@@ -76,13 +76,67 @@ include('../../Login/iniciar.php');
 					
 					<br>
 					<input type="text" name="idmateria" placeholder="Id Materia" maxlength="8"  required>
+					<br>
+					<br>
+
 					<p>Nombre</p>
-					
-					<br>
 					<input type="text" name="nombre" placeholder="Nombre" maxlength="45" required>
+					<br>
+					<br>
+
+					<p>Grupo</p>
+					<input type="text" name="grupo" placeholder="Grupo" maxlength="5"  required>
+					<br>
+					<br>
+
+					<p>Hora de inicio</p>
+					<input type="number" name="horainicio" placeholder="Hora de inicio" maxlength="5"  required>
+					<br>
+					<br>
+
+					<p>Hora Final</p>
+					<input type="number" name="horafinal" placeholder="Hora Final" maxlength="5"  required>
+					<br>
+					<br>
+
+					<p>Dia</p>
+						<select name="dia">
+						<option>--Dias diponibles--</option>
+						<option>--Lunes--</option>
+						<option>--Martes--</option>
+						<option>--Miercoles--</option>
+						<option>--Jueves--</option>
+						<option>--Viernes--</option>
+						</select>
 					
 					<br>
 					<br>
+
+					<p>ID Docente</p>	
+					<select name="iddocente">
+                        <option >--Docentes Disponibles--</option>
+                    <?php 
+							$sql="SELECT * from docentes";
+                            $result=mysqli_query($conexion,$sql);
+                            
+                            
+
+							while($ensenar=mysqli_fetch_array($result)){
+                                echo "
+                               
+                                    <option >".$ensenar['iddocente']."</option>
+                                    
+                                
+							";
+									
+                            ?>
+                            <?php 
+						}
+						?>	
+                    </select>
+					<br>
+					<br>
+
 					<input type="submit" value="Enviar"/>
 				</form>
 			</div>
