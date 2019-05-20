@@ -10,6 +10,4 @@
 				<li> <a class="menu" href='../reportes/reportes.php'>Reportes</a></li>
 				<li> <a class="menu" href='../cambiarclave.php'>Cambiar contraseña</a></li>
 				<li> <a class="menu" href='../../Login/salir.php'>Cerrar Sesion</a></li>
-				
-                
 </div>
