@@ -144,9 +144,9 @@ if (mysqli_query($conn, $pensum)) {
 
        //tabla horarios
        $horarios= "CREATE table if not exists horarios(
-        horainicio time not null, 
+        horainicio double not null, 
         primary key(horainicio),
-        horafinal time not null,
+        horafinal double not null,
         dia varchar(10) not null
         )Engine= innodb;";
      
@@ -157,7 +157,8 @@ if (mysqli_query($conn, $pensum)) {
 
           //tabla hora materia
     $horamateria= "CREATE table if not exists hora_materia(
-        horainicio time not null, 
+        horainicio double not null,
+        horfinal double not null, 
         idmateria varchar(5) not null, 
         idgrupo varchar (5) not null,
         primary key(horainicio, idmateria),
@@ -238,7 +239,36 @@ if (mysqli_query($conn, $pensum)) {
            echo "Error poner el registro" . mysqli_error($conn);
        } 
 
-    
+
+       //insertar facultades
+       $ingenieria= "INSERT into facultades values ('F-ING','Facultad de Ingenieria');";
+       if (mysqli_query($conn, $ingenieria)) {
+       } else {
+           echo "Error poner el registro" . mysqli_error($conn);
+       } 
+       $fcae= "INSERT into facultades values ('F-CAE','Facultad de Ciencias Administrativas y Economicas');";
+       if (mysqli_query($conn, $fcae)) {
+       } else {
+           echo "Error poner el registro" . mysqli_error($conn);
+       } 
+       $fmdc= "INSERT into facultades values ('F-MDC','Facultad de Marketing, Diseño y Comunicacion');";
+       if (mysqli_query($conn, $fmdc)) {
+       } else {
+           echo "Error poner el registro" . mysqli_error($conn);
+       } 
+       $fcjur= "INSERT into facultades values ('F-CJYR','Facultad de Ciencias Juridicas y Relaciones Internacionales');";
+       if (mysqli_query($conn, $fcjur)) {
+       } else {
+           echo "Error poner el registro" . mysqli_error($conn);
+       } 
+       $ucol= "INSERT into facultades values ('F-UCOL','UAM COLLEGE');";
+       if (mysqli_query($conn, $ucol)) {
+       } else {
+           echo "Error poner el registro" . mysqli_error($conn);
+       } 
+
+       
+
     
        //trigger para insertar alumnos en la tabla login
        $cuentaalumnos= "
