@@ -8,11 +8,12 @@ include('../../conexion.php');
 	$horaincio=$_POST['horainicio'];
 	$horafinal=$_POST['horafinal'];
 	$iddocente=$_POST['iddocente'];
+	$dia=$_POST['dia'];
 
 	//hacemos la sentencia de sql
 	$sql="INSERT INTO materias VALUES('$idmateria','$nombre')";
 	$materiasdocentes = "INSERT into materia_docente (idmateria, iddocente, idgrupo) values ('$idmateria','$iddocente','$grupo')";
-	$horario = "INSERT into hora_materia (horainicio, horfinal, idmateria, idgrupo) values ('$horaincio', '$horafinal' , '$idmateria' , '$grupo')";
+	$horario = "INSERT into hora_materia (horainicio, horfinal, idmateria, idgrupo,dia) values ('$horaincio', '$horafinal' , '$idmateria' , '$grupo', '$dia')";
 
 	//verificamos la ejecucion
 	if (mysqli_query($conexion, $sql) && mysqli_query($conexion, $materiasdocentes) && mysqli_query($conexion, $horario) ){

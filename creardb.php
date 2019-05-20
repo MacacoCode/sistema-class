@@ -150,6 +150,7 @@ if (mysqli_query($conn, $pensum)) {
         horfinal double not null, 
         idmateria varchar(5) not null, 
         idgrupo varchar (5) not null,
+        dia varchar(12) not null,   
         primary key(horainicio, idmateria),
         foreign key (idmateria) references materias(idmateria)
         )Engine= innodb;";

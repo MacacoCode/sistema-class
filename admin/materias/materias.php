@@ -31,12 +31,19 @@ include('../../Login/iniciar.php');
 								<tr>
 									<td>Id Materia</td>
 									<td>Nombre</td>
+									<td>Profesor</td>
+									<td>Hora de inicio</td>
+									<td>Hora Final</td>
+									<td>Dia</td>
+									<td>Grupo</td>
 									<td>Acciones</td>
 										
 								</tr>
 								</thead>
 							<?php 
-							$sql="SELECT * from materias";
+							$sql="SELECT materias.idmateria as idmateria, materias.nombre as nombre, docentes.nombre as profesor, hora_materia.horainicio as inicio, hora_materia.horfinal as final, hora_materia.dia as dia, hora_materia.idgrupo as grupo
+							from materias, materia_docente, hora_materia, docentes
+							where materias.idmateria=hora_materia.idmateria and materias.idmateria=materia_docente.idmateria and materia_docente.iddocente = docentes.iddocente;";
 							$result=mysqli_query($conexion,$sql);
 
 							while($mostrar=mysqli_fetch_array($result)){
@@ -45,6 +52,11 @@ include('../../Login/iniciar.php');
 								<tr>
 								<td>".$mostrar['idmateria']."</td>
 								<td>".$mostrar['nombre']."</td>
+								<td>".$mostrar['profesor']."</td>
+								<td>".$mostrar['inicio']."</td>
+								<td>".$mostrar['final']."</td>
+								<td>".$mostrar['dia']."</td>
+								<td>".$mostrar['grupo']."</td>
 								
 
 								<td>
