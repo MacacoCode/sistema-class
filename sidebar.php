@@ -1,7 +1,7 @@
 <div class="sidebar">
 					
                 <li ><a class="menu" href='../main/main.php'>Home</a> </li>
-				<li> <a class="menu" href='../facultadesycarreras/carreras.php'> Facultades y Carreras</a></li>
+				<li> <a class="menu" href='../facultadesycarreras/carreras.php'> Carreras</a></li>
                 <li> <a class="menu" href='../alumnos/alumnos.php'> Alumnos</a></li>
 				<li> <a class="menu" href='../profesores/profesores.php' > Profesores</a></li>
 				<li> <a class="menu" href='../materias/materias.php'> Materias</a></li>
