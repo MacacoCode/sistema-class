@@ -6,7 +6,6 @@
 				<li> <a class="menu" href='../profesores/profesores.php' > Profesores</a></li>
 				<li> <a class="menu" href='../materias/materias.php'> Materias</a></li>
 				<li> <a class="menu" href='../matricula/matricula.php'>Matricula de Alumnos</a></li>
-				<li> <a class="menu" href='../matriculaprofe/matriculaprofe.php'>Matricula de Profesores</a></li>
 				<li> <a class="menu" href='../reportes/reportes.php'>Reportes</a></li>
 				<li> <a class="menu" href='../cambiarclave.php'>Cambiar contraseña</a></li>
 				<li> <a class="menu" href='../../Login/salir.php'>Cerrar Sesion</a></li>

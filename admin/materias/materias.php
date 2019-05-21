@@ -114,11 +114,11 @@ include('../../Login/iniciar.php');
 					<p>Dia</p>
 						<select name="dia">
 						<option>--Dias diponibles--</option>
-						<option>--Lunes--</option>
-						<option>--Martes--</option>
-						<option>--Miercoles--</option>
-						<option>--Jueves--</option>
-						<option>--Viernes--</option>
+						<option>Lunes</option>
+						<option>Martes</option>
+						<option>Miercoles</option>
+						<option>Jueves</option>
+						<option>Viernes</option>
 						</select>
 					
 					<br>
