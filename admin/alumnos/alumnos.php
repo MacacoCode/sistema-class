@@ -14,7 +14,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		
-		<title>mostrar datos</title>
+		<title>Alumnos</title>
 	</head>
 	<body background-color: #fff>
 
@@ -94,19 +94,19 @@
 					<input type="text" name="apellido" placeholder="Apellido" maxlength="25" pattern="^[A-Za-z]+$" required>
 						<br>
 								<br>
-						<select name="carrera">
-                        <option>--Carreras Disponibles--</option>
+						<select name="carrera" required>
+                        <option required>--Carreras Disponibles--</option>
 							<?php 
 									$sql="SELECT * from oferta_academica";
 									$result=mysqli_query($conexion,$sql);
+								
 									
 									while($ensenar=mysqli_fetch_array($result)){
 										echo "
 									
 											<option >".$ensenar['idoferta']."</option>
-											
 										
-									";
+									"
 											
 									?>
 									<?php 
@@ -116,10 +116,13 @@
 
 						<br>
 
-						<div id="pop-up">
+						<div class="pop-up">
 							<div >
-							<p>Esta seguro?</p>
+							<p>¿Esta seguro?</p>
 							<input href='guardar.php' type="submit" value="Confirmar">
+							<br>
+							<br>
+							<input class= "pop-up-cancel" type="button" value="Cancelar">
 							</div>
 						</div>
 						
@@ -128,7 +131,7 @@
 						
 					</form>
 					
-					<button id="pop-up-activate">Enviar</button>
+					<button class="pop-up-activate">Enviar</button>
 				</div>
 			
 		</div>

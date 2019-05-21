@@ -12,7 +12,7 @@ include('../../Login/iniciar.php');
 	$sql="INSERT into alumnos VALUES('$cif','$nombre','$apellido')";
 	$sqk="INSERT into oferta_alumnos VALUES ('$carrera','$cif')";
 	//verificamos la ejecucion
-	if(mysqli_query($conexion, $sql) && mysqli_query($conexion, $sqk)){
+	if(mysqli_query($conexion, $sql)){
 		header("Location: http://localhost:8080/formulario/admin/alumnos/alumnos.php");
 	}
 	else{
@@ -20,5 +20,14 @@ include('../../Login/iniciar.php');
 	
 		
 	}
+	if(mysqli_query($conexion, $sqk)){
+		header("Location: http://localhost:8080/formulario/admin/alumnos/alumnos.php");
+	}
+	else{
+		echo "o No se introdujo una carrera";
+	
+		
+	}
+
 ?>
 

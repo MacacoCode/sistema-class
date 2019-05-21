@@ -3,6 +3,9 @@ body{
 	color: #fff;
 
 }
+h3{
+	color:black;
+}
 .fondo{
 	background-color:rgb(21, 32, 43);
 	border: 5px solid #000;
@@ -80,4 +83,12 @@ button {
 }
 a{
 	color:black;
+}
+.card-body{
+	background-color: rgb(29, 119, 129);
+	border-color:  rgb(29, 119, 129);
+}
+.btn-success{
+	background-color: rgba(10, 15, 20, 0.1);
+	border: 0;
 }
