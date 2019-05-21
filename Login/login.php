@@ -24,11 +24,11 @@
                     <form  action="loguear.php"  method="POST" autocomplete="off">
                     
                         <div class="form-group">
-                            <input type="text" name="username" placeholder="Username" class="form-control"  maxlength="8" required="required">
+                            <input type="text" name="username" placeholder="Usuario" class="form-control"  maxlength="8" required="required">
                         </div>
 
                         <div class="form-group">
-                            <input type= "password" name="password" placeholder="Password" class="form-control"  maxlength="10"required="required">
+                            <input type= "password" name="password" placeholder="Contraseña" class="form-control"  maxlength="10"required="required">
                         </div>
 
                         <div class="form-group">
