@@ -31,12 +31,19 @@ include('../../Login/iniciar.php');
 								<tr>
 									<td>Id Materia</td>
 									<td>Nombre</td>
+									<td>Profesor</td>
+									<td>Hora de inicio</td>
+									<td>Hora Final</td>
+									<td>Dia</td>
+									<td>Grupo</td>
 									<td>Acciones</td>
 										
 								</tr>
 								</thead>
 							<?php 
-							$sql="SELECT * from materias";
+							$sql="SELECT materias.idmateria as idmateria, materias.nombre as nombre, docentes.nombre as profesor, hora_materia.horainicio as inicio, hora_materia.horfinal as final, hora_materia.dia as dia, hora_materia.idgrupo as grupo
+							from materias, materia_docente, hora_materia, docentes
+							where materias.idmateria=hora_materia.idmateria and materias.idmateria=materia_docente.idmateria and materia_docente.iddocente = docentes.iddocente;";
 							$result=mysqli_query($conexion,$sql);
 
 							while($mostrar=mysqli_fetch_array($result)){
@@ -45,6 +52,11 @@ include('../../Login/iniciar.php');
 								<tr>
 								<td>".$mostrar['idmateria']."</td>
 								<td>".$mostrar['nombre']."</td>
+								<td>".$mostrar['profesor']."</td>
+								<td>".$mostrar['inicio']."</td>
+								<td>".$mostrar['final']."</td>
+								<td>".$mostrar['dia']."</td>
+								<td>".$mostrar['grupo']."</td>
 								
 
 								<td>
@@ -76,13 +88,67 @@ include('../../Login/iniciar.php');
 					
 					<br>
 					<input type="text" name="idmateria" placeholder="Id Materia" maxlength="8"  required>
+					<br>
+					<br>
+
 					<p>Nombre</p>
-					
-					<br>
 					<input type="text" name="nombre" placeholder="Nombre" maxlength="45" required>
+					<br>
+					<br>
+
+					<p>Grupo</p>
+					<input type="text" name="grupo" placeholder="Grupo" maxlength="5"  required>
+					<br>
+					<br>
+
+					<p>Hora de inicio</p>
+					<input type="number" name="horainicio" placeholder="Hora de inicio" maxlength="5"  required>
+					<br>
+					<br>
+
+					<p>Hora Final</p>
+					<input type="number" name="horafinal" placeholder="Hora Final" maxlength="5"  required>
+					<br>
+					<br>
+
+					<p>Dia</p>
+						<select name="dia">
+						<option>--Dias diponibles--</option>
+						<option>--Lunes--</option>
+						<option>--Martes--</option>
+						<option>--Miercoles--</option>
+						<option>--Jueves--</option>
+						<option>--Viernes--</option>
+						</select>
 					
 					<br>
 					<br>
+
+					<p>ID Docente</p>	
+					<select name="iddocente">
+                        <option >--Docentes Disponibles--</option>
+                    <?php 
+							$sql="SELECT * from docentes";
+                            $result=mysqli_query($conexion,$sql);
+                            
+                            
+
+							while($ensenar=mysqli_fetch_array($result)){
+                                echo "
+                               
+                                    <option >".$ensenar['iddocente']."</option>
+                                    
+                                
+							";
+									
+                            ?>
+                            <?php 
+						}
+						?>	
+                    </select>
+					<br>
+					<br>
+
 					<input type="submit" value="Enviar"/>
 				</form>
 			</div>

@@ -129,31 +129,20 @@ if (mysqli_query($conn, $pensum)) {
        }  
 
           //tabla materias_alumnos
-    $materiasalumnos= "CREATE table if not exists materias_alumnos(
-        idmateria varchar(5) not null,
-        idalumno varchar (10) not null, 
-        primary key(idmateria, idalumno),
-        foreign key (idmateria) references materias(idmateria),
-        foreign key (idalumno) references alumnos(idalumno)
-        )Engine= innodb;";
-     
-    if (mysqli_query($conn, $materiasalumnos)) {
-    } else {
-        echo "Error al crear la tabla: " . mysqli_error($conn);
-    }  
+            $materiasalumnos= "CREATE table if not exists materias_alumnos(
+                idmateria varchar(5) not null,
+                idalumno varchar (10) not null, 
+                primary key(idmateria, idalumno),
+                foreign key (idmateria) references materias(idmateria),
+                foreign key (idalumno) references alumnos(idalumno)
+                )Engine= innodb;";
+            
+            if (mysqli_query($conn, $materiasalumnos)) {
+            } else {
+                echo "Error al crear la tabla: " . mysqli_error($conn);
+            }  
 
-       //tabla horarios
-       $horarios= "CREATE table if not exists horarios(
-        horainicio double not null, 
-        primary key(horainicio),
-        horafinal double not null,
-        dia varchar(10) not null
-        )Engine= innodb;";
-     
-       if (mysqli_query($conn, $horarios)) {
-       } else {
-           echo "Error al crear la tabla: " . mysqli_error($conn);
-       }  
+        
 
           //tabla hora materia
     $horamateria= "CREATE table if not exists hora_materia(
@@ -161,8 +150,8 @@ if (mysqli_query($conn, $pensum)) {
         horfinal double not null, 
         idmateria varchar(5) not null, 
         idgrupo varchar (5) not null,
+        dia varchar(12) not null,   
         primary key(horainicio, idmateria),
-        foreign key (horainicio) references horarios(horainicio),
         foreign key (idmateria) references materias(idmateria)
         )Engine= innodb;";
      
