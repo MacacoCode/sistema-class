@@ -6,7 +6,6 @@ include('../../conexion.php');
 	$nombre=$_POST['nombre']; //id de la materia
 
 	//Primera consulta para obtener la hora y dia de la materia
-
 	$cdh="SELECT horainicio as inicio, horfinal as final,dia as dia from hora_materia where idmateria='$nombre';";
 	$consulta = mysqli_query($conexion, $cdh);
 	$array = mysqli_fetch_array($consulta);
@@ -15,7 +14,7 @@ include('../../conexion.php');
 	$dia= $array['dia'];
 
 
-	
+	//Consulta para verificar si la hora y dia estan disponibles para un estudiante
 	$sinchoque = "SELECT count(*) as sinchoque from materias, hora_materia, materias_alumnos
 	where materias.idmateria = hora_materia.idmateria and materias.idmateria= materias_alumnos.idmateria
 	and hora_materia.horainicio ='$horainicio' and hora_materia.horfinal='$horafinal' and hora_materia.dia='$dia' 
