@@ -95,7 +95,7 @@ include('../../Login/iniciar.php');
 							while($ensenar=mysqli_fetch_array($result)){
                                 echo "
                                
-                                    <option >".$ensenar['idmateria']."</option>
+                                    <option >".$ensenar['nombre']."</option>
                                     
                                 
 							";

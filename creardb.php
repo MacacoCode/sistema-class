@@ -31,8 +31,9 @@ $facultades= "CREATE table if not exists facultades(
 
 //tabla oferta
 $oferta= "CREATE table if not exists oferta_academica(
+    idcarrera MEDIUMINT NOT NULL AUTO_INCREMENT,
     idoferta varchar(10) not null,
-    primary key (idoferta),
+    primary key (idcarrera),
     nombre varchar(45) not null, 
     tipo enum('pregrado', 'posgrado'),
     idfacultad varchar(10) ,
@@ -50,8 +51,8 @@ $pensum= "CREATE table if not exists pensum (
     idpensum varchar(8) not null,
     primary key(idpensum),
     year datetime not null,
-    idoferta varchar(10) not null,
-    foreign key (idoferta) references oferta_academica(idoferta)
+    idcarrera mediumint not null,
+    foreign key (idcarrera) references oferta_academica(idcarrera)
     )Engine= innodb;";
  
 if (mysqli_query($conn, $pensum)) {
@@ -74,10 +75,10 @@ if (mysqli_query($conn, $pensum)) {
 
        //tabla oferta_alumnos
        $matricula= "CREATE table if not exists oferta_alumnos(
-        idoferta varchar(10) not null, 
+        idcarrera mediumint not null,
         idalumno varchar(10) not null, 
-        primary key (idoferta, idalumno),
-        foreign key (idoferta) references oferta_academica(idoferta),
+        primary key (idcarrera, idalumno),
+        foreign key (idcarrera) references oferta_academica(idcarrera),
         foreign key(idalumno) references alumnos(idalumno)
         
         )Engine= innodb;";
@@ -118,7 +119,8 @@ if (mysqli_query($conn, $pensum)) {
     
        //tabla materias
        $materias= "CREATE table if not exists materias(
-        idmateria varchar (5) not null, 
+        idmateria MEDIUMINT NOT NULL AUTO_INCREMENT,
+        codigo varchar (5) not null, 
         primary key (idmateria), 
         nombre varchar(45) not null
         )Engine= innodb;";
@@ -130,7 +132,7 @@ if (mysqli_query($conn, $pensum)) {
 
           //tabla materias_alumnos
             $materiasalumnos= "CREATE table if not exists materias_alumnos(
-                idmateria varchar(5) not null,
+                idmateria MEDIUMINT not null,
                 idalumno varchar (10) not null, 
                 primary key(idmateria, idalumno),
                 foreign key (idmateria) references materias(idmateria),
@@ -146,9 +148,9 @@ if (mysqli_query($conn, $pensum)) {
 
           //tabla hora materia
     $horamateria= "CREATE table if not exists hora_materia(
-        horainicio double not null,
-        horfinal double not null, 
-        idmateria varchar(5) not null, 
+        horainicio TIME not null,
+        horfinal TIME not null, 
+        idmateria MEDIUMINT not null, 
         idgrupo varchar (5) not null,
         dia varchar(12) not null,   
         primary key(horainicio, idmateria),
@@ -178,7 +180,7 @@ if (mysqli_query($conn, $pensum)) {
         nota double not null ,
         primary key (nota),
         idalumno varchar(10) not null,
-        idmateria varchar(5) not null, 
+        idmateria MEDIUMINT not null, 
         foreign key (idalumno) references alumnos(idalumno),
         foreign key (idmateria) references materias(idmateria)
         )Engine= innodb;";
@@ -204,7 +206,7 @@ if (mysqli_query($conn, $pensum)) {
 
        //tabla materias docentes
        $materiasdocentes= "CREATE table if not exists materia_docente(
-        idmateria varchar(5) not null, 
+        idmateria MEDIUMINT not null, 
         iddocente varchar(10) not null, 
         idgrupo varchar (5) not null,
         primary key (idmateria, iddocente),

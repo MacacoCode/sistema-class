@@ -42,7 +42,7 @@
 								<?php 
 								$sql="SELECT alumnos.idalumno as idalumno, alumnos.nombre as nombre, alumnos.apellido as apellido, oferta_academica.nombre as carrera
 								from alumnos, oferta_alumnos, oferta_academica 
-								where alumnos.idalumno=oferta_alumnos.idalumno and oferta_alumnos.idoferta=oferta_academica.idoferta;";
+								where alumnos.idalumno=oferta_alumnos.idalumno and oferta_alumnos.idcarrera=oferta_academica.idcarrera;";
 								$result=mysqli_query($conexion,$sql);
 
 								while($mostrar=mysqli_fetch_array($result)){
@@ -104,7 +104,7 @@
 									while($ensenar=mysqli_fetch_array($result)){
 										echo "
 									
-											<option >".$ensenar['idoferta']."</option>
+											<option >".$ensenar['nombre']."</option>
 										
 									"
 											

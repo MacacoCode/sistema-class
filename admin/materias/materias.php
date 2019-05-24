@@ -87,7 +87,7 @@ include('../../Login/iniciar.php');
 					<p>ID Materia</p>
 					
 					<br>
-					<input type="text" name="idmateria" placeholder="Id Materia" maxlength="8"  required>
+					<input type="text" name="codigo" placeholder="Id Materia" maxlength="8"  required>
 					<br>
 					<br>
 
@@ -102,12 +102,12 @@ include('../../Login/iniciar.php');
 					<br>
 
 					<p>Hora de inicio</p>
-					<input type="number" name="horainicio" placeholder="Hora de inicio" maxlength="5"  required>
+					<input type="time" name="horainicio" placeholder="Hora de inicio" maxlength="15"  required>
 					<br>
 					<br>
 
 					<p>Hora Final</p>
-					<input type="number" name="horafinal" placeholder="Hora Final" maxlength="5"  required>
+					<input type="time" name="horafinal" placeholder="Hora Final" maxlength="15"  required>
 					<br>
 					<br>
 

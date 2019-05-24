@@ -3,12 +3,18 @@ include('../../conexion.php');
 	
 	//recuperar las variables
 	$idalumno=$_POST['idalumno'];
-	$nombre=$_POST['nombre']; //id de la materia
+	$nombre=$_POST['nombre']; //nombre de la materia
+
+	//Pasar el nombre de la materia a id
+	$recuperarID="SELECT idmateria as idmateria from materias where nombre='$nombre'";
+	$consulta = mysqli_query($conexion, $recuperarID);
+	$array = mysqli_fetch_array($consulta);
+	$idmateria= $array['idmateria'];
 
 	//Primera consulta para obtener la hora y dia de la materia
-	$cdh="SELECT horainicio as inicio, horfinal as final,dia as dia from hora_materia where idmateria='$nombre';";
-	$consulta = mysqli_query($conexion, $cdh);
-	$array = mysqli_fetch_array($consulta);
+	$cdh="SELECT horainicio as inicio, horfinal as final,dia as dia from hora_materia where idmateria='$idmateria'";
+	$consultahdm = mysqli_query($conexion, $cdh);
+	$array = mysqli_fetch_array($consultahdm);
 	$horainicio= $array['inicio'];
 	$horafinal= $array['final'];
 	$dia= $array['dia'];
@@ -26,7 +32,7 @@ include('../../conexion.php');
 	if($arrayd['sinchoque']==0){
 		
 		//hacemos la sentencia de sql
-	$sql="INSERT INTO materias_alumnos(idalumno, idmateria) VALUES('$idalumno','$nombre')";
+	$sql="INSERT INTO materias_alumnos(idmateria, idalumno) VALUES('$idmateria','$idalumno')";
 	//verificamos la ejecucion
 	if(mysqli_query($conexion, $sql)){
 		header("Location: http://localhost:8080/formulario/admin/matricula/matricula.php");
