@@ -73,13 +73,23 @@ include('../../Login/iniciar.php');
 					<p>Nombre</p>		
 					<br>
 					<input type="text" name="nombre" placeholder="Nombre de la Carrera" maxlength="45"  required>
+					<br>
+					<br>
 
-					<p>Tipo</p>
-					<br>
-					<input type="text" name="tipo" placeholder="Pregrado o Posgrado" maxlength="45"  required>
-					<br>
-                    <br>        
-                    <select name="idfacultad">
+					<p>Pregrado o Posgrado</p>
+					<select name="tipo">
+                        <option>--Opciones--</option>
+						<option>pregrado</option>
+						<option>posgrado</option>
+                	
+                    </select>
+
+						<br>
+						<br>
+
+
+					<p>Facultad</p>
+                    <select name="nombreFac">
                         <option>--Facultades--</option>
                     <?php 
 							$sql="SELECT * from facultades";
@@ -88,7 +98,7 @@ include('../../Login/iniciar.php');
 							while($ensenar=mysqli_fetch_array($result)){
                                 echo "
                                
-                                    <option >".$ensenar['idfacultad'    ]."</option>
+                                    <option >".$ensenar['nombre_facultad']."</option>
                                     
                                 
 							";

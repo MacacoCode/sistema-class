@@ -153,7 +153,7 @@ if (mysqli_query($conn, $pensum)) {
         idmateria MEDIUMINT not null, 
         idgrupo varchar (5) not null,
         dia varchar(12) not null,   
-        primary key(horainicio, idmateria),
+        primary key(idgrupo, idmateria),
         foreign key (idmateria) references materias(idmateria)
         )Engine= innodb;";
      
@@ -209,7 +209,7 @@ if (mysqli_query($conn, $pensum)) {
         idmateria MEDIUMINT not null, 
         iddocente varchar(10) not null, 
         idgrupo varchar (5) not null,
-        primary key (idmateria, iddocente),
+        primary key (idmateria,idgrupo),
         foreign key (idmateria) references materias(idmateria),
         foreign key (iddocente) references docentes(iddocente)
         
