@@ -30,18 +30,20 @@ include('../../Login/iniciar.php');
 						<thead>
                             <tr>
                                 <td>ID alumno</td>
-                                <td>Nombre del alumno</td>
-                                <td>ID materia</td>
                                 <td>Materia</td>
+                                <td>Hora inicio</td>
+                                <td>Hora final</td>
+								<td>grupo</td>
+								<td>dia</td>
 								<td>Acciones</td>
                                 
                                     
                             </tr>
 						</thead>
                         <?php 
-                        $sql="SELECT matri.idalumno, alumnos.nombre as alumnos, matri.idmateria,materias.nombre 
-                        from materias_alumnos as matri, materias, alumnos 
-                        where matri.idalumno = alumnos.idalumno and materias.idmateria = matri.idmateria";
+                        $sql="SELECT materias_alumnos.idalumno as idalumno, materias.nombre as nombre, hora_materia.horainicio as inicio, hora_materia.horfinal as final, materias_alumnos.idgrupo as grupo, hora_materia.dia as dia
+						from materias_alumnos, hora_materia, materias
+						where materias_alumnos.idmateria=hora_materia.idmateria and materias_alumnos.idmateria=materias.idmateria;";
                         $result=mysqli_query($conexion,$sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
@@ -49,16 +51,18 @@ include('../../Login/iniciar.php');
 							<tbody>
 							<tr>
                             <td>".$mostrar['idalumno']."</td>
-                            <td>".$mostrar['alumnos']."</td>
-                            <td>".$mostrar['idmateria']."</td>
-							<td>".$mostrar['nombre']."</td>
+                            <td>".$mostrar['nombre']."</td>
+                            <td>".$mostrar['inicio']."</td>
+							<td>".$mostrar['final']."</td>
+							<td>".$mostrar['grupo']."</td>
+							<td>".$mostrar['dia']."</td>
 							
 							
 							<td>
 							
 
 							<button >
-							<a  href='deletematricula.php?pn=$mostrar[idmateria]&sc=$mostrar[idalumno]'>Borrar</a>
+							<a  href='deletematricula.php?pn=$mostrar[nombre]&sc=$mostrar[idalumno]&gr=$mostrar[grupo]'>Borrar</a>
 							</button>
 							</td>
                         
@@ -81,6 +85,8 @@ include('../../Login/iniciar.php');
 					
 					<br>
 					<input type="text" name="idalumno" placeholder="Id Alumno" maxlength="8" pattern="^[0-9]*$" required>
+					<br>	
+					<br>
 					<p>ID Materia</p>
 					
                     <br>
@@ -105,8 +111,13 @@ include('../../Login/iniciar.php');
 						}
 						?>	
                     </select>
+					<br>
+					<br>
+
+					<p>Grupo</p>
 					
-					
+					<br>
+					<input type="number" name="grupo" placeholder="No. Grupo" maxlength="8" pattern="^[0-9]*$" required>
 					<br>
 					<br>
 					<input type="submit" value="Enviar"/>

@@ -134,6 +134,7 @@ if (mysqli_query($conn, $pensum)) {
             $materiasalumnos= "CREATE table if not exists materias_alumnos(
                 idmateria MEDIUMINT not null,
                 idalumno varchar (10) not null, 
+                idgrupo varchar(5) not null,
                 primary key(idmateria, idalumno),
                 foreign key (idmateria) references materias(idmateria),
                 foreign key (idalumno) references alumnos(idalumno)
