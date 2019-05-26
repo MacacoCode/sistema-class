@@ -78,4 +78,5 @@ $clave=$_SESSION['clave'];
         </style>    
         
     </body>
+    
 </html>

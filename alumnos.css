@@ -9,6 +9,9 @@
      display: flex;
  
  }
+ select {
+     width: 100%;
+ }
  
  
  #main{ 

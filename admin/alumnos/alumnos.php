@@ -16,7 +16,7 @@
 		
 		<title>Alumnos</title>
 	</head>
-	<body background-color: #fff>
+	<body>
 
 
 	<div id="container">
@@ -60,7 +60,7 @@
 									<a  href='update.php?rn=$mostrar[idalumno]&sn=$mostrar[nombre]&cl=$mostrar[apellido]&car=$mostrar[carrera]'>Editar</a>
 									</button>
 
-									<button >
+									<button class='pop-up-activate'>
 									<a  href='delete.php?rn=$mostrar[idalumno]'>Borrar</a>
 									</button>
 									</td>
@@ -94,7 +94,7 @@
 					<input type="text" name="apellido" placeholder="Apellido" maxlength="25" pattern="^[A-Za-z]+$" required>
 						<br>
 								<br>
-						<select name="carrera" required>
+						<select name="carrera" required flex>
                         <option required>--Carreras Disponibles--</option>
 							<?php 
 									$sql="SELECT * from oferta_academica";
