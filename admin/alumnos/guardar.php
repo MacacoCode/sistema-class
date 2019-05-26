@@ -8,7 +8,7 @@ include('../../Login/iniciar.php');
 	$apellido=$_POST['apellido'];
 	$carrera=$_POST['carrera'];
 
-	//Recuperamos el idcarrera, ya que el usuario ingresa
+	//Recuperamos el idcarrera, ya que el usuario ingresa el nombre de la carrera
 	$recuperarID="SELECT idcarrera as idcarrera from oferta_academica where nombre='$carrera'";
 	$consulta = mysqli_query($conexion, $recuperarID);
 	$array = mysqli_fetch_array($consulta);

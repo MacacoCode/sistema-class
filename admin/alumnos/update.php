@@ -3,9 +3,10 @@
     include('../../Login/iniciar.php');
 error_reporting(0);
 
-$_GET['rn'];
-$_GET['sn'];
-$_GET['cl'];
+$_GET['rn']; //idalumno
+$_GET['sn']; //nombre
+$_GET['cl']; //apellido
+$_GET['car']; //nombre de la carrera
 
 
 ?>
@@ -25,7 +26,7 @@ $_GET['cl'];
         <br>
     <div class="form col" >
     <form action="" method="GET" autocomplete="off"  >
-		<p>CIF</p>
+		<p>ID</p>
 		<br>
         <input type="text" name="CIF" placeholder="CIF" maxlength="8" required value="<?php echo $_GET['rn']; ?>" DISABLED>
        
@@ -39,7 +40,8 @@ $_GET['cl'];
 		<input type="text" name="apellido" placeholder="Apellido" maxlength="45" required value="<?php echo $_GET['cl']; ?>">
 		<br>
         <br>
-                            <br>
+        
+        <br>
 		<br>
 		<input type="submit" name="submit" value="Actualizar"/>
     </form>

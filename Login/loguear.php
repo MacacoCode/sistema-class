@@ -46,4 +46,19 @@ else{
     
    echo"Contrasena o usuario incorrecto";
 }
+
+//Coordinadores
+$q = "SELECT COUNT(*) as contar from login where usuario = '$usuario' and clave = '$clave' and cargo ='coord'";
+$consulta = mysqli_query($conexion, $q);
+$array = mysqli_fetch_array($consulta);
+
+if($array['contar']>0){
+    $_SESSION['usuario'] = $usuario; //nuevo
+    header("Location:http://localhost:8080/formulario/Coordinador/coord.php");
+    
+}
+else{
+    
+   echo"Contrasena o usuario incorrecto";
+}
 ?>

@@ -60,6 +60,22 @@ if (mysqli_query($conn, $pensum)) {
     echo "Error al crear la tabla: " . mysqli_error($conn);
 }  
 
+ //tabla coordinadores 
+ $coord= "CREATE table if not exists coordinadores(
+    idcoordinador varchar(10) not null, 
+    nombre varchar (45) not null, 
+    apellido varchar(45),
+    idcarrera mediumint not null,
+    primary key (idcoordinador,idcarrera),
+    foreign key (idcarrera) references oferta_academica(idcarrera)
+    )Engine= innodb;";
+ 
+if (mysqli_query($conn, $coord)) {
+} else {
+    echo "Error al crear la tabla: " . mysqli_error($conn);
+}  
+
+
     //tabla alumnos 
     $alumnos= "CREATE table if not exists alumnos(
         idalumno varchar(10) not null,
@@ -195,7 +211,7 @@ if (mysqli_query($conn, $pensum)) {
        $login = "CREATE table if not exists login(
         usuario varchar(50) not null,
         clave varchar(40) not null,
-        cargo enum('alumno', 'profesor','admin'),
+        cargo enum('alumno', 'profesor','admin','coord'),
         primary key (usuario)
         
         )Engine = innodb;";
