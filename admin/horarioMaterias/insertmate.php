@@ -16,6 +16,7 @@ include('../../conexion.php');
 	$array = mysqli_fetch_array($consulta);
 	$idmateria= $array['idmateria'];
 
+	
 
 
 	$materiasdocentes = "INSERT into materia_docente (idmateria, iddocente, idgrupo) values ('$idmateria','$iddocente','$grupo')";

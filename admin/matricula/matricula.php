@@ -43,7 +43,7 @@ include('../../Login/iniciar.php');
                         <?php 
                         $sql="SELECT materias_alumnos.idalumno as idalumno, materias.nombre as nombre, hora_materia.horainicio as inicio, hora_materia.horfinal as final, materias_alumnos.idgrupo as grupo, hora_materia.dia as dia
 						from materias_alumnos, hora_materia, materias
-						where materias_alumnos.idmateria=hora_materia.idmateria and materias_alumnos.idmateria=materias.idmateria;";
+						where materias_alumnos.idmateria=hora_materia.idmateria and materias_alumnos.idmateria=materias.idmateria and materias_alumnos.idgrupo=hora_materia.idgrupo;";
                         $result=mysqli_query($conexion,$sql);
 
                         while($mostrar=mysqli_fetch_array($result)){

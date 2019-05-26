@@ -42,7 +42,7 @@ include('../../conexion.php');
 					
 			}
 			else{
-				echo"Error al inscribir la materia";
+				echo"Ya se inscribio esa materia!";
 				
 			}
 	}
