@@ -87,7 +87,7 @@ include('../../Login/iniciar.php');
 					<p>Codigo</p>
 					
 					<br>
-					<input type="text" name="codigo" placeholder="Codigo de Clase" maxlength="4" pattern="^([A-Z]{1})([0-9]{3})$" required oninvalid="this.setCustomValidity('Se requieren 1 letra y 3 digitos')">
+					<input type="text" name="codigo" placeholder="Codigo de Clase" maxlength="5" required >
                     <br>
                     <br>
 

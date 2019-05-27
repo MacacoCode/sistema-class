@@ -28,8 +28,7 @@ $_GET['car']; //nombre de la carrera
     <form action="" method="GET" autocomplete="off"  >
 		<p>ID</p>
 		
-        <p name="idalumno" ><?php echo $_GET['rn']; ?></p>
-        <input id="esconder" type="text" name="id" placeholder="CIF" maxlength="8" required value="<?php echo $_GET['rn']; ?>" >
+        
        <br>
         <input class="idnone" type="text" name="id" placeholder="CIF" maxlength="8" required value="<?php echo $_GET['rn']; ?>">
         <p><?php echo $_GET['rn']; ?></p>
