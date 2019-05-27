@@ -1,6 +1,6 @@
 <?php
 
-$link = mysqli_connect("localhost", "root", "");
+$link = mysqli_connect("localhost:3307", "root", "");
  
 // Check connection
 if($link === false){
@@ -15,7 +15,7 @@ if(mysqli_query($link, $base)){
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }
 
-$conn = mysqli_connect("localhost", "root", "", "universidad");
+$conn = mysqli_connect("localhost:3307", "root", "", "universidad");
 
 //tabla facultades
 $facultades= "CREATE table if not exists facultades(
@@ -35,7 +35,7 @@ $oferta= "CREATE table if not exists oferta_academica(
     idoferta varchar(10) not null,
     primary key (idcarrera),
     nombre varchar(45) not null, 
-    tipo enum('pregrado', 'posgrado'),
+    tipo enum('Pregrado', 'Posgrado'),
     idfacultad varchar(10) ,
     foreign key(idfacultad) references facultades(idfacultad)
     )Engine =  innodb;";
@@ -224,7 +224,7 @@ if (mysqli_query($conn, $coord)) {
        //tabla materias docentes
        $materiasdocentes= "CREATE table if not exists materia_docente(
         idmateria MEDIUMINT not null, 
-        iddocente varchar(10) not null, 
+        iddocente varchar(15) not null, 
         idgrupo varchar (5) not null,
         primary key (idmateria,idgrupo),
         foreign key (idmateria) references materias(idmateria),

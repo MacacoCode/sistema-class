@@ -27,9 +27,10 @@ $_GET['car']; //nombre de la carrera
     <div class="form col" >
     <form action="" method="GET" autocomplete="off"  >
 		<p>ID</p>
-		<br>
-        <input type="text" name="id" placeholder="CIF" maxlength="8" required value="<?php echo $_GET['rn']; ?>" DISABLED>
-       
+		
+        <p name="idalumno" ><?php echo $_GET['rn']; ?></p>
+        <input id="esconder" type="text" name="id" placeholder="CIF" maxlength="8" required value="<?php echo $_GET['rn']; ?>" >
+       <br>
         
 		<p>Nombre</p>
 		<br>
@@ -40,27 +41,8 @@ $_GET['car']; //nombre de la carrera
 		<input type="text" name="apellido" placeholder="Apellido" maxlength="45" required value="<?php echo $_GET['cl']; ?>">
 		<br>
         <br>
-        <select name="carrera" required>
-                        <option required>--Carreras Disponibles--</option>
-							<?php 
-									$sql="SELECT * from oferta_academica";
-									$result=mysqli_query($conexion,$sql);
-								
-									
-									while($ensenar=mysqli_fetch_array($result)){
-										echo "
-									
-											<option >".$ensenar['nombre']."</option>
-										
-									"
-											
-									?>
-									<?php 
-								}
-								?>	
-							</select>
-        <br>
-		<br>
+        
+       
 		<input type="submit" name="submit" value="Actualizar"/>
     </form>
     </div>
