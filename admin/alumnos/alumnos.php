@@ -94,15 +94,15 @@
 					<p>CIF</p>
 					
 					<br>
-					<input type="text" name="cif" placeholder="CIF" maxlength="8" pattern="^[0-9]*$" required>
+					<input type="text" name="cif" placeholder="CIF" maxlength="8" pattern="^[0-9]*$" required oninvalid="this.setCustomValidity('Solo se aceptan numeros')">
 					<p>Nombre</p>
 					
 					<br>
-					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="25" pattern="^[A-Za-z]+$" required>
+					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="25" pattern="^[A-Za-z]+$" required oninvalid="this.setCustomValidity('Solo se aceptan letras')">
 					<p>Apellido</p>
 					
 					<br>
-					<input type="text" name="apellido" placeholder="Apellido" maxlength="25" pattern="^[A-Za-z]+$" required>
+					<input type="text" name="apellido" placeholder="Apellido" maxlength="25" pattern="^[A-Za-z]+$" required oninvalid="this.setCustomValidity('Solo se aceptan letras)">
 						<br>
 								<br>
 						<select name="carrera" required flex>

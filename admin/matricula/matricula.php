@@ -96,7 +96,7 @@ include('../../Login/iniciar.php');
 					<p>ID Alumno</p>
 					
 					<br>
-					<input type="text" name="idalumno" placeholder="Id Alumno" maxlength="8" pattern="^[0-9]*$" required>
+					<input type="text" name="idalumno" placeholder="Id Alumno" maxlength="8" pattern="^[0-9]*$" required oninvalid="this.setCustomValidity('Solo se aceptan digitos')">
 					<br>	
 					<br>
 					<p>ID Clase</p>

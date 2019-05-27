@@ -89,15 +89,15 @@ include('../../Login/iniciar.php');
 					<p>ID Docente</p>
 					
 					<br>
-					<input type="text" name="iddocente" placeholder="ID" maxlength="14" pattern="^([0-9]{13})([A-Z]{1})$" required>
+					<input type="text" name="iddocente" placeholder="ID" maxlength="14" pattern="^([0-9]{13})([A-Z]{1})$" required oninvalid="this.setCustomValidity('Se requieren 13 digitos y 1 letra mayuscula')">
 					<p>Nombre</p>
 					
 					<br>
-					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="45" pattern="^[A-Za-z]+$" required>
+					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="45" pattern="^[A-Za-z]+$" required oninvalid="this.setCustomValidity('Solo se aceptan letras')">
 					<p>Apellido</p>
 					
 					<br>
-					<input type="text" name="apellido" placeholder="Apellido" maxlength="45" pattern="^[A-Za-z]+$" required>
+					<input type="text" name="apellido" placeholder="Apellido" maxlength="45" pattern="^[A-Za-z]+$" required oninvalid="this.setCustomValidity('Solo se aceptan letras')">
 					<br>
 					<br>
 
