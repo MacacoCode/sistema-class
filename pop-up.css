@@ -23,3 +23,19 @@ input[type=button], input[type=submit]{
      font: 14px normal normal uppercase helvetica, arial, serif;
      padding:2px;
 }
+.pop-up-borrar{
+    top: 0;
+    right: 0;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.808);
+    display: none;
+    position: absolute !important;
+    padding-left: 49%;
+    padding-right: 50%;
+    padding-top: 20%;
+    padding-bottom: 29%;
+    pointer-events: all;
+}
+p{
+    color:white;
+}

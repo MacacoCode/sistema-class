@@ -1,6 +1,6 @@
 <?php
 
-$link = mysqli_connect("localhost:3307", "root", "");
+$link = mysqli_connect("localhost", "root", "");
  
 // Check connection
 if($link === false){
@@ -15,7 +15,7 @@ if(mysqli_query($link, $base)){
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }
 
-$conn = mysqli_connect("localhost:3307", "root", "", "universidad");
+$conn = mysqli_connect("localhost", "root", "", "universidad");
 
 //tabla facultades
 $facultades= "CREATE table if not exists facultades(
@@ -181,7 +181,7 @@ if (mysqli_query($conn, $coord)) {
 
        //tabla docentes
        $docentes= "CREATE table if not exists docentes(
-        iddocente varchar(10) not null, 
+        iddocente varchar(15) not null, 
         primary key (iddocente),
         nombre varchar (45) not null,
         apellido varchar(45) not null 

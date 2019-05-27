@@ -32,7 +32,7 @@ include('../../Login/iniciar.php');
 								<tr>
 									<td>Id Materia</td>
 									<td>Nombre</td>
-									<td>Profesor</td>
+									<td>Docente</td>
 									<td>Hora de inicio</td>
 									<td>Hora Final</td>
 									<td>Dia</td>
@@ -65,13 +65,24 @@ include('../../Login/iniciar.php');
 								<a  href='updatemate.php?rn=$mostrar[idmateria]&sn=$mostrar[nombre]'>Editar</a>
 								</button>
 
-								<button >
-								<a  href='deletemate.php?id=$mostrar[idmateria]&hi=$mostrar[inicio]&hf=$mostrar[final]&dia=$mostrar[dia]&gp=$mostrar[grupo]'>Borrar</a>
+								<button class='pop-up-del'>
+								<a>Borrar</a>
 								</button>
 								</td>
 								
 								</tr>
-								</tbody>";
+								</tbody>
+								<div class='pop-up-borrar'>
+										<div>
+											<p>¿Esta seguro?</p>
+											<button class='pop-up-del'>
+												<a href='deletemate.php?id=$mostrar[idmateria]&hi=$mostrar[inicio]&hf=$mostrar[final]&dia=$mostrar[dia]&gp=$mostrar[grupo]'>Confirmar</a>
+											</button>
+											<br>
+											<br>
+											<input class= 'pop-up-cancel' type='button' value='Cancelar'>
+										</div>
+									</div>";
 									
 							?>
 							

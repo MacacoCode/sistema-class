@@ -32,7 +32,7 @@
 							<table class="tabla" id="buscador">
 								<thead>
 									<tr>
-										<td >Id</td>
+										<td >ID</td>
 										<td>Nombre</td>
 										<td>Apellido</td>
 										<td>Carrera</td>
@@ -60,13 +60,24 @@
 									<a  href='updatecoord.php?rn=$mostrar[idcoord]&sn=$mostrar[nombre]&cl=$mostrar[apellido]&car=$mostrar[carrera]'>Editar</a>
 									</button>
 
-									<button >
-									<a  href='deletecoord.php?rn=$mostrar[idcoord]'>Borrar</a>
+									<button class='pop-up-del'>
+									<a>Borrar</a>
 									</button>
 									</td>
 									
 									</tr>
-									</tbody>";
+									</tbody>
+									<div class='pop-up-borrar'>
+										<div>
+											<p>¿Esta seguro?</p>
+											<button class='pop-up-del'>
+												<a href='deletecoord.php?rn=$mostrar[idcoord]'>Confirmar</a>
+											</button>
+											<br>
+											<br>
+											<input class= 'pop-up-cancel' type='button' value='Cancelar'>
+										</div>
+									</div>";
 										
 								?>
 								
