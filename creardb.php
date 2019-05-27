@@ -48,10 +48,11 @@ $oferta= "CREATE table if not exists oferta_academica(
 
     //tabla pensum
 $pensum= "CREATE table if not exists pensum (
-    idpensum varchar(8) not null,
-    primary key(idpensum),
-    year datetime not null,
-    idcarrera mediumint not null,
+    idcarrera MEDIUMINT not null,
+    semestre enum('Semestre I', 'Semestre II', 'Semestre III') not null,
+    idmateria mediumint not null,
+    primary key(semestre, idmateria, idcarrera),
+    foreign key (idmateria) references materias(idmateria),
     foreign key (idcarrera) references oferta_academica(idcarrera)
     )Engine= innodb;";
  
@@ -275,7 +276,39 @@ if (mysqli_query($conn, $coord)) {
            echo "Error poner el registro" . mysqli_error($conn);
        } 
 
+          //trigger para insertar coordinadores en la tabla login
+          $cuentacoord= "
+    
+          CREATE trigger cuenta_coord after insert on coordinadores
+          for each row
+          begin
+          insert into login(usuario, clave, cargo) values (new.idcoordinador, '12345678', 'coord');
+          
+          END ;
+         ";
+         
+         if (mysqli_query($conn, $cuentacoord)) {
+      } else {
+          echo "Error al crear la tabla: " . mysqli_error($conn);
+      }  
+  
+  
+  
+          //trigger para borrar cuentas de coordinadores -->login 
+          $borrarcoor= "
+          
+          CREATE trigger borrar_coord after delete on coordinadores
+          for each row
+          begin
+          delete from login where usuario = old.idcoordinador;
+          
+          END;
+          ";
        
+         if (mysqli_query($conn, $borrarcoor)) {
+         } else {
+             echo "Error al crear la tabla: " . mysqli_error($conn);
+         }  
 
     
        //trigger para insertar alumnos en la tabla login
