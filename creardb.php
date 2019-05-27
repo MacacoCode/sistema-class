@@ -35,7 +35,7 @@ $oferta= "CREATE table if not exists oferta_academica(
     idoferta varchar(10) not null,
     primary key (idcarrera),
     nombre varchar(45) not null, 
-    tipo enum('pregrado', 'posgrado'),
+    tipo enum('Pregrado', 'Posgrado'),
     idfacultad varchar(10) ,
     foreign key(idfacultad) references facultades(idfacultad)
     )Engine =  innodb;";
