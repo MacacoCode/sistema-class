@@ -25,8 +25,10 @@ $_GET['cl'];
     <div class="form col" >
     <form action="" method="GET" autocomplete="off"  >
 		<p>ID Docente</p>
-		<br>
-        <input type="text" name="iddocente" placeholder="iddocente" maxlength="8" required value="<?php echo $_GET['rn']; ?>" DISABLED>
+	
+        <input class="idnone" type="text" name="iddocente" placeholder="iddocente" maxlength="8" required value="<?php echo $_GET['rn']; ?>">
+        <p> <?php echo $_GET['rn']; ?> </p>
+        <br>
         
 		<p>Nombre</p>
 		<br>

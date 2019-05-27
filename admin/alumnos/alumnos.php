@@ -131,7 +131,7 @@
 							<div >
 							<p>¿Esta seguro?</p>
 							<input href='guardar.php' type="submit" value="Confirmar">
-							<br>
+							
 							<br>
 							<input class= "pop-up-cancel" type="button" value="Cancelar">
 							</div>

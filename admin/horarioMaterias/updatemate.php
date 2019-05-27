@@ -26,9 +26,9 @@ $_GET['sn'];
     <div class="form col" >
     <form action="" method="GET" autocomplete="off"  >
 		<p>ID Materia</p>
-		<br>
-        <input type="text" name="idmateria" placeholder="idmateria" maxlength="8" required value="<?php echo $_GET['rn']; ?>" >
-        
+        <input class="idnone" type="text" name="idmateria" placeholder="idmateria" maxlength="8" required value="<?php echo $_GET['rn']; ?>" >
+        <p> <?php echo $_GET['rn']; ?> </p>
+        <br>
 		<p>Nombre</p>
 		<br>
         <input type="text" name="nombre" placeholder="Primer nombre" maxlength="45" required value="<?php echo $_GET['sn']; ?>">

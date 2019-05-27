@@ -1,14 +1,15 @@
 .pop-up {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
     top: 0;
-    right: 70%;
-    height: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.808);
     display: none;
-    position: absolute !important;
-    padding-left: 100%;
-    padding-right: 90%;
-    padding-top: 25%;
-    padding-bottom: 100%;
+    
     pointer-events: all;
 }
 input[type=button], input[type=submit]{

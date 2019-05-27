@@ -32,6 +32,10 @@ $_GET['car']; //nombre de la carrera
          <input id='esconder' type="text" name="idalumno" placeholder="CIF" maxlength="8" required value="<?php echo $_GET['rn']; ?>" >
       
         <br>
+        <input class="idnone" type="text" name="CIF" placeholder="CIF" maxlength="8" required value="<?php echo $_GET['rn']; ?>">
+        <p><?php echo $_GET['rn']; ?></p>
+        <br>
+        
 		<p>Nombre</p>
 		<br>
         <input type="text" name="nombre" placeholder="Primer nombre" maxlength="45" required value="<?php echo $_GET['sn']; ?>">
