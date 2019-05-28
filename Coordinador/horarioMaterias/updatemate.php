@@ -2,8 +2,12 @@
 	include('../../conexion.php');
 error_reporting(0);
 
-$_GET['rn'];
-$_GET['sn'];
+$_GET['rn']; // ID DE LA MATERIA
+$_GET['sn'];   //Nombre de la materia 
+$_GET['gr'];   //Grupo de la materia
+$_GET['ini'];   //Hora inicio de la materia
+$_GET['fin'];   //Hora final de la materia
+$_GET['dia'];   //Dia de la materia
 
 
 ?>
@@ -29,9 +33,27 @@ $_GET['sn'];
         <input class="idnone" type="text" name="idmateria" placeholder="idmateria" maxlength="8" required value="<?php echo $_GET['rn']; ?>" >
         <p> <?php echo $_GET['rn']; ?> </p>
         <br>
-		<p>Nombre</p>
+
+        <p> <?php echo $_GET['sn']; ?> </p>
+        <input class="idnone" type="text" name="nombre" placeholder="Primer nombre" maxlength="45" required value="<?php echo $_GET['sn']; ?>">
+        <br>
+	
+        <p>Grupo</p>
+        <p> <?php echo $_GET['gr']; ?> </p>
+        <input class="idnone" type="text" name="grupo" placeholder="Primer nombre" maxlength="45" required value="<?php echo $_GET['gr']; ?>">
+        <br>
+        <p>Hora inicio</p>
+        <input  type="time" name="horainicio"   required value="<?php echo $_GET['ini']; ?>">
+        <br>
 		<br>
-        <input type="text" name="nombre" placeholder="Primer nombre" maxlength="45" required value="<?php echo $_GET['sn']; ?>">
+
+        <p>Hora Final</p>
+        <input  type="time" name="horafinal" required value="<?php echo $_GET['fin']; ?>">
+        <br>
+		<br>
+
+        <p>Dia</p>
+        <input  type="text" name="dia" maxlength="10" required value="<?php echo $_GET['dia']; ?>">
         <br>
 		<br>
 		<input type="submit" name="submit" value="Actualizar"/>
@@ -41,10 +63,12 @@ $_GET['sn'];
         if($_GET['submit'])
         {
             $idmateria = $_GET['idmateria'];
-            $nombre = $_GET['nombre'];
-         
+            $grupo = $_GET['grupo'];
+            $horainicio = $_GET['horainicio'];
+            $horafinal = $_GET['horafinal'];
+            $dia = $_GET['dia'];
 
-            $query ="UPDATE materias SET  nombre= '$nombre' WHERE idmateria='$idmateria' or nombre='$nombre' ";
+            $query ="UPDATE hora_materia SET horainicio='$horainicio', horfinal='$horafinal', dia='$dia' where idmateria='$idmateria' and idgrupo='$grupo' ";
             $data = mysqli_query($conexion, $query);
             if($data)
             {

@@ -61,7 +61,7 @@ include('../../Login/iniciar.php');
 
 								<td>
 								<button >
-								<a  href='updatemate.php?rn=$mostrar[idmateria]&sn=$mostrar[nombre]'>Editar</a>
+								<a  href='updatemate.php?rn=$mostrar[idmateria]&sn=$mostrar[nombre]&gr=$mostrar[grupo]&ini=$mostrar[inicio]&fin=$mostrar[final]&dia=$mostrar[dia]'>Editar</a>
 								</button>
 
 								<button class='pop-up-del'>
