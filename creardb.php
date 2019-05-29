@@ -399,10 +399,10 @@ if (mysqli_query($conn, $coord)) {
      //trigger para borrar alumnos de notas si retiran la clase
      $borrarnotas= "
         
-     CREATE trigger borrar_docentes after delete on materias_alumnos
+     CREATE trigger borrarNotas after delete on materias_alumnos    
      for each row
      begin
-     delete from notas where idalumno=old.idalummno and idmateria=old.idmateria and idgrupo=old.idgrupo;
+     delete from notas where idalumno=old.idalumno and idmateria=old.idmateria and idgrupo=old.idgrupo;
      
      END;
      ";
