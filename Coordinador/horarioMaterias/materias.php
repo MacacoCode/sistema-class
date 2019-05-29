@@ -168,4 +168,4 @@ include('../../Login/iniciar.php');
 	</body>
 	<script src="../../pop-up.js"></script>
 	</html>
-	<?php include ('../main/searchbar.php')?>
+	<?php include ('../../admin/main/searchbar.php')?>
