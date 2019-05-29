@@ -88,7 +88,7 @@
                             
                         <p>Materia</p>    
 						<select name="materia" required flex>
-                        <option required>--Materias Disponibles--</option>
+                        <option required></option>
 							<?php 
 									$sql="SELECT * from materias";
 									$result=mysqli_query($conexion,$sql);
@@ -110,8 +110,8 @@
                             <br>
 
                             <p>Semestre</p>
-					<select name="semestre">
-                        <option>--Opciones--</option>
+					<select name="semestre" required>
+                        <option></option>
 						<option>Semestre I</option>
                         <option>Semestre II</option>
                         <option>Semestre III</option>
@@ -122,7 +122,7 @@
 
                         <p>Carrera</p>    
 						<select name="carrera" required flex>
-                        <option required>--Carreras Disponibles--</option>
+                        <option required></option>
 							<?php 
 									$sql="SELECT * from oferta_academica";
 									$result=mysqli_query($conexion,$sql);

@@ -36,13 +36,13 @@
                                 Iniciar Sesion 
                             </button>
                         </div>
-
+                      
 
 
                     </form>
                 </div>
             </div>   
-
+               
             <div class="pop-up">
 							<div >
 							<p>Contraseña o Usuario Incorrectos</p>

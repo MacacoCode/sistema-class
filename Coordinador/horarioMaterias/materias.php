@@ -99,8 +99,8 @@ include('../../Login/iniciar.php');
 					
 				<p>Nombre de la Materia</p>	
 	
-					<select name="nombreMateria">
-                        <option >--Materias Disponibles--</option>
+					<select name="nombreMateria" required>
+                        <option ></option>
                     <?php 
 							$sql="SELECT * from materias";
                             $result=mysqli_query($conexion,$sql);
@@ -134,8 +134,8 @@ include('../../Login/iniciar.php');
 					<br>
 
 					<p>Dia</p>
-						<select name="dia">
-						<option>--Dias diponibles--</option>
+						<select name="dia" required>
+						<option></option>
 						<option>Lunes</option>
 						<option>Martes</option>
 						<option>Miercoles</option>

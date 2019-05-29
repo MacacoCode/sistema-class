@@ -53,10 +53,17 @@ if($array['contar']>0){
     $_SESSION['usuario'] = $usuario; //nuevo
     header("Location:http://localhost:8080/formulario/Coordinador/main/maincoor.php");
     
-}{
+}
+else
+{
     //header("Location:http://localhost:8080/formulario/Login/login.php");
     
     echo " Contraseña o Usuario Incorrecto
+
+
+
+
+
     <script>
          $('.pop-up').(function(){
      $('body').css('pointer-events', 'none');

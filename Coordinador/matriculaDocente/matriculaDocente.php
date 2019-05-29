@@ -93,10 +93,10 @@ include('../../Login/iniciar.php');
 			<div class="form col">
 			<h2>Registrar</h2>	
 				<form action="insertDocente.php" method="POST" autocomplete="off">
-					<p>ID Docente</p>
+					<p>Docente</p>
 					<br>
-                    <select name="docente">
-                        <option >--Docentes disponibles--</option>
+                    <select name="docente" required>
+                        <option ></option>
                     <?php 
 							$sqk="SELECT * from docentes";
                             $resulte=mysqli_query($conexion,$sqk);
@@ -118,11 +118,11 @@ include('../../Login/iniciar.php');
                     </select>
 					<br>	
 					<br>
-					<p>ID Clase</p>
+					<p>Clase</p>
 					
                     <br>
-                    <select name="nombre">
-                        <option >--Clases disponibles--</option>
+                    <select name="nombre" required>
+                        <option ></option>
                     <?php 
 							$sql="SELECT * from materias";
                             $result=mysqli_query($conexion,$sql);
