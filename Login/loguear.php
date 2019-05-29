@@ -51,7 +51,7 @@ $array = mysqli_fetch_array($consulta);
 
 if($array['contar']>0){
     $_SESSION['usuario'] = $usuario; //nuevo
-    header("Location:http://localhost:8080/formulario/Coordinador/coord.php");
+    header("Location:http://localhost:8080/formulario/Coordinador/main/maincoor.php");
     
 }
 

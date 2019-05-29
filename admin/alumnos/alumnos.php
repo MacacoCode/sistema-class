@@ -104,9 +104,11 @@
 					<br>
 					<input type="text" name="apellido" placeholder="Apellido" maxlength="25" pattern="^[A-Za-z]+$" required oninvalid="this.setCustomValidity('Solo se aceptan letras)">
 						<br>
-								<br>
+						<br>
+						<p>Seleccione una carrera</p>
 						<select name="carrera" required flex>
-                        <option required>--Carreras Disponibles--</option>
+                        <option >
+						</option>
 							<?php 
 									$sql="SELECT * from oferta_academica";
 									$result=mysqli_query($conexion,$sql);

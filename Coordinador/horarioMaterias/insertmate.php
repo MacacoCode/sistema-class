@@ -6,7 +6,7 @@ include('../../conexion.php');
 	$grupo=$_POST['grupo'];
 	$horaincio=$_POST['horainicio'];
 	$horafinal=$_POST['horafinal'];
-	$iddocente=$_POST['iddocente'];
+
 	$dia=$_POST['dia'];
 
 
@@ -19,12 +19,13 @@ include('../../conexion.php');
 	
 
 
-	$materiasdocentes = "INSERT into materia_docente (idmateria, iddocente, idgrupo) values ('$idmateria','$iddocente','$grupo')";
+
 	$horario = "INSERT into hora_materia (horainicio, horfinal, idmateria, idgrupo,dia) values ('$horaincio', '$horafinal' , '$idmateria' , '$grupo', '$dia')";
 
 	//verificamos la ejecucion
-	if (mysqli_query($conexion, $horario) && mysqli_query($conexion, $materiasdocentes) ){
-		header("Location: http://localhost:8080/formulario/admin/horarioMaterias/materias.php");
+	if (mysqli_query($conexion, $horario) ){
+	
+		header("Location: http://localhost:8080/formulario/Coordinador/horarioMaterias/materias.php");
 			
 	}
 	else{

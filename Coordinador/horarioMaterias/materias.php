@@ -20,7 +20,7 @@ include('../../Login/iniciar.php');
 </head>
 <body>
 <div id="container">
-		<?php include ('../../sidebar.php')?>
+		<?php include ('../sidebarcoor.php')?>
 
 		<div id="main">
 				<div class="contenedor-tabla"> 
@@ -32,7 +32,7 @@ include('../../Login/iniciar.php');
 								<tr>
 									<td>Id Materia</td>
 									<td>Nombre</td>
-									<td>Docente</td>
+								
 									<td>Hora de inicio</td>
 									<td>Hora Final</td>
 									<td>Dia</td>
@@ -42,9 +42,9 @@ include('../../Login/iniciar.php');
 								</tr>
 								</thead>
 							<?php 
-							$sql="SELECT distinct materias.idmateria as idmateria, materias.nombre as nombre, docentes.nombre as profesor, hora_materia.horainicio as inicio, hora_materia.horfinal as final, hora_materia.dia as dia, hora_materia.idgrupo as grupo
-							from materias, materia_docente, hora_materia, docentes
-							where materias.idmateria=hora_materia.idmateria and materias.idmateria=materia_docente.idmateria and materia_docente.iddocente = docentes.iddocente and hora_materia.idgrupo=materia_docente.idgrupo";
+							$sql="SELECT materias.idmateria as idmateria, materias.nombre as nombre, hora_materia.horainicio as inicio, hora_materia.horfinal as final , hora_materia.dia as dia, hora_materia.idgrupo as grupo
+							from hora_materia, materias
+							where materias.idmateria=hora_materia.idmateria;";
 							$result=mysqli_query($conexion,$sql);
 
 							while($mostrar=mysqli_fetch_array($result)){
@@ -53,7 +53,6 @@ include('../../Login/iniciar.php');
 								<tr>
 								<td>".$mostrar['idmateria']."</td>
 								<td>".$mostrar['nombre']."</td>
-								<td>".$mostrar['profesor']."</td>
 								<td>".$mostrar['inicio']."</td>
 								<td>".$mostrar['final']."</td>
 								<td>".$mostrar['dia']."</td>
@@ -62,7 +61,7 @@ include('../../Login/iniciar.php');
 
 								<td>
 								<button >
-								<a  href='updatemate.php?rn=$mostrar[idmateria]&sn=$mostrar[nombre]'>Editar</a>
+								<a  href='updatemate.php?rn=$mostrar[idmateria]&sn=$mostrar[nombre]&gr=$mostrar[grupo]&ini=$mostrar[inicio]&fin=$mostrar[final]&dia=$mostrar[dia]'>Editar</a>
 								</button>
 
 								<button class='pop-up-del'>
@@ -100,8 +99,8 @@ include('../../Login/iniciar.php');
 					
 				<p>Nombre de la Materia</p>	
 	
-					<select name="nombreMateria">
-                        <option >--Materias Disponibles--</option>
+					<select name="nombreMateria" required>
+                        <option ></option>
                     <?php 
 							$sql="SELECT * from materias";
                             $result=mysqli_query($conexion,$sql);
@@ -135,8 +134,8 @@ include('../../Login/iniciar.php');
 					<br>
 
 					<p>Dia</p>
-						<select name="dia">
-						<option>--Dias diponibles--</option>
+						<select name="dia" required>
+						<option></option>
 						<option>Lunes</option>
 						<option>Martes</option>
 						<option>Miercoles</option>
@@ -147,30 +146,8 @@ include('../../Login/iniciar.php');
 					<br>
 					<br>
 
-					<p>ID Docente</p>	
-					<select name="iddocente">
-                        <option >--Docentes Disponibles--</option>
-                    <?php 
-							$sql="SELECT * from docentes";
-                            $result=mysqli_query($conexion,$sql);
-                            
-                            
-
-							while($ensenar=mysqli_fetch_array($result)){
-                                echo "
-                               
-                                    <option >".$ensenar['iddocente']."</option>
-                                    
-                                
-							";
-									
-                            ?>
-                            <?php 
-						}
-						?>	
-                    </select>
-					<br>
-					<br>
+					
+			
 
 					<div class="pop-up">
 						<div >

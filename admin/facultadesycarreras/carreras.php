@@ -78,8 +78,8 @@ include('../../Login/iniciar.php');
 					<br>
 
 					<p>Pregrado o Posgrado</p>
-					<select name="tipo">
-                        <option>--Opciones--</option>
+					<select name="tipo" required>
+                        <option ></option>
 						<option>Pregrado</option>
 						<option>Posgrado</option>
                 	
@@ -90,8 +90,8 @@ include('../../Login/iniciar.php');
 
 
 					<p>Facultad</p>
-                    <select name="nombreFac">
-                        <option>--Facultades--</option>
+                    <select name="nombreFac" required>
+                        <option ></option>
                     <?php 
 							$sql="SELECT * from facultades";
                             $result=mysqli_query($conexion,$sql);

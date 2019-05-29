@@ -99,11 +99,11 @@ include('../../Login/iniciar.php');
 					<input type="text" name="idalumno" placeholder="Id Alumno" maxlength="8" pattern="^[0-9]*$" required oninvalid="this.setCustomValidity('Solo se aceptan digitos')">
 					<br>	
 					<br>
-					<p>ID Clase</p>
 					
                     <br>
-                    <select name="nombre">
-                        <option >--Clases disponibles--</option>
+					<p>Clases disponibles</p>
+                    <select name="nombre" required>
+                        <option ></option>
                     <?php 
 							$sql="SELECT * from materias";
                             $result=mysqli_query($conexion,$sql);
