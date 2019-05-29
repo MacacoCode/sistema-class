@@ -40,7 +40,7 @@ $array = mysqli_fetch_array($consulta);
 
 if($array['contar']>0){
     $_SESSION['usuario'] = $usuario; //nuevo
-    header("Location:http://localhost:8080/formulario/LoginDocente/maindocentes.php");
+    header("Location:http://localhost:8080/formulario/LoginDocente/mainDocentes/maindocentes.php");
     
 }
 
