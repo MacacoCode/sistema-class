@@ -53,7 +53,7 @@ $recuperarID="SELECT idmateria as idmateria from materias where nombre='$materia
                             </tr>
 						</thead>
                         <?php 
-                        $sql="SELECT distinct alumnos.nombre as alumno, alumnos.apellido as apellido, materias.nombre as materia,notas.idgrupo as grupo, notas.nota as nota
+                        $sql="SELECT distinct alumnos.nombre as alumno, alumnos.idalumno as id, alumnos.apellido as apellido, materias.nombre as materia,materias.idmateria as idmateria,notas.idgrupo as grupo, notas.nota as nota
 						from notas , materias, alumnos, materia_docente
 						where notas.idmateria=materias.idmateria and notas.idalumno = alumnos.idalumno and materia_docente.idmateria=materias.idmateria and
 						materia_docente.iddocente ='$usuario' and notas.idmateria='$idmateria' and notas.idgrupo='$grupo';";
@@ -69,18 +69,19 @@ $recuperarID="SELECT idmateria as idmateria from materias where nombre='$materia
                             <td>".$mostrar['materia']."</td>
 							<td>".$mostrar['grupo']."</td>
                             <td>".$mostrar['nota']."</td>
-							<td> <form action='updatenota.php' method='GET'>
+							<td> <form action='updatenota.php' method='POST'>
+							<input type='text' name='id' id='hidden' value=".$mostrar['id']." > 
+							<input type='text' name='grupo' id='hidden' value=".$mostrar['grupo']." > 
+							<input type='text' name='idmateria' id='hidden' value=".$mostrar['idmateria']." > 
+							<input type='text' name='nombreMateria' id='hidden' value='$materia' >
+							 
 							<input type='number' name='nota'required> 
 							<button type='submit'>
 							Devolver nota
 							</button>
 							</form> </td>
-							<td>
-							<button>
-							<a href='updatenota.php?al=$mostrar[alumno]&ap=$mostrar[apellido]&mat=$mostrar[materia]&gr=$mostrar[grupo]'>variables</a>
 							
-							</button>
-							</td>
+						
 							
 							
 							
@@ -102,7 +103,11 @@ $recuperarID="SELECT idmateria as idmateria from materias where nombre='$materia
 			
 	</div>
 	</div>
-
+<style>
+ #hidden{
+	 display: none
+ }
+</style>
 
 	</body>
 	<script src="../../pop-up.js"></script>

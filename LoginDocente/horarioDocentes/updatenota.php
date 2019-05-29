@@ -2,12 +2,23 @@
 include('../../conexion.php');
 include('../../Login/iniciar.php');
 
-$nota = $_GET['nota'];
-$alumno = $_GET['al'];
-$apellido = $_GET['ap'];
-$materia = $_GET['mat'];
-$grupo = $_GET['gr'];
-echo $nota;
-echo $alumno,$apellido,$materia,$grupo;
+$nota = $_POST['nota'];
+$idalumno = $_POST['id'];
+$grupo = $_POST['grupo'];
+$idmateria = $_POST['idmateria'];
+$nombreMateria = $_POST['nombreMateria'];
+
+$query ="UPDATE notas SET  nota= '$nota' WHERE idalumno='$idalumno' and idmateria='$idmateria' and idgrupo='$grupo' ";
+           
+
+
+if(mysqli_query($conexion, $query))
+{
+    header("Location: http://localhost:8080/formulario/LoginDocente/horarioDocentes/notas.php?rn=$nombreMateria&gr=$grupo");
+}
+else{
+   echo "No se pudo actualizar";
+}
+
 
 ?>
