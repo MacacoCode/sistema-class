@@ -195,10 +195,11 @@ if (mysqli_query($conn, $coord)) {
 
           //tabla notas
     $notas= "CREATE table if not exists notas(
-        nota double not null ,
-        primary key (nota),
+        nota double default null,
         idalumno varchar(10) not null,
-        idmateria MEDIUMINT not null, 
+        idmateria MEDIUMINT not null,
+        idgrupo varchar(5) not null, 
+        primary key (idalumno,idmateria),
         foreign key (idalumno) references alumnos(idalumno),
         foreign key (idmateria) references materias(idmateria)
         )Engine= innodb;";
@@ -376,6 +377,23 @@ if (mysqli_query($conn, $coord)) {
       } else {
           echo "Error al crear la tabla: " . mysqli_error($conn);
       }  
+
+      //trigger para meter alumnos en tabla notas    
+      $notas= "
+        
+      CREATE trigger notasAlumnos after insert on materias_alumnos
+      for each row
+      begin
+      insert into notas( idalumno, idmateria, idgrupo) values (new.idalumno, new.idmateria, new.idgrupo);
+
+      
+      END;
+      ";
+   
+     if (mysqli_query($conn, $notas)) {
+     } else {
+         echo "Error al crear la tabla: " . mysqli_error($conn);
+     }  
 
        header("Location: http://localhost:8080/formulario/Login/login.php");
 

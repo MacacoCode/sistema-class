@@ -26,39 +26,40 @@ $clave=$_SESSION['clave'];
 
 		<div id="main" >
 				<div class="contenedor-tabla"> 
-					<h2>Horarios </h2>
+					<h2>Asignar notas </h2>
 					<input type="text" name="search" id="search" class="form-control" placeholder="Buscar en tabla" />  
 					<br>
 					<table class="tabla" id="buscador">
 						<thead>
                             <tr>
+                                <td>Alumno</td>
+                                <td>Alumno</td>
                                 <td>Materia</td>
-                                <td>Inicio</td>
-                                <td>Final</td>
                                 <td>Grupo</td>
-								<td>dia</td>
+								<td>nota</td>
+                                <td>Nueva nota</td>
 								<td>Acciones</td>
                                 
                                     
                             </tr>
 						</thead>
                         <?php 
-                        $sql="SELECT materias.nombre as nombre, hora_materia.horainicio as inicio, hora_materia.horfinal as final, hora_materia.idgrupo as grupo, hora_materia.dia as dia
-                        from materia_docente, materias, hora_materia
-                        where materia_docente.idmateria = hora_materia.idmateria and materias.idmateria=materia_docente.idmateria and hora_materia.idmateria = materias.idmateria
-                        and hora_materia.idgrupo = materia_docente.idgrupo
-                        and materia_docente.iddocente ='$usuario' ;";
+                        $sql="SELECT alumnos.nombre as alumno, alumnos.apellido as apellido, materias.nombre as materia,notas.idgrupo as grupo, notas.nota as nota
+                        from notas , materias, alumnos, materia_docente
+                        where notas.idmateria=materias.idmateria and notas.idalumno = alumnos.idalumno and materia_docente.idmateria=materias.idmateria and
+                        materia_docente.iddocente ='$usuario';";
                         $result=mysqli_query($conexion,$sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
 							echo "
 							<tbody>
 							<tr>
-                            <td>".$mostrar['nombre']."</td>
-                            <td>".$mostrar['inicio']."</td>
-                            <td>".$mostrar['final']."</td>
+                            <td>".$mostrar['alumno']."</td>
+                            <td>".$mostrar['apellido']."</td>
+                            <td>".$mostrar['materia']."</td>
 							<td>".$mostrar['grupo']."</td>
-							<td>".$mostrar['dia']."</td>
+                            <td>".$mostrar['nota']."</td>
+                            <td> <form><input type='number'> </form> </td>
 						
 							
 							
@@ -66,7 +67,7 @@ $clave=$_SESSION['clave'];
 							
 
                             <button >
-                            <a href='notas.php'>Asignar notas</a>
+                            <a>Entregar nota</a>
 							
 							</button>
 							</td>
