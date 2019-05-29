@@ -46,20 +46,7 @@ $oferta= "CREATE table if not exists oferta_academica(
     }    
 
 
-    //tabla pensum
-$pensum= "CREATE table if not exists pensum (
-    idcarrera MEDIUMINT not null,
-    semestre enum('Semestre I', 'Semestre II', 'Semestre III') not null,
-    idmateria mediumint not null,
-    primary key(semestre, idmateria, idcarrera),
-    foreign key (idmateria) references materias(idmateria),
-    foreign key (idcarrera) references oferta_academica(idcarrera)
-    )Engine= innodb;";
- 
-if (mysqli_query($conn, $pensum)) {
-} else {
-    echo "Error al crear la tabla: " . mysqli_error($conn);
-}  
+
 
  //tabla coordinadores 
  $coord= "CREATE table if not exists coordinadores(
@@ -238,6 +225,20 @@ if (mysqli_query($conn, $coord)) {
        } else {
            echo "Error al crear la tabla: " . mysqli_error($conn);
        }  
+                //tabla pensum
+        $pensum= "CREATE table if not exists pensum (
+            idcarrera MEDIUMINT not null,
+            semestre enum('Semestre I', 'Semestre II', 'Semestre III') not null,
+            idmateria mediumint not null,
+            primary key(semestre, idmateria, idcarrera),
+            foreign key (idmateria) references materias(idmateria),
+            foreign key (idcarrera) references oferta_academica(idcarrera)
+            )Engine= innodb;";
+        
+        if (mysqli_query($conn, $pensum)) {
+        } else {
+            echo "Error al crear la tabla: " . mysqli_error($conn);
+        }  
 
 
 
@@ -394,6 +395,22 @@ if (mysqli_query($conn, $coord)) {
      } else {
          echo "Error al crear la tabla: " . mysqli_error($conn);
      }  
+
+     //trigger para borrar alumnos de notas si retiran la clase
+     $borrarnotas= "
+        
+     CREATE trigger borrar_docentes after delete on materias_alumnos
+     for each row
+     begin
+     delete from notas where idalumno=old.idalummno and idmateria=old.idmateria and idgrupo=old.idgrupo;
+     
+     END;
+     ";
+  
+    if (mysqli_query($conn, $borrarnotas)) {
+    } else {
+        echo "Error al crear la tabla: " . mysqli_error($conn);
+    }  
 
        header("Location: http://localhost:8080/formulario/Login/login.php");
 
