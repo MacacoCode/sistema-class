@@ -5,6 +5,15 @@ include('../../Login/iniciar.php');
  
 $usuario = $_SESSION['usuario'];
 $clave=$_SESSION['clave'];
+
+$materia = $_GET['rn'];
+$grupo = $_GET['gr'];
+//Pasar el nombre de la materia a su id
+$recuperarID="SELECT idmateria as idmateria from materias where nombre='$materia'";
+	$consulta = mysqli_query($conexion, $recuperarID);
+	$array = mysqli_fetch_array($consulta);
+	$idmateria= $array['idmateria'];
+
  ?>
 
 
@@ -32,26 +41,27 @@ $clave=$_SESSION['clave'];
 					<table class="tabla" id="buscador">
 						<thead>
                             <tr>
-                                <td>Alumno</td>
-                                <td>Alumno</td>
+                                <td>Nombre</td>
+                                <td>Apellido</td>
                                 <td>Materia</td>
                                 <td>Grupo</td>
 								<td>nota</td>
                                 <td>Nueva nota</td>
-								<td>Acciones</td>
+					
                                 
                                     
                             </tr>
 						</thead>
                         <?php 
-                        $sql="SELECT alumnos.nombre as alumno, alumnos.apellido as apellido, materias.nombre as materia,notas.idgrupo as grupo, notas.nota as nota
-                        from notas , materias, alumnos, materia_docente
-                        where notas.idmateria=materias.idmateria and notas.idalumno = alumnos.idalumno and materia_docente.idmateria=materias.idmateria and
-                        materia_docente.iddocente ='$usuario';";
+                        $sql="SELECT distinct alumnos.nombre as alumno, alumnos.apellido as apellido, materias.nombre as materia,notas.idgrupo as grupo, notas.nota as nota
+						from notas , materias, alumnos, materia_docente
+						where notas.idmateria=materias.idmateria and notas.idalumno = alumnos.idalumno and materia_docente.idmateria=materias.idmateria and
+						materia_docente.iddocente ='$usuario' and notas.idmateria='$idmateria' and notas.idgrupo='$grupo';";
                         $result=mysqli_query($conexion,$sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
-							echo "
+							echo " 
+							
 							<tbody>
 							<tr>
                             <td>".$mostrar['alumno']."</td>
@@ -59,18 +69,22 @@ $clave=$_SESSION['clave'];
                             <td>".$mostrar['materia']."</td>
 							<td>".$mostrar['grupo']."</td>
                             <td>".$mostrar['nota']."</td>
-                            <td> <form><input type='number'> </form> </td>
-						
-							
-							
+							<td> <form action='updatenota.php' method='GET'>
+							<input type='number' name='nota'required> 
+							<button type='submit'>
+							Devolver nota
+							</button>
+							</form> </td>
 							<td>
-							
-
-                            <button >
-                            <a>Entregar nota</a>
+							<button>
+							<a href='updatenota.php?al=$mostrar[alumno]&ap=$mostrar[apellido]&mat=$mostrar[materia]&gr=$mostrar[grupo]'>variables</a>
 							
 							</button>
 							</td>
+							
+							
+							
+							
                         
 							</tr>
 							</tbody>
