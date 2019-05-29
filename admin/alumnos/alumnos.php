@@ -56,7 +56,7 @@
 
 									<td>
 				
-									<button>
+									<button >
 									<a  href='update.php?rn=$mostrar[idalumno]&sn=$mostrar[nombre]&cl=$mostrar[apellido]&car=$mostrar[carrera]'>Editar</a>
 									</button>
 

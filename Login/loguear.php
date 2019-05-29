@@ -53,25 +53,25 @@ if($array['contar']>0){
     $_SESSION['usuario'] = $usuario; //nuevo
     header("Location:http://localhost:8080/formulario/Coordinador/coord.php");
     
-}{
-    //header("Location:http://localhost:8080/formulario/Login/login.php");
-    
-    echo " Contraseña o Usuario Incorrecto
-    <script>
-         $('.pop-up').(function(){
-     $('body').css('pointer-events', 'none');
-     $('.pop-up').css('display', 'block')
-     $('.pop-up').slideDown(500);
- });
- $('.pop-up-cancel').click(function(){
-     $('body').css('pointer-events', 'all');
-     $('.pop-up').css('display', 'none')
-     $('.pop-up-borrar').css('display', 'none');
-     $('.pop-up').slideDown(500);
-     $('.pop-up-borrar').slideDown(500);
- });
-     </script> ";
- 
- }  
+}
+
+$q = "SELECT COUNT(*) as contar from login where usuario = '$usuario' and clave = '$clave'";
+$consulta = mysqli_query($conexion, $q);
+$array = mysqli_fetch_array($consulta);
+
+if(!$consulta){ 
+    // echo "Usuario no existe " . $nombre . " " . $password. " o hubo un error " . 
+    echo mysqli_error($mysqli);
+    // si la consulta falla es bueno evitar que el código se siga ejecutando
+    exit;
+} 
+
+if($array['contar']== 0){
+        // el usuario y la pwd no son correctas
+        header("Location:http://localhost:8080/formulario/Login/login.php?fallo=true");
+}
+
+
+
 
 ?>
