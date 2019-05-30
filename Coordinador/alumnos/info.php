@@ -1,10 +1,12 @@
-<?php 
+<?php
 include('../../conexion.php');
 include('../../Login/iniciar.php');
+$idalumno =$_GET['id'];
+$nombre =$_GET['nom'];
+$apellido =$_GET['ap'];
 
-$usuario = $_SESSION['usuario'];
-$clave=$_SESSION['clave'];
- ?>
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -19,11 +21,11 @@ $clave=$_SESSION['clave'];
 </head>
 <body>
 <div id="container">
-			<?php include ('../sidebarAlu.php')?>
+			<?php include ('../sidebarcoor.php')?>
 
 		<div id="main" >
 				<div class="contenedor-tabla"> 
-					<h2>Horarios </h2>
+					<h2><?php echo $nombre,"   ",$apellido ?> </h2>
 					<input type="text" name="search" id="search" class="form-control" placeholder="Buscar en tabla" />  
 					<br>
 					<table class="tabla" id="buscador">
@@ -35,7 +37,7 @@ $clave=$_SESSION['clave'];
                                 <td>Grupo</td>
 								<td>dia</td>
 								<td>nota</td>
-								<td>Acciones</td>
+								
                                 
                                     
                             </tr>
@@ -44,7 +46,7 @@ $clave=$_SESSION['clave'];
                         $sql="SELECT materias.idmateria as idmateria, materias.nombre as materia, hora_materia.horainicio as inicio, hora_materia.horfinal as final, materias_alumnos.idgrupo as grupo, hora_materia.dia as dia, notas.nota
 						from materias_alumnos, hora_materia, materias, notas
 						where materias_alumnos.idmateria=hora_materia.idmateria and materias_alumnos.idmateria=materias.idmateria and materias_alumnos.idgrupo=hora_materia.idgrupo 
-						and notas.idalumno=materias_alumnos.idalumno and notas.idmateria=materias.idmateria and materias_alumnos.idalumno='$usuario' ;";
+						and notas.idalumno=materias_alumnos.idalumno and notas.idmateria=materias.idmateria and materias_alumnos.idalumno='$idalumno' ;";
                         $result=mysqli_query($conexion,$sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
@@ -59,14 +61,7 @@ $clave=$_SESSION['clave'];
 							<td>".$mostrar['nota']."</td>
 							
 							
-							<td>
 							
-
-                            <button >
-                            <a href='botarclase.php?rn=$mostrar[idmateria]' >Botar Clase</a>
-							
-							</button>
-							</td>
                         
 							</tr>
 							</tbody>
