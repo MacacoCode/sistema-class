@@ -73,7 +73,7 @@ include('../../Login/iniciar.php');
 
 					<p>Nombre</p>		
 					<br>
-					<input type="text" name="nombre" placeholder="Nombre de la Carrera" maxlength="45" pattern="[a-zA-Z]*$" required oninvalid="this.setCustomValidity('Solo se aceptan letras')">
+					<input type="text" name="nombre" placeholder="Nombre de la Carrera" maxlength="45"  required oninvalid="this.setCustomValidity('Solo se aceptan letras')">
 					<br>
 					<br>
 
