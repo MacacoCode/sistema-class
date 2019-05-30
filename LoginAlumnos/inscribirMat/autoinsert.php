@@ -4,25 +4,11 @@ include('../../Login/iniciar.php');
 
 $usuario = $_SESSION['usuario']; //id del alumno
 
-	$nombre=$_POST['nombre']; //nombre de la materia
-    $grupo=$_POST['grupo']; //grupo de la materia
-    
-    //Pasar el nombre de la materia a id
-	$recuperarID="SELECT idmateria as idmateria from materias where nombre='$nombre'";
-	$consulta = mysqli_query($conexion, $recuperarID);
-	$array = mysqli_fetch_array($consulta);
-    $idmateria= $array['idmateria']; // id de la materia
-    
-    
-	//Primera consulta para obtener la hora y dia de la materia
-	$cdh="SELECT horainicio as inicio, horfinal as final,dia as dia from hora_materia where idmateria='$idmateria' and idgrupo='$grupo'";
-	$consultahdm = mysqli_query($conexion, $cdh);
-    $array = mysqli_fetch_array($consultahdm);
-    
-	$horainicio= $array['inicio'];
-	$horafinal= $array['final'];
-	$dia= $array['dia'];
-
+	$idmateria=$_GET['rn']; //id de la materia
+    $grupo=$_GET['gr']; //grupo de la materia
+	$horainicio= $_GET['ini'];
+	$horafinal= $_GET['fin'];
+	$dia= $_GET['dia'];
 
 	//Consulta para verificar si la hora y dia estan disponibles para un estudiante
 	$sinchoque = "SELECT count(*) as sinchoque FROM  materias, hora_materia, materias_alumnos 

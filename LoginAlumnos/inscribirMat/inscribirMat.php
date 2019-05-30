@@ -26,60 +26,63 @@ $usuario = $_SESSION['usuario'];
 
 		<div id="main">
 				
-			
-			<div class="form col">
-			<h2>Registrar</h2>	
-				<form action="autoinsert.php" method="POST" autocomplete="off">
-					<p>ID Alumno</p>
-					<p><?php echo $usuario; ?></p>
+		<div class="contenedor-tabla"> 
+					<h2>Inscribir Clase </h2>
+					<input type="text" name="search" id="search" class="form-control" placeholder="Buscar en tabla" />  
 					<br>
-					<input class="idnone" type="text" name="idalumno" placeholder="CIF" maxlength="8" required value="<?php echo $usuario ?>">
-					
-					
-                    <br>
-					<p>Clases disponibles</p>
-                    <select name="nombre" required>
-                        <option ></option>
-                    <?php 
-							$sql="SELECT nombre from materias";
-                            $result=mysqli_query($conexion,$sql);
-                            
-                            
-
-							while($ensenar=mysqli_fetch_array($result)){
-                                echo "
-                               
-                                    <option >".$ensenar['nombre']."</option>
-                                    
+					<table class="tabla" id="buscador">
+						<thead>
+                            <tr>
+                                <td>Materia</td>
+                                <td>Inicio</td>
+                                <td>Final</td>
+                                <td>Grupo</td>
+								<td>dia</td>
+								<td>Acciones</td>
                                 
-							";
-									
-                            ?>
-                            <?php 
-						}
-						?>	
-                    </select>
-					<br>
-					<br>
+                                    
+                            </tr>
+						</thead>
+                        <?php 
+                        $sql="SELECT materias.idmateria as idmateria, materias.nombre as materia, hora_materia.horainicio as inicio, hora_materia.horfinal as final,  hora_materia.idgrupo as grupo, hora_materia.dia as dia
+						from hora_materia, materias
+						where hora_materia.idmateria=materias.idmateria;";
+                        $result=mysqli_query($conexion,$sql);
 
-					<p>Grupo</p>
-					
-					<br>
-					<input type="number" name="grupo" placeholder="No. Grupo" maxlength="8" pattern="^[0-9]*$" required>
-					<br>
-					<br>
-					<div class="pop-up">
-						<div >
-							<p>¿Esta seguro?</p>
-							<input href='autoinsert.php' type="submit" value="Confirmar">
-							<br>
-							<br>
-							<input class= "pop-up-cancel" type="button" value="Cancelar">
-						</div>
-					</div>
-				</form>
-				<button class="pop-up-activate">Enviar</button>
-			</div>
+                        while($mostrar=mysqli_fetch_array($result)){
+							echo "
+							<tbody>
+							<tr>
+                            <td>".$mostrar['materia']."</td>
+                            <td>".$mostrar['inicio']."</td>
+                            <td>".$mostrar['final']."</td>
+							<td>".$mostrar['grupo']."</td>
+							<td>".$mostrar['dia']."</td>
+						
+							
+							
+							<td>
+							
+
+                            <button >
+                            <a href='autoinsert.php?rn=$mostrar[idmateria]&gr=$mostrar[grupo]&ini=$mostrar[inicio]&fin=$mostrar[final]&dia=$mostrar[dia]' >Matricular</a>
+							
+							</button>
+							</td>
+                        
+							</tr>
+							</tbody>
+							";
+                                
+                        ?>
+                        
+                    <?php 
+                    }
+                    ?>
+                    </table>
+				
+				</div>
+			
 	</div>
 	</div>
 	<?php
