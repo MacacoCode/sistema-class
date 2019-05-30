@@ -4,6 +4,11 @@ include('../../conexion.php');
 include('../../Login/iniciar.php');
  
 $usuario = $_SESSION['usuario'];
+
+$recuperarID="SELECT idcarrera from oferta_alumnos where idalumno='$usuario';";
+$consulta = mysqli_query($conexion, $recuperarID);
+$array = mysqli_fetch_array($consulta);
+$idcarrera= $array['idcarrera'];
  ?>
 
 
@@ -44,9 +49,10 @@ $usuario = $_SESSION['usuario'];
                             </tr>
 						</thead>
                         <?php 
-                        $sql="SELECT materias.idmateria as idmateria, materias.nombre as materia, hora_materia.horainicio as inicio, hora_materia.horfinal as final,  hora_materia.idgrupo as grupo, hora_materia.dia as dia
-						from hora_materia, materias
-						where hora_materia.idmateria=materias.idmateria and hora_materia.idmateria not in (select idmateria from materias_alumnos where idalumno='$usuario');";
+                        $sql="SELECT materias.idmateria as idmateria, materias.nombre as materia, pensum.idcarrera, hora_materia.horainicio as inicio, hora_materia.horfinal as final,  hora_materia.idgrupo as grupo, hora_materia.dia as dia
+                        from pensum, hora_materia, materias
+                        where pensum.idmateria=hora_materia.idmateria and pensum.idmateria=materias.idmateria and pensum.idcarrera ='$idcarrera' and 
+                        hora_materia.idmateria  not in (select idmateria from materias_alumnos where idalumno='$usuario');";
                         $result=mysqli_query($conexion,$sql);
 
                         while($mostrar=mysqli_fetch_array($result)){

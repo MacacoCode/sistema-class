@@ -59,7 +59,7 @@
                                     <td>".$mostrar['carrera']."</td>
 								
 									<td>
-									<button class='pop-up-del'>
+									<button >
 									<a href='info.php?id=$mostrar[id]&nom=$mostrar[nombre]&ap=$mostrar[apellido]'>Info</a>
 									</button>
 									</td>
