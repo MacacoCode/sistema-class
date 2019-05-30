@@ -1,6 +1,8 @@
 <?php 
 		include('../../conexion.php');
 		include('../../Login/iniciar.php');
+
+		$usuario = $_SESSION['usuario'];
 	?>
 
 
@@ -9,6 +11,7 @@
 	<head>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="../../alumnos.css">
+		
 		<link rel="stylesheet" type="text/css" href="../../pop-up.css">
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -41,8 +44,8 @@
 								</thead>
 								<?php 
 								$sql="SELECT distinct materias.nombre as idmateria, oferta_academica.nombre as idcarrera, pensum.semestre as semestre 
-                                from pensum, materias, oferta_academica
-                                where oferta_academica.idcarrera=pensum.idcarrera and pensum.idmateria=materias.idmateria";
+								from pensum, materias, oferta_academica, coordinadores
+								where oferta_academica.idcarrera=pensum.idcarrera and pensum.idmateria=materias.idmateria and coordinadores.idcarrera=oferta_academica.idcarrera and coordinadores.idcoordinador='$usuario';";
 								$result=mysqli_query($conexion,$sql);
 
 								while($mostrar=mysqli_fetch_array($result)){
@@ -121,17 +124,19 @@
                     <br>
 
                         <p>Carrera</p>    
-						<select name="carrera" required flex>
+						
                         <option required></option>
 							<?php 
-									$sql="SELECT * from oferta_academica";
+									$sql="SELECT oferta_academica.nombre from coordinadores, oferta_academica
+									where coordinadores.idcarrera=oferta_academica.idcarrera and coordinadores.idcoordinador = '$usuario';";
 									$result=mysqli_query($conexion,$sql);
 								
 									
 									while($ensenar=mysqli_fetch_array($result)){
 										echo "
 									
-											<option >".$ensenar['nombre']."</option>
+											<input class='idnone' name='carrera' value='".$ensenar['nombre']."' >
+											<p>".$ensenar['nombre']."</p>
 										
 									"
 											
@@ -190,6 +195,9 @@
 			.form {
 				width:250px;
 				height: 500px;
+			}
+			.idnone{
+					display: none;
 			}
 		</style>
 	
