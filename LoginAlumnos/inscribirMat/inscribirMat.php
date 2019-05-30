@@ -46,7 +46,7 @@ $usuario = $_SESSION['usuario'];
                         <?php 
                         $sql="SELECT materias.idmateria as idmateria, materias.nombre as materia, hora_materia.horainicio as inicio, hora_materia.horfinal as final,  hora_materia.idgrupo as grupo, hora_materia.dia as dia
 						from hora_materia, materias
-						where hora_materia.idmateria=materias.idmateria;";
+						where hora_materia.idmateria=materias.idmateria and hora_materia.idmateria not in (select idmateria from materias_alumnos where idalumno='$usuario');";
                         $result=mysqli_query($conexion,$sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
