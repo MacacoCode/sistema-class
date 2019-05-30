@@ -48,13 +48,13 @@ include('../../conexion.php');
 					
 			}
 			else{
-				echo"Ya se inscribio esa materia!";
+				header("Location: http://localhost:8080/formulario/Coordinador/matriculaDocente/matriculaDocente.php?fallo=true");
 				
 			}
 	}
 	else 
 	{
-		echo "La clase choca xd";
+		header("Location: http://localhost:8080/formulario/Coordinador/matriculaDocente/matriculaDocente.php?fallo2=true");
 	}
 
 	

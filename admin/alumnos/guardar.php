@@ -23,8 +23,7 @@ include('../../Login/iniciar.php');
 		header("Location: http://localhost:8080/formulario/admin/alumnos/alumnos.php");
 	}
 	else{
-		echo "Ya existe un alumno con ese numero de carnet";
-	
+		header("Location: http://localhost:8080/formulario/admin/alumnos/alumnos.php?fallo=true");	
 		
 	}
 	

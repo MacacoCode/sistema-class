@@ -25,7 +25,7 @@ include('../../conexion.php');
 			
 	}
 	else{
-       echo"Error al registrar la materia";
+		header("Location: http://localhost:8080/formulario/admin/facultadesycarreras/carreras.php?fallo=true");
 		
 	}
 ?>

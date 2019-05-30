@@ -16,7 +16,7 @@ if($data)
 }
 else 
 {
-   echo"No se puede eliminar materia que tiene un horario";
+    header("Location: http://localhost:8080/formulario/admin/Clases/clases.php?fallo2=true");
 }
 
 ?>

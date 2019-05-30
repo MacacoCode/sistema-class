@@ -12,6 +12,9 @@
     
     pointer-events: all;
 }
+.pop-up-activate{
+    display: inline;
+}
 input[type=button], input[type=submit]{
     position:relative;
      width:100px;
@@ -40,7 +43,7 @@ input[type=button], input[type=submit]{
 p{
     color:white;
 }
-.pop-up-login {
+.pop-up-error {
     display: flex;
     justify-content: center;
     align-items: center;

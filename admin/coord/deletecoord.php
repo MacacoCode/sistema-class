@@ -15,7 +15,7 @@ if($data)
 }
 else 
 {
-    echo"Error al eliminar dato";
+    header("Location: http://localhost:8080/formulario/admin/coord/coord.php?fallo2=true");
 
 }
 

@@ -70,7 +70,7 @@
 									<div class='pop-up-borrar'>
 										<div>
 											<p>¿Esta seguro?</p>
-											<button class='pop-up-del'>
+											<button>
 												<a href='deletecoord.php?rn=$mostrar[idcoord]'>Confirmar</a>
 											</button>
 											<br>
@@ -98,11 +98,11 @@
 					<p>Nombre</p>
 					
 					<br>
-					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="25" pattern="^[A-Za-z]+$" required oninvalid="this.setCustomValidity('Solo se aceptan letras')">
+					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="25" pattern="^[A-Za-z]*$" required oninvalid="this.setCustomValidity('Solo se aceptan letras')">
 					<p>Apellido</p>
 					
 					<br>
-					<input type="text" name="apellido" placeholder="Apellido" maxlength="25" pattern="^[A-Za-z]+$" required oninvalid="this.setCustomValidity('Solo se aceptan letras')"> 
+					<input type="text" name="apellido" placeholder="Apellido" maxlength="25" pattern="^[A-Za-z]*$" required oninvalid="this.setCustomValidity('Solo se aceptan letras')"> 
 						<br>
 						<br>
 						<p>Carreras Disponibles</p>
@@ -149,6 +149,28 @@
 		</div>
 		
 		</div>
+		<?php
+       if(isset($_GET["fallo"]) && $_GET["fallo"] == 'true')
+       {
+          echo "
+            <div class='pop-up-error'>
+                <div>
+					<p>Ya existe un coordinador con esta identificacion</p>
+                    <input class='pop-up-cancel' type='button' value='Confirmar'>
+                </div>
+            </div> ";
+	   }
+	   if(isset($_GET["fallo2"]) && $_GET["fallo2"] == 'true')
+       {
+          echo "
+            <div class='pop-up-error'>
+                <div>
+					<p>Hubo Un Error Al Borrar</p>
+                    <input class='pop-up-cancel' type='button' value='Confirmar'>
+                </div>
+            </div> ";
+       }
+     ?>
 		<style>
 			.form {
 				width:250px;

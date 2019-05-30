@@ -18,7 +18,7 @@ if(mysqli_query($conexion, $q))
 }
 else 
 {
-    echo"Error al borrar";
+    header("Location: http://localhost:8080/formulario/Coordinador/horarioMaterias/materias.php?fallo2=true");
 }
 
 ?>

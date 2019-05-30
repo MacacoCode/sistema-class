@@ -22,7 +22,7 @@ if(mysqli_query($conexion, $q))
 }
 else 
 {
-    echo"Error al borrar";
+    header("Location: http://localhost:8080/formulario/Coordinador/matriculaDocente/matriculaDocente.php?fallo3=true");
 }
 
 ?>

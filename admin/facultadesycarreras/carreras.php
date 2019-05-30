@@ -73,7 +73,7 @@ include('../../Login/iniciar.php');
 
 					<p>Nombre</p>		
 					<br>
-					<input type="text" name="nombre" placeholder="Nombre de la Carrera" maxlength="45" required oninvalid="this.setCustomValidity('Solo se aceptan letras')">
+					<input type="text" name="nombre" placeholder="Nombre de la Carrera" maxlength="45" pattern="[a-zA-Z]*$" required oninvalid="this.setCustomValidity('Solo se aceptan letras')">
 					<br>
 					<br>
 
@@ -126,6 +126,19 @@ include('../../Login/iniciar.php');
 			</div>
 	</div>
 	</div>
+	<?php
+       if(isset($_GET["fallo"]) && $_GET["fallo"] == 'true')
+       {
+          echo "
+            <div class='pop-up-error'>
+                <div>
+                    <p>Error Al Registrar La Carrera</p>
+                    <input class='pop-up-cancel' type='button' value='Confirmar'>
+                </div>
+            </div> ";
+	   }
+     ?>
+
 
 	</body>
 	<script src="../../pop-up.js"></script>

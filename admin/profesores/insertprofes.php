@@ -14,7 +14,7 @@ include('../../conexion.php');
 			
 	}
 	else{
-		header("Location: http://localhost:8080/formulario/admin/profesores/profesores.php");
+		header("Location: http://localhost:8080/formulario/admin/profesores/profesores.php?fallo=true");
 	
 		
 	}

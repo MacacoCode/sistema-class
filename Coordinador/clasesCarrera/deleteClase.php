@@ -3,6 +3,7 @@ include('../../conexion.php');
 include('../../Login/iniciar.php');
 
 
+
 $materia = $_GET['rn'];
 $carrera = $_GET['sn'];
 $semestre = $_GET['pn'];
@@ -28,7 +29,7 @@ if($data)
 }
 else 
 {
-    echo"Error al eliminar datos";
+    header("Location: http://localhost:8080/formulario/Coordinador/clasesCarrera/agregarClase.php?fallo2=true");
 
 }
 

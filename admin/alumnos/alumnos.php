@@ -70,7 +70,7 @@
 									<div class='pop-up-borrar'>
 										<div>
 											<p>¿Esta seguro?</p>
-											<button class='pop-up-del'>
+											<button>
 												<a href='delete.php?rn=$mostrar[idalumno]'>Confirmar</a>
 											</button>
 											<br>
@@ -150,6 +150,28 @@
 		</div>
 		
 		</div>
+		<?php
+       if(isset($_GET["fallo"]) && $_GET["fallo"] == 'true')
+       {
+          echo "
+            <div class='pop-up-error'>
+                <div>
+					<p>Ya existe un alumnno con esta identificacion</p>
+                    <input class='pop-up-cancel' type='button' value='Confirmar'>
+                </div>
+            </div> ";
+	   }
+	   if(isset($_GET["fallo2"]) && $_GET["fallo2"] == 'true')
+       {
+          echo "
+            <div class='pop-up-error'>
+                <div>
+					<p>Hubo Un Error Al Borrar</p>
+                    <input class='pop-up-cancel' type='button' value='Confirmar'>
+                </div>
+            </div> ";
+	   }
+     ?>
 		<style>
 			.form {
 				width:250px;

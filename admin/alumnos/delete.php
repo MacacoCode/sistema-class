@@ -14,7 +14,7 @@ if($data)
 }
 else 
 {
-    header("Location: http://localhost:8080/formulario/admin/alumnos/alumnos.php");
+    header("Location: http://localhost:8080/formulario/admin/alumnos/alumnos.php?fallo2");
 
 }
 

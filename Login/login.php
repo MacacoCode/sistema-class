@@ -47,7 +47,7 @@
        if(isset($_GET["fallo"]) && $_GET["fallo"] == 'true')
        {
           echo "
-            <div class='pop-up-login'>
+            <div class='pop-up-error'>
                 <div>
                     <p>Contraseña o Usuario Incorrectos</p>
                     <input class='pop-up-cancel' type='button' value='Confirmar'>

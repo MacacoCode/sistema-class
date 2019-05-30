@@ -62,7 +62,7 @@ include('../../Login/iniciar.php');
 							<div class='pop-up-borrar'>
 										<div>
 											<p>¿Esta seguro?</p>
-											<button class='pop-up-del'>
+											<button>
 												<a href='deleteclases.php?pn=$mostrar[idmateria]&sc=$mostrar[codigo]'>Borrar</a>
 											</button>
 											<br>
@@ -81,7 +81,7 @@ include('../../Login/iniciar.php');
 				</div>
 			
 			<div class="form col">
-			<h2>Registrar Materia</h2>	
+			<h2>Registrar Clase</h2>	
 				<form action="insertclases.php" method="POST" autocomplete="off">
                 <br>
 					<p>Codigo</p>
@@ -91,7 +91,7 @@ include('../../Login/iniciar.php');
                     <br>
                     <br>
 
-					<p>Nombre de la Materia</p>
+					<p>Nombre de la Clase</p>
                     <br>
 					<input type="text" name="nombre" placeholder="Nombre de la clase" maxlength="45"  required >
 					
@@ -114,6 +114,28 @@ include('../../Login/iniciar.php');
 			</div>
 	</div>
 	</div>
+	<?php
+       if(isset($_GET["fallo"]) && $_GET["fallo"] == 'true')
+       {
+          echo "
+            <div class='pop-up-error'>
+                <div>
+					<p>Hubo Un Error Al Registrar La Clase</p>
+                    <input class='pop-up-cancel' type='button' value='Confirmar'>
+                </div>
+            </div> ";
+	   }
+	   if(isset($_GET["fallo2"]) && $_GET["fallo2"] == 'true')
+       {
+          echo "
+            <div class='pop-up-error'>
+                <div>
+					<p>Hubo Un Error Al Borrar La Clase</p>
+                    <input class='pop-up-cancel' type='button' value='Confirmar'>
+                </div>
+            </div> ";
+       }
+     ?>
 
 
 	</body>

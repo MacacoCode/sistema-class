@@ -23,7 +23,7 @@ include('../../Login/iniciar.php');
 		header("Location: http://localhost:8080/formulario/admin/coord/coord.php");
 	}
 	else{
-		echo "Ya existe un coordinador con ese numero de carnet";
+		header("Location: http://localhost:8080/formulario/admin/coord/coord.php?fallo=true");
 	
 		
 	}

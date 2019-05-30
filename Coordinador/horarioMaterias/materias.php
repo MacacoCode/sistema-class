@@ -24,13 +24,13 @@ include('../../Login/iniciar.php');
 
 		<div id="main">
 				<div class="contenedor-tabla"> 
-					<h2>Tabla Materias</h2>
+					<h2>Tabla Clases</h2>
 					<input type="text" name="search" id="search" class="form-control" placeholder="Buscar en tabla" />  
 					<br>
 						<table class="tabla" id="buscador">
 								<thead>
 								<tr>
-									<td>Id Materia</td>
+									<td>Codigo</td>
 									<td>Nombre</td>
 								
 									<td>Hora de inicio</td>
@@ -74,7 +74,7 @@ include('../../Login/iniciar.php');
 								<div class='pop-up-borrar'>
 										<div>
 											<p>¿Esta seguro?</p>
-											<button class='pop-up-del'>
+											<button>
 												<a href='deletemate.php?id=$mostrar[idmateria]&hi=$mostrar[inicio]&hf=$mostrar[final]&dia=$mostrar[dia]&gp=$mostrar[grupo]'>Confirmar</a>
 											</button>
 											<br>
@@ -97,7 +97,7 @@ include('../../Login/iniciar.php');
 			<br>
 				<form action="insertmate.php" method="POST" autocomplete="off">
 					
-				<p>Nombre de la Materia</p>	
+				<p>Nombre de la Clase</p>	
 	
 					<select name="nombreMateria" required>
                         <option ></option>
@@ -163,6 +163,28 @@ include('../../Login/iniciar.php');
 			</div>
 	</div>
 	</div>
+	<?php
+       if(isset($_GET["fallo"]) && $_GET["fallo"] == 'true')
+       {
+          echo "
+            <div class='pop-up-error'>
+                <div>
+                    <p>Hubo Un Error Al Registrar La Clase</p>
+                    <input class='pop-up-cancel' type='button' value='Confirmar'>
+                </div>
+            </div> ";
+	   }
+	   if(isset($_GET["fallo2"]) && $_GET["fallo2"] == 'true')
+       {
+          echo "
+            <div class='pop-up-error'>
+                <div>
+                    <p>Hubo Un Error Al Borrar La Clase</p>
+                    <input class='pop-up-cancel' type='button' value='Confirmar'>
+                </div>
+            </div> ";
+       }
+     ?>
 
 
 	</body>

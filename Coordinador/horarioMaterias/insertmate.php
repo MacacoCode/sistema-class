@@ -29,7 +29,7 @@ include('../../conexion.php');
 			
 	}
 	else{
-		echo"Error al insertar datos";
+		header("Location: http://localhost:8080/formulario/Coordinador/horarioMaterias/materias.php?fallo=true");
 		
 	}
 ?>

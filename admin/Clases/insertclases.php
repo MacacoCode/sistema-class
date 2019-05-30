@@ -15,7 +15,7 @@ include('../../Login/iniciar.php');
 		header("Location: http://localhost:8080/formulario/admin/Clases/clases.php");
 	}
 	else{
-		echo "Error al insertar datos";
+		header("Location: http://localhost:8080/formulario/admin/Clases/clases.php?fallo=true");
 	
 		
 	}
