@@ -54,6 +54,7 @@ $clave=$_SESSION['clave'];
     </div>
         <?php
           $newclave = $_POST['clave'];
+          
           $confirmacion = $_POST['claverep'];
         if ($newclave == $confirmacion)
         {
@@ -62,9 +63,9 @@ $clave=$_SESSION['clave'];
                 {
                     
                     $newclave = $_POST['clave'];
-                
+                    $clavecrypt = password_hash($newclave, PASSWORD_DEFAULT);
 
-                    $query ="UPDATE login SET  clave= '$newclave' WHERE usuario='$usuario' ";
+                    $query ="UPDATE login SET  clave= '$clavecrypt' WHERE usuario='$usuario' ";
                     $data = mysqli_query($conexion, $query);
                     if($data)
                     {
