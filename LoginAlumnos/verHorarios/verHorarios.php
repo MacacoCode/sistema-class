@@ -33,15 +33,17 @@ $clave=$_SESSION['clave'];
                                 <td>Inicio</td>
                                 <td>Final</td>
                                 <td>Grupo</td>
-								<td>dia</td>
-								<td>nota</td>
+								<td>Dia	</td>
+								<td>Aula</td>
+								<td>Nota</td>
+								
 								<td>Acciones</td>
                                 
                                     
                             </tr>
 						</thead>
                         <?php 
-                        $sql="SELECT materias.idmateria as idmateria, materias.nombre as materia, hora_materia.horainicio as inicio, hora_materia.horfinal as final, materias_alumnos.idgrupo as grupo, hora_materia.dia as dia, notas.nota
+                        $sql="SELECT materias.idmateria as idmateria, materias.nombre as materia, hora_materia.horainicio as inicio, hora_materia.horfinal as final, materias_alumnos.idgrupo as grupo, hora_materia.dia as dia,hora_materia.aula as aula, notas.nota
 						from materias_alumnos, hora_materia, materias, notas
 						where materias_alumnos.idmateria=hora_materia.idmateria and materias_alumnos.idmateria=materias.idmateria and materias_alumnos.idgrupo=hora_materia.idgrupo 
 						and notas.idalumno=materias_alumnos.idalumno and notas.idmateria=materias.idmateria and materias_alumnos.idalumno='$usuario' ;";
@@ -56,6 +58,7 @@ $clave=$_SESSION['clave'];
                             <td>".$mostrar['final']."</td>
 							<td>".$mostrar['grupo']."</td>
 							<td>".$mostrar['dia']."</td>
+							<td>".$mostrar['aula']."</td>
 							<td>".$mostrar['nota']."</td>
 							
 							

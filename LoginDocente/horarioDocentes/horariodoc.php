@@ -36,14 +36,15 @@ $clave=$_SESSION['clave'];
                                 <td>Inicio</td>
                                 <td>Final</td>
                                 <td>Grupo</td>
-								<td>dia</td>
+								<td>Dia</td>
+								<td>Aula</td>
 								<td>Acciones</td>
                                 
                                     
                             </tr>
 						</thead>
                         <?php 
-                        $sql="SELECT materias.nombre as materia, hora_materia.horainicio as inicio, hora_materia.horfinal as final, hora_materia.idgrupo as grupo, hora_materia.dia as dia
+                        $sql="SELECT materias.nombre as materia, hora_materia.horainicio as inicio, hora_materia.horfinal as final, hora_materia.idgrupo as grupo, hora_materia.dia as dia, hora_materia.aula as aula
                         from materia_docente, materias, hora_materia
                         where materia_docente.idmateria = hora_materia.idmateria and materias.idmateria=materia_docente.idmateria and hora_materia.idmateria = materias.idmateria
                         and hora_materia.idgrupo = materia_docente.idgrupo
@@ -59,6 +60,7 @@ $clave=$_SESSION['clave'];
                             <td>".$mostrar['final']."</td>
 							<td>".$mostrar['grupo']."</td>
 							<td>".$mostrar['dia']."</td>
+							<td>".$mostrar['aula']."</td>
 						
 							
 							

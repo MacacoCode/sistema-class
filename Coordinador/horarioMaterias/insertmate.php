@@ -6,9 +6,8 @@ include('../../conexion.php');
 	$grupo=$_POST['grupo'];
 	$horaincio=$_POST['horainicio'];
 	$horafinal=$_POST['horafinal'];
-
 	$dia=$_POST['dia'];
-
+	$aula=$_POST['aula'];
 
 	//Recuperamos el idmateria
 	$recuperarID="SELECT idmateria as idmateria from materias where nombre='$nombreMateria'";
@@ -20,7 +19,7 @@ include('../../conexion.php');
 
 
 
-	$horario = "INSERT into hora_materia (horainicio, horfinal, idmateria, idgrupo,dia) values ('$horaincio', '$horafinal' , '$idmateria' , '$grupo', '$dia')";
+	$horario = "INSERT into hora_materia (horainicio, horfinal, idmateria, idgrupo,dia,aula) values ('$horaincio', '$horafinal' , '$idmateria' , '$grupo', '$dia','$aula')";
 
 	//verificamos la ejecucion
 	if (mysqli_query($conexion, $horario) ){

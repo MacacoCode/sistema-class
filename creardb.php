@@ -157,7 +157,8 @@ if (mysqli_query($conn, $coord)) {
         horfinal TIME not null, 
         idmateria MEDIUMINT not null, 
         idgrupo varchar (5) not null,
-        dia varchar(12) not null,   
+        dia varchar(12) not null,
+        aula varchar(5) not null,   
         primary key(idgrupo, idmateria),
         foreign key (idmateria) references materias(idmateria)
         )Engine= innodb;";
