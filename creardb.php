@@ -124,7 +124,8 @@ if (mysqli_query($conn, $coord)) {
        //tabla materias
        $materias= "CREATE table if not exists materias(
         idmateria MEDIUMINT NOT NULL AUTO_INCREMENT,
-        codigo varchar (5) not null, 
+        codigo varchar (5) not null,
+        prerequisito MEDIUMINT, 
         primary key (idmateria), 
         nombre varchar(45) not null
         )Engine= innodb;";
@@ -133,6 +134,8 @@ if (mysqli_query($conn, $coord)) {
        } else {
            echo "Error al crear la tabla: " . mysqli_error($conn);
        }  
+
+        
 
           //tabla materias_alumnos
             $materiasalumnos= "CREATE table if not exists materias_alumnos(
@@ -159,7 +162,7 @@ if (mysqli_query($conn, $coord)) {
         idgrupo varchar (5) not null,
         dia varchar(12) not null,
         aula varchar(5) not null,   
-        primary key(idgrupo, idmateria),
+        primary key(idgrupo, idmateria, dia),
         foreign key (idmateria) references materias(idmateria)
         )Engine= innodb;";
      
@@ -278,6 +281,35 @@ if (mysqli_query($conn, $coord)) {
        } else {
            echo "Error poner el registro" . mysqli_error($conn);
        } 
+       /*Registro de dos carreras*/ 
+       $isis= "INSERT into oferta_academica(idoferta, nombre, tipo, idfacultad) values ('I-SIS','Ingenieria en Sistemas', 'Pregrado','F-ING');";
+       if (mysqli_query($conn, $isis)) {
+       } else {
+           echo "Error poner el registro" . mysqli_error($conn);
+       }
+       $mark= "INSERT into oferta_academica(idoferta, nombre, tipo, idfacultad) values ('MARK','Marketing', 'Pregrado','F-MDC');";
+       if (mysqli_query($conn, $mark)) {
+       } else {
+           echo "Error poner el registro" . mysqli_error($conn);
+       }
+
+       //Registro de 3 materias
+       $mat= "INSERT into materias(codigo, nombre) values ('MTM','Matematica Basica' );";
+       if (mysqli_query($conn, $mat)) {
+       } else {
+           echo "Error poner el registro" . mysqli_error($conn);
+       }
+       $log= "INSERT into materias(codigo, nombre) values ('SIS101','Logica y Algoritmo' );";
+       if (mysqli_query($conn, $log)) {
+       } else {
+           echo "Error poner el registro" . mysqli_error($conn);
+       }
+       
+       $prinma= "INSERT into materias(codigo, nombre) values ('MA101','Fundamentos de Marketing' );";
+       if (mysqli_query($conn, $prinma)) {
+       } else {
+           echo "Error poner el registro" . mysqli_error($conn);
+       }
 
           //trigger para insertar coordinadores en la tabla login
           $cuentacoord= "

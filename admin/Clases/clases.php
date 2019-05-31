@@ -33,6 +33,7 @@ include('../../Login/iniciar.php');
                                 <td>ID Clase</td>
                                 <td>Codigo</td>
                                 <td>Nombre</td>
+								<td>Prerequisito</td>
 								<td>Acciones</td>
                             
                             </tr>
@@ -47,7 +48,8 @@ include('../../Login/iniciar.php');
 							<tr>
                             <td>".$mostrar['idmateria']."</td>
                             <td>".$mostrar['codigo']."</td>
-                            <td>".$mostrar['nombre']."</td>
+							<td>".$mostrar['nombre']."</td>
+							<td>".$mostrar['prerequisito']."</td>
 						
 							<td>
 							
@@ -94,8 +96,29 @@ include('../../Login/iniciar.php');
 					<p>Nombre de la Clase</p>
                     <br>
 					<input type="text" name="nombre" placeholder="Nombre de la clase" maxlength="45"  required >
-					
-					
+					<br>
+					<br>
+					<p>Prerequisito</p>
+						<select name="prerequisito"  flex>
+                        <option >
+						</option>
+							<?php 
+									$sql="SELECT * from materias";
+									$result=mysqli_query($conexion,$sql);
+								
+									
+									while($ensenar=mysqli_fetch_array($result)){
+										echo "
+									
+											<option >".$ensenar['nombre']."</option>
+										
+									"
+											
+									?>
+									<?php 
+								}
+								?>	
+							</select>
 		
 					<br>
 					<br>

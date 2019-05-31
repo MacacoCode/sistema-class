@@ -108,17 +108,8 @@ if($contador>0 ){
 
 }
 
-$q = "SELECT COUNT(*) as contar from login where usuario = '$usuario' and clave = '$clave'";
-$consulta = mysqli_query($conexion, $q);
-$array = mysqli_fetch_array($consulta);
-
-if(!$consulta){ 
-    // echo "Usuario no existe " . $nombre . " " . $password. " o hubo un error " . 
-    echo mysqli_error($mysqli);
-    // si la consulta falla es bueno evitar que el código se siga ejecutando
-    exit;
-} 
-
+ 
+header("Location:http://localhost:8080/formulario/Login/login.php?fallo=true");
 
 
 
