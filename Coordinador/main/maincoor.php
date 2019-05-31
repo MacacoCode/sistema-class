@@ -3,6 +3,12 @@ include('../../conexion.php');
 	
 include('../../Login/iniciar.php');
 include('../../admin/main/validacioncontra.php');
+
+
+$recuperarID="SELECT nombre from coordinadores where idcoordinador='$usuario';";
+$consultad = mysqli_query($conexion, $recuperarID);
+$arrayd = mysqli_fetch_array($consultad);
+$nombre= $arrayd['nombre'];
 ?>
 	
 	<!DOCTYPE html>
@@ -25,8 +31,8 @@ include('../../admin/main/validacioncontra.php');
 			<div id="main-repair">
 					<div class="row">
 						<div class ="col"> 
-							<h2 class="mainh2">Bienvenido al manejador de base de datos Universidad</h2>
-							<h2 class="mainh2">Version Coordinador</h2>
+							<h2 class="mainh2">Bienvenido/a, <?php echo $nombre; ?></h2>
+							
 						</div>
 					</div>
 					<div class="row">
@@ -42,7 +48,7 @@ include('../../admin/main/validacioncontra.php');
    
 		echo "<div class='pop-up-error'>
 			  <div>
-		   <p>Recuerda cambiar tu contraseña Usuario $usuario</p>
+		   <p>Recuerda cambiar tu contraseña, $nombre</p>
 		   <input class= 'pop-up-cancel' type='button' value='Okay'>
 		</div>
 	 </div>";
