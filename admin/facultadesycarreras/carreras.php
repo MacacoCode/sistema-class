@@ -33,14 +33,15 @@ include('../../Login/iniciar.php');
 									<td>Id Facultad</td>
 									<td>Facultad</td>
 									<td>Id carrera</td>
-									<td>Carrera</td>	
+									<td>Carrera</td>
+									<td>Acciones</td>	
 								</tr>
 								</thead>
 
 							<?php 
-							$sql="SELECT distinct facultades.idfacultad as idfacultad, facultades.nombre_facultad as nombref, oferta_academica.idoferta as idcarrera, oferta_academica.nombre as nombrec 
-                            from facultades, oferta_academica
-                            where facultades.idfacultad = oferta_academica.idfacultad";
+							$sql="SELECT distinct oferta_academica.idcarrera as id,   facultades.idfacultad as idfacultad, facultades.nombre_facultad as nombref, oferta_academica.idoferta as idcarrera, oferta_academica.nombre as nombrec 
+							from facultades, oferta_academica
+							where facultades.idfacultad = oferta_academica.idfacultad";
 							$result=mysqli_query($conexion,$sql);
 
 							while($mostrar=mysqli_fetch_array($result)){
@@ -50,7 +51,11 @@ include('../../Login/iniciar.php');
 								<td>".$mostrar['idfacultad']."</td>
 								<td>".$mostrar['nombref']."</td>
                                 <td>".$mostrar['idcarrera']."</td>
-                                <td>".$mostrar['nombrec']."</td>
+								<td>".$mostrar['nombrec']."</td>
+								
+								<td><button>
+								<a href='deleteCarrera.php?rn=$mostrar[id]'>Borrar</a>
+								</button></td>
                                 </tbody>
                                 ";
 									
