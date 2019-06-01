@@ -62,11 +62,8 @@
 
 									<button class='pop-up-del'>
 									Borrar
-									</button>
-									</td>
 									
-									</tr>
-									</tbody>
+									</button>
 									<div class='pop-up-borrar'>
 										<div>
 											<p>¿Esta seguro?</p>
@@ -77,7 +74,12 @@
 											<br>
 											<input class= 'pop-up-cancel' type='button' value='Cancelar'>
 										</div>
-									</div>";
+									</div>
+									</td>
+									
+									</tr>
+									</tbody>
+	";
 										
 								?>
 								

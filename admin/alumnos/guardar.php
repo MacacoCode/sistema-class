@@ -14,7 +14,7 @@ include('../../Login/iniciar.php');
 	$array = mysqli_fetch_array($consulta);
 	$idcarrera= $array['idcarrera'];
 
-	//hacemos la sentencia de sql
+	//hacemos la sentencia de sql para insertar al alumno
 	$sql="INSERT into alumnos VALUES('$cif','$nombre','$apellido')";
 	$sqk="INSERT into oferta_alumnos VALUES ('$idcarrera','$cif')";
 	//verificamos la ejecucion
