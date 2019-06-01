@@ -2,7 +2,11 @@
 
 include('../../conexion.php');
 include('../../Login/iniciar.php');
- 
+$usuario = $_SESSION['usuario'];
+$recuperarID="SELECT idcarrera from coordinadores where idcoordinador='$usuario';";
+$consulta = mysqli_query($conexion, $recuperarID);
+$array = mysqli_fetch_array($consulta);
+$idcar= $array['idcarrera'];
  ?>
 
 
@@ -104,7 +108,7 @@ include('../../Login/iniciar.php');
 					<select name="nombreMateria" required>
                         <option ></option>
                     <?php 
-							$sql="SELECT * from materias";
+							$sql="SELECT materias.nombre from pensum, materias where idcarrera='$idcar' and pensum.idmateria=materias.idmateria;";
                             $result=mysqli_query($conexion,$sql);
                             
 							while($ensenar=mysqli_fetch_array($result)){
