@@ -3,6 +3,12 @@
 		include('../../Login/iniciar.php');
 
 		$usuario = $_SESSION['usuario'];
+
+		//idcoordinador a idcarrera
+		$recuperarID="SELECT idcarrera from coordinadores where idcoordinador='$usuario';";
+		$consulta = mysqli_query($conexion, $recuperarID);
+		$array = mysqli_fetch_array($consulta);
+		$idcar= $array['idcarrera'];
 	?>
 
 
@@ -58,12 +64,9 @@
 								
 									<td>
 									<button class='pop-up-del'>
-									Borrar
+									<a href='deleteClase.php?rn=$mostrar[idmateria]&sn=$mostrar[idcarrera]&pn=$mostrar[semestre]'>Borrar</a>
 									</button>
-									</td>
-									
-									</tr>
-									</tbody>
+
 									<div class='pop-up-borrar'>
 										<div>
 											<p>¿Esta seguro?</p>
@@ -74,7 +77,13 @@
 											<br>
 											<input class= 'pop-up-cancel' type='button' value='Cancelar'>
 										</div>
-									</div>";
+									</div>
+									</td>
+									
+									</tr>
+									
+									
+									</tbody>";
 										
 								?>
 								
@@ -93,7 +102,9 @@
 						<select name="materia" required flex>
                         <option required></option>
 							<?php 
-									$sql="SELECT * from materias";
+									$sql="SELECT idmateria, nombre from materias where idmateria not in (
+									select materias.idmateria
+									 from pensum, materias where pensum.idcarrera='$idcar' and pensum.idmateria=materias.idmateria);";
 									$result=mysqli_query($conexion,$sql);
 								
 									

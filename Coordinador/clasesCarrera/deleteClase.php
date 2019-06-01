@@ -8,6 +8,9 @@ $materia = $_GET['rn'];
 $carrera = $_GET['sn'];
 $semestre = $_GET['pn'];
 
+echo $materia, $carrera, $semestre;
+
+/*
 //Recuperamos el idcarrera, ya que el coord mira el nombre de la carrera
 $recuperarID="SELECT idcarrera as idcarrera from oferta_academica where nombre='$carrera'";
 $consulta = mysqli_query($conexion, $recuperarID);
@@ -31,6 +34,6 @@ else
 {
     header("Location: http://localhost:8080/formulario/Coordinador/clasesCarrera/agregarClase.php?fallo2=true");
 
-}
+}*/
 
 ?>
