@@ -55,24 +55,22 @@ include('../../Login/iniciar.php');
 								<a  href='updateprofes.php?rn=$mostrar[iddocente]&sn=$mostrar[nombre]&cl=$mostrar[apellido]'>Editar</a>
 								</button>
 
-								<button class='pop-up-del'>
-								<a>Borrar</a>
-								</button>
-								</td>
-								
-								</tr>
-								</tbody>
+								<button class='pop-up-del'>Borrar<p>".$mostrar['iddocente']."</p></button>
 								<div class='pop-up-borrar'>
 										<div>
 											<p>¿Esta seguro?</p>
 											<button>
-												<a href='deleteprofes.php?pn=$mostrar[iddocente]'>Confirmar</a>
+												<a href='deleteprofes.php?pn=replace'>Confirmar</a>
 											</button>
 											<br>
 											<br>
 											<input class= 'pop-up-cancel' type='button' value='Cancelar'>
 										</div>
-									</div>";
+									</div>
+								</td>
+								
+								</tr>
+								</tbody>";
 									
 							?>
 							

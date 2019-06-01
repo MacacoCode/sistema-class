@@ -27,7 +27,7 @@ $recuperarID="SELECT idmateria as idmateria from materias where nombre='$materia
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>	
 	
-	<title>Horario de profesores de Profesores</title>
+	<title>Asignacion De Notas</title>
 </head>
 <body>
 <div id="container">
@@ -35,8 +35,8 @@ $recuperarID="SELECT idmateria as idmateria from materias where nombre='$materia
 
 		<div id="main" >
 				<div class="contenedor-tabla"> 
-					<h2>Asignar notas </h2>
-					<input type="text" name="search" id="search" class="form-control" placeholder="Buscar en tabla" />  
+					<h2>Asignar Notas </h2>
+					<input type="text" name="search" id="search" class="form-control" placeholder="Buscar" />  
 					<br>
 					<table class="tabla" id="buscador">
 						<thead>
@@ -45,7 +45,7 @@ $recuperarID="SELECT idmateria as idmateria from materias where nombre='$materia
                                 <td>Apellido</td>
                                 <td>Materia</td>
                                 <td>Grupo</td>
-								<td>nota</td>
+								<td>Nota</td>
                                 <td>Nueva nota</td>
 					
                                 
@@ -77,7 +77,7 @@ $recuperarID="SELECT idmateria as idmateria from materias where nombre='$materia
 							 
 							<input type='number' name='nota'required> 
 							<button type='submit'>
-							Devolver nota
+							Devolver Nota
 							</button>
 							</form> </td>
 							

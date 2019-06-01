@@ -90,7 +90,8 @@ $idcarrera= $array['idcarrera'];
 				</div>
 			
 	</div>
-	</div>
+    </div>
+    
 	<?php
        if(isset($_GET["fallo"]) && $_GET["fallo"] == 'true')
        {

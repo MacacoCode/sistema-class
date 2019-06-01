@@ -53,9 +53,20 @@ include('../../Login/iniciar.php');
                                 <td>".$mostrar['idcarrera']."</td>
 								<td>".$mostrar['nombrec']."</td>
 								
-								<td><button>
-								<a href='deleteCarrera.php?rn=$mostrar[id]'>Borrar</a>
-								</button></td>
+								<td>
+								<button class='pop-up-del' >Borrar<p>".$mostrar['idcarrera']."</p></button>
+								<div class='pop-up-borrar'>
+											<div>
+											<p>¿Esta seguro?</p>
+											<button>
+											   <a class='toDelete' href='deleteCarrera.php?rn=replace'>Confirmar</a>
+											   </button>
+											   <br>
+											   <br>
+											   <input class= 'pop-up-cancel' type='button' value='Cancelar'>
+										   </div>
+										</div>
+								</td>
                                 </tbody>
                                 ";
 									
@@ -78,7 +89,7 @@ include('../../Login/iniciar.php');
 
 					<p>Nombre</p>		
 					<br>
-					<input type="text" name="nombre" placeholder="Nombre de la Carrera" maxlength="45"  required oninvalid="this.setCustomValidity('Solo se aceptan letras')">
+					<input type="text" name="nombre" placeholder="Nombre de la Carrera" maxlength="45"  required>
 					<br>
 					<br>
 

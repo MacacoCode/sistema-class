@@ -62,17 +62,12 @@ include('../../Login/iniciar.php');
 								
 
 								<td>
+								----------------------------------------------------------------------------------------------------------------
 								<button >
 								<a  href='updatemate.php?rn=$mostrar[idmateria]&sn=$mostrar[nombre]&gr=$mostrar[grupo]&ini=$mostrar[inicio]&fin=$mostrar[final]&dia=$mostrar[dia]'>Editar</a>
 								</button>
 
-								<button class='pop-up-del'>
-								<a>Borrar</a>
-								</button>
-								</td>
-								
-								</tr>
-								</tbody>
+								<button class='pop-up-del'>Borrar</button>
 								<div class='pop-up-borrar'>
 										<div>
 											<p>¿Esta seguro?</p>
@@ -83,7 +78,13 @@ include('../../Login/iniciar.php');
 											<br>
 											<input class= 'pop-up-cancel' type='button' value='Cancelar'>
 										</div>
-									</div>";
+									</div>
+								----------------------------------------------------------------------------------------------------------------
+								</td>
+								
+								</tr>
+								</tbody>
+								";
 									
 							?>
 							

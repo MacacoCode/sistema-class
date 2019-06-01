@@ -61,25 +61,25 @@ include('../../Login/iniciar.php');
 							
 							<td>
 							
-
-							<button class='pop-up-del'>
-							<a>Borrar</a>
-							</button>
-							</td>
-                        
-							</tr>
-							</tbody>
+-----------------------------------------------------------------------------------------------------------------------------------
+							<button class='pop-up-del'>Borrar".$mostrar['nombre'].$mostrar['idalumno'].$mostrar['grupo']."</button>
 							<div class='pop-up-borrar'>
 										<div>
 											<p>¿Esta seguro?</p>
 											<button>
-												<a href='deletematricula.php?pn=$mostrar[nombre]&sc=$mostrar[idalumno]&gr=$mostrar[grupo]'>Confirmar</a>
+												<a href='deletematricula.php?pn=replace&sc=replace2&gr=replace3'>Confirmar</a>
 											</button>
 											<br>
 											<br>
 											<input class= 'pop-up-cancel' type='button' value='Cancelar'>
 										</div>
-									</div>";
+									</div>
+--------------------------------------------------------------------------------------------------------------------------------------
+							</td>
+                        
+							</tr>
+							</tbody>
+							";
                                 
                         ?>
                         

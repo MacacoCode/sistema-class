@@ -54,24 +54,22 @@ include('../../Login/iniciar.php');
 							<td>
 							
 
-							<button class='pop-up-del'>
-							<a>Borrar</a>
-							</button>
-							</td>
-                        
-							</tr>
-							</tbody>
+							<button class='pop-up-del'>Borrar<p>".$mostrar['idmateria']."</p></button>
 							<div class='pop-up-borrar'>
 										<div>
 											<p>¿Esta seguro?</p>
 											<button>
-												<a href='deleteclases.php?pn=$mostrar[idmateria]&sc=$mostrar[codigo]'>Borrar</a>
+												<a href='deleteclases.php?pn=replace&sc=$mostrar[codigo]'>Borrar</a>
 											</button>
 											<br>
 											<br>
 											<input class= 'pop-up-cancel' type='button' value='Cancelar'>
 										</div>
-									</div>";
+									</div>
+							</td>
+                        
+							</tr>
+							</tbody>";
                                 
                         ?>
                         

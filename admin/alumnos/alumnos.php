@@ -60,30 +60,29 @@
 									<a  href='update.php?rn=$mostrar[idalumno]&sn=$mostrar[nombre]&cl=$mostrar[apellido]&car=$mostrar[carrera]'>Editar</a>
 									</button>
 
-									<button class='pop-up-del'>
-									Borrar
-									
-									</button>
-									<div class='pop-up-borrar'>
-										<div>
+									<button class='pop-up-del' >Borrar<p>".$mostrar['idalumno']."</p></button>
+								
+										
+											<div class='pop-up-borrar'>
+											<div>
 											<p>¿Esta seguro?</p>
 											<button>
-												<a href='delete.php?rn=$mostrar[idalumno]'>Confirmar</a>
-											</button>
-											<br>
-											<br>
-											<input class= 'pop-up-cancel' type='button' value='Cancelar'>
+											   <a class='toDelete' href='delete.php?rn=replace'>Confirmar</a>
+											   </button>
+											   <br>
+											   <br>
+											   <input class= 'pop-up-cancel' type='button' value='Cancelar'>
+										   </div>
 										</div>
-									</div>
+										
+									
 									</td>
 									
 									</tr>
 									</tbody>
 	";
 										
-								?>
 								
-							<?php 
 							}
 							?>	
 						</table>

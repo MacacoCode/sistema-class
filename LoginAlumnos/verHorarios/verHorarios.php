@@ -65,10 +65,18 @@ $clave=$_SESSION['clave'];
 							<td>
 							
 
-                            <button >
-                            <a href='botarclase.php?rn=$mostrar[idmateria]' >Botar Clase</a>
-							
-							</button>
+                            <button >Botar Clase<p>".$mostrar['idmateria']."</p></button>
+							<div class='pop-up-borrar'>
+											<div>
+											<p>¿Esta seguro?</p>
+											<button>
+											   <a class='toDelete' href='botarclase.php?rn=replace'>Confirmar</a>
+											   </button>
+											   <br>
+											   <br>
+											   <input class= 'pop-up-cancel' type='button' value='Cancelar'>
+										   </div>
+										</div>
 							</td>
                         
 							</tr>

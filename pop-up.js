@@ -5,6 +5,11 @@ $(".pop-up-activate").click(function(){
    
 });
 $(".pop-up-del").click(function(){
+    const father = $(this).text()
+    const replace = father.slice(6);
+    $('a.toDelete').each(function(){
+        this.href = this.href.replace('replace', replace);
+    });
     $("body").css("pointer-events", "none");
     $(".pop-up-borrar").css("display", "flex")
     

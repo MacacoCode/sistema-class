@@ -63,6 +63,7 @@
 									<td>".$mostrar['semestre']."</td>
 								
 									<td>
+									---------------------------------------------------------------------------------------
 									<button class='pop-up-del'>
 									<a href='deleteClase.php?rn=$mostrar[idmateria]&sn=$mostrar[idcarrera]&pn=$mostrar[semestre]'>Borrar</a>
 									</button>
@@ -78,6 +79,7 @@
 											<input class= 'pop-up-cancel' type='button' value='Cancelar'>
 										</div>
 									</div>
+									------------------------------------------------------------------------------------------
 									</td>
 									
 									</tr>

@@ -60,24 +60,23 @@
 									<a  href='updatecoord.php?rn=$mostrar[idcoord]&sn=$mostrar[nombre]&cl=$mostrar[apellido]&car=$mostrar[carrera]'>Editar</a>
 									</button>
 
-									<button class='pop-up-del'>
-									<a>Borrar</a>
-									</button>
-									</td>
-									
-									</tr>
-									</tbody>
+									<button class='pop-up-del'>Borrar<p>".$mostrar['idcoord']."</p></button>
 									<div class='pop-up-borrar'>
 										<div>
 											<p>¿Esta seguro?</p>
 											<button>
-												<a href='deletecoord.php?rn=$mostrar[idcoord]'>Confirmar</a>
+												<a href='deletecoord.php?rn=replace'>Confirmar</a>
 											</button>
 											<br>
 											<br>
 											<input class= 'pop-up-cancel' type='button' value='Cancelar'>
 										</div>
-									</div>";
+									</div>
+									</td>
+									
+									</tr>
+									</tbody>
+									";
 										
 								?>
 								

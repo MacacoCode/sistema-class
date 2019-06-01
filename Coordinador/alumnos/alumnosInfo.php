@@ -66,17 +66,7 @@
 									
 									</tr>
 									</tbody>
-									<div class='pop-up-borrar'>
-										<div>
-											<p>¿Esta seguro?</p>
-											<button>
-												<a >Confirmar</a>
-											</button>
-											<br>
-											<br>
-											<input class= 'pop-up-cancel' type='button' value='Cancelar'>
-										</div>
-									</div>";
+									";
 										
 								?>
 								
