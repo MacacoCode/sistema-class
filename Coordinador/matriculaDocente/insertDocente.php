@@ -6,6 +6,7 @@ include('../../conexion.php');
 	$nombre=$_POST['nombre']; //nombre de la materia
 	$grupo=$_POST['grupo'];
 
+
 	//Pasar el nombre de la materia a id
 	$recuperarID="SELECT idmateria as idmateria from materias where nombre='$nombre'";
 	$consulta = mysqli_query($conexion, $recuperarID);
