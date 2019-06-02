@@ -94,12 +94,29 @@ $usuario = $_SESSION['usuario'];
                             
                         }
 
+                        else if($oldclave, $array['clave']){
+                            $clavecrypt = password_hash($newclave, PASSWORD_DEFAULT);
+
+                            $query ="UPDATE login SET  clave= '$clavecrypt' WHERE usuario='$usuario' ";
+                            $data = mysqli_query($conexion, $query);
+                            if($data)
+                            {
+                                header("Location: http://localhost:8080/formulario/Login/login.php");
+                            }
+                            else{
+                                header("Location: http://localhost:8080/formulario/Login/login.php");
+                            }
+                        }
+
                         else{
                             header("Location: http://localhost:8080/formulario/admin/cambiarclave.php?fallo=true");  //CAMBIAR POP UP POR "Contraseña actual no valida"
                         }
                                 
                        
                         }
+
+
+                        
 
                     }
                 else {
