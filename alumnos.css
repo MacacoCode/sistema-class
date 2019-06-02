@@ -3,10 +3,7 @@
     padding: 0;
     
  }
- .sidebar-permanent-hover{
-    background-color: rgb(41, 158, 173);
-    color: black;
- }
+
  input{
      border-radius:1em;
      height: 1.4em;
@@ -134,7 +131,7 @@
 th, td{
     padding: 20px;
     text-align: center;
-    color: #000;
+    
 }
 
 thead{
