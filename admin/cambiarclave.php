@@ -42,7 +42,7 @@ $usuario = $_SESSION['usuario'];
         <br>
         <p>Ingrese la nueva contraseña</p>
         <br>
-        <input type="password" name="clave" minlength="8" placeholder="Nueva contraseña" maxlength="10" required="required" >
+        <input type="password" name="newclave" minlength="8" placeholder="Nueva contraseña" maxlength="10" required="required" >
         <br>
         <br>
         <input type="password" name="claverep" minlength="8" placeholder="Repita la contraseña" maxlength="10" required="required">
@@ -61,18 +61,18 @@ $usuario = $_SESSION['usuario'];
     <button class="pop-up-activate">Actualizar</button>
     </div>
         <?php
-          $oldclave=$_POST['oldclave']; //contraseña antigua 
+         $oldclave=$_POST['oldclave'];//contraseña antigua 
           $newclave = $_POST['newclave'];  //nuevacontraseña
           $confirmacion = $_POST['claverep'];
         
-     
+            
                 if ($newclave == $confirmacion)
                 {
                         
                         if($_POST['submit'])
                         {
                             
-                            $newclave = $_POST['clave'];
+                       
                             $clavecrypt = password_hash($newclave, PASSWORD_DEFAULT);
 
                             $query ="UPDATE login SET  clave= '$clavecrypt' WHERE usuario='$usuario' ";
@@ -89,6 +89,12 @@ $usuario = $_SESSION['usuario'];
                 else {
                     header("Location: http://localhost:8080/formulario/admin/cambiarclave.php?fallo=true");
                 }
+            
+          
+           
+     
+
+
         
       
 
