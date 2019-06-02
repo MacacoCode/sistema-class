@@ -113,7 +113,7 @@ $idcar= $array['idcarrera'];
 							while($ensenar=mysqli_fetch_array($resulte)){
                                 echo "
                                
-                                    <option >".$ensenar['nombre']."</option>
+                                    <option >".$ensenar['iddocente']."</option> 
                                     
                                 
 							";
@@ -131,16 +131,22 @@ $idcar= $array['idcarrera'];
                     <select class='replace' name="nombre" onchange="change();" required>
                         <option ></option>
                     <?php 
-							$sql="SELECT materias.nombre from pensum, materias where idcarrera='$idcar' and pensum.idmateria=materias.idmateria;";
+							$sql="SELECT distinct materias.nombre as nombre from hora_materia, materias
+							where materias.idmateria=hora_materia.idmateria and (hora_materia.idmateria, hora_materia.idgrupo ) not in (select idmateria,idgrupo from materia_docente);";
                             $result=mysqli_query($conexion,$sql);
-                            
-                            
 
 							while($ensenar=mysqli_fetch_array($result)){
+								$nombredemateria= $ensenar['nombre'];
+							
                                 echo "
+<<<<<<< HEAD
                                
                                     <option>".$ensenar['nombre']."</option>
                                     
+=======
+								
+                                    <option >".$nombredemateria."</option>       
+>>>>>>> ec13c295fc3f99950b6ad3ecb0f831e21624d50a
                                 
 							";
 									
@@ -154,8 +160,12 @@ $idcar= $array['idcarrera'];
 
 					<p>Grupo</p>
 					<br>
+<<<<<<< HEAD
 					<select name="grupo" required>
                         <option ></option>
+=======
+
+>>>>>>> ec13c295fc3f99950b6ad3ecb0f831e21624d50a
 					<br>
 					<?php 
 							echo $_POST['change'];

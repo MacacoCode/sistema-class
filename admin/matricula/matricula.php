@@ -107,7 +107,7 @@ validaradmin($usuario,$conexion);
                     <select name="nombre" required>
                         <option ></option>
                     <?php 
-							$sql="SELECT * from materias";
+							$sql="SELECT distinct materias.nombre as nombre from hora_materia, materias where hora_materia.idmateria=materias.idmateria";
                             $result=mysqli_query($conexion,$sql);
                             
                             

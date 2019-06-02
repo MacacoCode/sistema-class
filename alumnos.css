@@ -109,19 +109,34 @@
      height: 5  00px;
   
  }
- 
- .tabla{
-     color:white;
-     border:1px solid;
-     width:500px;
- }
- td{
-     text-align: center;
-     border: 1px solid;
-     font: 18px normal normal uppercase helvetica, arial, serif;
-     width: 100%;
- }
- 
+
+ table{
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td{
+    padding: 20px;
+    text-align: center;
+}
+
+thead{
+	background-color: rgb(55, 91, 131);
+	border-bottom: solid 5px #0F362D;
+	color: white;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: rgb(55, 91, 131);
+	color: white;
+}
+
  .btcolor{
      
      width:70px;
