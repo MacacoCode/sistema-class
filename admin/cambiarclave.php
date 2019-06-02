@@ -62,15 +62,22 @@ $usuario = $_SESSION['usuario'];
     </div>
         <?php
          $oldclave=$_POST['oldclave'];//contraseña antigua 
+         $contador = 0;
+        
+         
           $newclave = $_POST['newclave'];  //nuevacontraseña
           $confirmacion = $_POST['claverep'];
-        
-            
+          
                 if ($newclave == $confirmacion)
-                {
-                        
+                {  
                         if($_POST['submit'])
                         {
+                            $q = "SELECT *from login where usuario= '$usuario'";
+                            $consulta = mysqli_query($conexion, $q);
+                            $array = mysqli_fetch_array($consulta);
+
+                            if(password_verify($oldclave, $array['clave'])){
+
                             
                        
                             $clavecrypt = password_hash($newclave, PASSWORD_DEFAULT);
@@ -84,19 +91,21 @@ $usuario = $_SESSION['usuario'];
                             else{
                                 header("Location: http://localhost:8080/formulario/Login/login.php");
                             }
+                            
                         }
-                }
+
+                        else{
+                            header("Location: http://localhost:8080/formulario/admin/cambiarclave.php?fallo=true");  //CAMBIAR POP UP POR "Contraseña actual no valida"
+                        }
+                                
+                       
+                        }
+
+                    }
                 else {
                     header("Location: http://localhost:8080/formulario/admin/cambiarclave.php?fallo=true");
                 }
             
-          
-           
-     
-
-
-        
-      
 
 
       
