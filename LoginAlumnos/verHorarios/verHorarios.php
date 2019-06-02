@@ -65,7 +65,7 @@ $clave=$_SESSION['clave'];
 							<td>
 							
 
-                            <button class='pop-up-del'>Botar Clase<p>".$mostrar['idmateria']."</p></button>
+                            <button class='pop-up-del-multi'>Botar Clase<p>".$mostrar['idmateria']."</p></button>
 							<div class='pop-up-borrar'>
 											<div>
 											<p>¿Esta seguro?</p>
