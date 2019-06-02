@@ -33,8 +33,8 @@ $facultades= "CREATE table if not exists facultades(
 $oferta= "CREATE table if not exists oferta_academica(
     idcarrera MEDIUMINT NOT NULL AUTO_INCREMENT,
     idoferta varchar(10) not null,
-    primary key (idcarrera),
     nombre varchar(45) not null, 
+    primary key (idcarrera, nombre),
     tipo enum('Pregrado', 'Posgrado'),
     idfacultad varchar(10) ,
     foreign key(idfacultad) references facultades(idfacultad)
@@ -126,8 +126,8 @@ if (mysqli_query($conn, $coord)) {
         idmateria MEDIUMINT NOT NULL AUTO_INCREMENT,
         codigo varchar (5) not null,
         prerequisito MEDIUMINT, 
-        primary key (idmateria), 
-        nombre varchar(45) not null
+        nombre varchar(45) not null,
+        primary key (idmateria, nombre) 
         )Engine= innodb;";
      
        if (mysqli_query($conn, $materias)) {

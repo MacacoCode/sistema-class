@@ -9,29 +9,49 @@ include('../../conexion.php');
 	$dia=$_POST['dia'];
 	$aula=$_POST['aula'];
 
-	if ($horaincio<$horafinal)
-	{
-		
-	//Recuperamos el idmateria
-	$recuperarID="SELECT idmateria as idmateria from materias where nombre='$nombreMateria'";
-	$consulta = mysqli_query($conexion, $recuperarID);
-	$array = mysqli_fetch_array($consulta);
-	$idmateria= $array['idmateria'];
-
-	$horario = "INSERT into hora_materia (horainicio, horfinal, idmateria, idgrupo,dia,aula) values ('$horaincio', '$horafinal' , '$idmateria' , '$grupo', '$dia','$aula')";
-
-	//verificamos la ejecucion
-	if (mysqli_query($conexion, $horario) ){
 	
-		header("Location: http://localhost:8080/formulario/Coordinador/horarioMaterias/materias.php");
-			
-	}
-	else{
-		header("Location: http://localhost:8080/formulario/Coordinador/horarioMaterias/materias.php?fallo=true");
+	
+		//Consulta para verificar si la hora y dia estan disponibles para un aula
+		$sinchoque = "SELECT count(*) as sinchoque FROM  materias, hora_materia, materias_alumnos 
+		WHERE (hora_materia.horainicio BETWEEN cast('$horaincio' AS time) and cast('$horafinal' AS time)  or
+		hora_materia.horfinal BETWEEN cast('$horaincio' AS time) and cast('$horafinal' AS time) )
+		and hora_materia.dia='$dia' 
+		and  materias.idmateria = hora_materia.idmateria and materias.idmateria= materias_alumnos.idmateria and materias_alumnos.idgrupo=hora_materia.idgrupo and hora_materia.aula='$aula';";
 		
-	}	
-	}
-	else { 
-		echo"Horas no son validas";}
+		$consultad = mysqli_query($conexion, $sinchoque);
+		$arrayd = mysqli_fetch_array($consultad);
+
+		if($arrayd['sinchoque']==0)
+		{
+			if ($horaincio<$horafinal)
+			{
+				
+			//Recuperamos el idmateria
+			$recuperarID="SELECT idmateria as idmateria from materias where nombre='$nombreMateria'";
+			$consulta = mysqli_query($conexion, $recuperarID);
+			$array = mysqli_fetch_array($consulta);
+			$idmateria= $array['idmateria'];
+		
+			$horario = "INSERT into hora_materia (horainicio, horfinal, idmateria, idgrupo,dia,aula) values ('$horaincio', '$horafinal' , '$idmateria' , '$grupo', '$dia','$aula')";
+		
+			//verificamos la ejecucion
+			if (mysqli_query($conexion, $horario) ){
+			
+				header("Location: http://localhost:8080/formulario/Coordinador/horarioMaterias/materias.php");
+					
+			}
+			else{
+				header("Location: http://localhost:8080/formulario/Coordinador/horarioMaterias/materias.php?fallo=true");
+				
+			}	
+			}
+			else { 
+				echo"Horas no son validas";}
+		}
+		else {
+			echo"El aula seleccionada ya esta ocupada en esas horas ";
+		}
+	
+	
 
 ?>
