@@ -112,7 +112,7 @@ $idcar= $array['idcarrera'];
 							while($ensenar=mysqli_fetch_array($resulte)){
                                 echo "
                                
-                                    <option >".$ensenar['nombre']."</option>
+                                    <option >".$ensenar['iddocente']."</option> 
                                     
                                 
 							";
@@ -130,16 +130,16 @@ $idcar= $array['idcarrera'];
                     <select name="nombre" required>
                         <option ></option>
                     <?php 
-							$sql="SELECT materias.nombre from pensum, materias where idcarrera='$idcar' and pensum.idmateria=materias.idmateria;";
+							$sql="SELECT distinct materias.nombre as nombre from hora_materia, materias
+							where materias.idmateria=hora_materia.idmateria and (hora_materia.idmateria, hora_materia.idgrupo ) not in (select idmateria,idgrupo from materia_docente);";
                             $result=mysqli_query($conexion,$sql);
-                            
-                            
 
 							while($ensenar=mysqli_fetch_array($result)){
+								$nombredemateria= $ensenar['nombre'];
+							
                                 echo "
-                               
-                                    <option >".$ensenar['nombre']."</option>
-                                    
+								
+                                    <option >".$nombredemateria."</option>       
                                 
 							";
 									
@@ -156,6 +156,7 @@ $idcar= $array['idcarrera'];
 					<br>
 					<input type="number" name="grupo" placeholder="No. Grupo" maxlength="8" pattern="^[0-9]*$" required>
 					<br>
+
 					<br>
 					<div class="pop-up">
 						<div >
