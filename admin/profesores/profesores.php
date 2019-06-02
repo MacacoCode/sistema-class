@@ -2,7 +2,9 @@
 
 include('../../conexion.php');
 include('../../Login/iniciar.php');
- 
+include('../../validarsesion.php');
+$usuario = $_SESSION['usuario']; 
+validaradmin($usuario,$conexion);
  ?>
 
 

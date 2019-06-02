@@ -5,6 +5,9 @@ include('../../Login/iniciar.php');
  
 $usuario = $_SESSION['usuario'];
 
+
+include('../../validarsesion.php');
+validaralumno($usuario,$conexion);
 $recuperarID="SELECT idcarrera from oferta_alumnos where idalumno='$usuario';";
 $consulta = mysqli_query($conexion, $recuperarID);
 $array = mysqli_fetch_array($consulta);

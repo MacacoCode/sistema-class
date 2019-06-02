@@ -4,7 +4,10 @@ include('../../conexion.php');
 include('../../Login/iniciar.php');
  
 $usuario = $_SESSION['usuario'];
+$usuario = $_SESSION['usuario'];
 
+include('../../validarsesion.php');
+validaralumno($usuario,$conexion);
 
  ?>
 

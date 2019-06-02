@@ -3,7 +3,9 @@
 		include('../../Login/iniciar.php');
 
 		$usuario = $_SESSION['usuario'];
-
+		
+		include('../../validarsesion.php');
+		validarcoor($usuario,$conexion);
 		//idcoordinador a idcarrera
 		$recuperarID="SELECT idcarrera from coordinadores where idcoordinador='$usuario';";
 		$consulta = mysqli_query($conexion, $recuperarID);

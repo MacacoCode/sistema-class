@@ -5,6 +5,10 @@ include('../../Login/iniciar.php');
  
 $usuario = $_SESSION['usuario'];
 $clave=$_SESSION['clave'];
+
+
+include('../../validarsesion.php');
+validarprofe($usuario,$conexion);
  ?>
 
 

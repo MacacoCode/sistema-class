@@ -3,7 +3,9 @@ include('../../conexion.php');
 	
 include('../../Login/iniciar.php');
 include('../../admin/main/validacioncontra.php');
-
+$usuario = $_SESSION['usuario'];
+include('../../validarsesion.php');
+validarcoor($usuario,$conexion);
 
 $recuperarID="SELECT nombre from coordinadores where idcoordinador='$usuario';";
 $consultad = mysqli_query($conexion, $recuperarID);

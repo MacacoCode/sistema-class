@@ -4,6 +4,11 @@ include('../../Login/iniciar.php');
 
 $usuario = $_SESSION['usuario'];
 $clave=$_SESSION['clave'];
+
+
+
+include('../../validarsesion.php');
+validaralumno($usuario,$conexion);
  ?>
 
 <!DOCTYPE html>

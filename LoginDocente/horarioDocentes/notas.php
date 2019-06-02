@@ -5,7 +5,8 @@ include('../../Login/iniciar.php');
  
 $usuario = $_SESSION['usuario'];
 $clave=$_SESSION['clave'];
-
+include('../../validarsesion.php');
+validarprofe($usuario,$conexion);
 $materia = $_GET['rn'];
 $grupo = $_GET['gr'];
 //Pasar el nombre de la materia a su id

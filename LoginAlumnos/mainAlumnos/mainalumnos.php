@@ -3,6 +3,11 @@ include('../../conexion.php');
 include('../../Login/iniciar.php');
 include('../../admin/main/validacioncontra.php');
 
+$usuario = $_SESSION['usuario'];
+
+include('../../validarsesion.php');
+validaralumno($usuario,$conexion);
+
 $recuperarID="SELECT nombre from alumnos where idalumno='$usuario';";
 $consultad = mysqli_query($conexion, $recuperarID);
 $arrayd = mysqli_fetch_array($consultad);

@@ -1,6 +1,11 @@
 <?php
 include('../../conexion.php');
 include('../../Login/iniciar.php');
+
+$usuario = $_SESSION['usuario'];
+include('../../validarsesion.php');
+validarcoor($usuario,$conexion);
+
 $idalumno =$_GET['id'];
 $nombre =$_GET['nom'];
 $apellido =$_GET['ap'];

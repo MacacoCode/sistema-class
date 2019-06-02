@@ -3,6 +3,8 @@
 		include('../../Login/iniciar.php');
 
 		$usuario = $_SESSION['usuario'];
+		include('../../validarsesion.php');
+		validarcoor($usuario,$conexion);
 	?>
 
 
