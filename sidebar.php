@@ -7,7 +7,7 @@
 				<a class="menu" href='../profesores/profesores.php' >Profesores</a>
 				<a class="menu" href='../Clases/clases.php'>Clases</a>
 				<a class="menu" href='../matricula/matricula.php'>Matricula de Alumnos</a>
-				<a class="menu" href='../reportes/reportes.php'>** Reportes **</a>
+				<a class="menu" href='../cambioclave/claveolvidada.php'>Clave olvidada</a>
 				<a id="config-footer" class="menu" href='../cambiarclave.php'> Cambiar Contraseña</a>
 				<a class="menu" href='../../Login/salir.php'>Cerrar Sesión</a>
 </div>
