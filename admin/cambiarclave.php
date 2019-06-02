@@ -106,7 +106,7 @@ $usuario = $_SESSION['usuario'];
                         }
 
                         else{
-                            header("Location: http://localhost:8080/formulario/admin/cambiarclave.php?fallo=true");  //CAMBIAR POP UP POR "Contraseña actual no valida"
+                            header("Location: http://localhost:8080/formulario/Login/login.php");  //CAMBIAR POP UP POR "Contraseña actual no valida"
                         }
                                 
                        
