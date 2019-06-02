@@ -59,3 +59,22 @@ $(".pop-up-cancel").click(function(){
 
     
 });
+function change(){
+    const url = window.location.href;  
+    const selectBox = $(".replace");
+    const father = selectBox.find('option')
+    const Valor = selectBox.prop('selectedIndex')
+    const change = father.slice(Valor,Valor+1).text();
+
+    var request = new XMLHttpRequest();
+    // POST to httpbin which returns the POST data as JSON
+    request.open('POST', url, /* async = */ false);
+
+    var formData = new FormData(change);
+    formData.append('change', change);
+    request.send(formData)
+    console.log(request.response)
+    /*fetch(url, { method: 'POST', body: formData})
+    
+     console.log(fetch(url, { method: 'POST', body: formData}));*/
+}

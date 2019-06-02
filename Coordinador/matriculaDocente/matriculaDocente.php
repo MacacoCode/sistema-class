@@ -21,7 +21,8 @@ $idcar= $array['idcarrera'];
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>	
-	
+	<script src="../../pop-up.js"></script>
+
 	<title>Matricula de Profesores</title>
 </head>
 <body>
@@ -127,7 +128,7 @@ $idcar= $array['idcarrera'];
 					<p>Clase</p>
 					
                     <br>
-                    <select name="nombre" required>
+                    <select class='replace' name="nombre" onchange="change();" required>
                         <option ></option>
                     <?php 
 							$sql="SELECT materias.nombre from pensum, materias where idcarrera='$idcar' and pensum.idmateria=materias.idmateria;";
@@ -138,7 +139,7 @@ $idcar= $array['idcarrera'];
 							while($ensenar=mysqli_fetch_array($result)){
                                 echo "
                                
-                                    <option >".$ensenar['nombre']."</option>
+                                    <option>".$ensenar['nombre']."</option>
                                     
                                 
 							";
@@ -152,11 +153,31 @@ $idcar= $array['idcarrera'];
 					<br>
 
 					<p>Grupo</p>
-					
 					<br>
-					<input type="number" name="grupo" placeholder="No. Grupo" maxlength="8" pattern="^[0-9]*$" required>
+					<select name="grupo" required>
+                        <option ></option>
 					<br>
-					<br>
+					<?php 
+							echo $_POST['change'];
+							$change = $_POST['change'];
+						
+							$sql="SELECT idgrupo FROM materias, hora_materia WHERE materias.nombre = '$change';";
+                            $result=mysqli_query($conexion,$sql);
+                            
+                            
+
+							while($ensenar=mysqli_fetch_array($result)){
+                                echo "
+                               
+                                    <option >".$ensenar['idgrupo']."</option>
+                                    
+                                
+							";
+						
+								
+						}
+						?>
+						 </select>	
 					<div class="pop-up">
 						<div >
 							<p>¿Esta seguro?</p>
