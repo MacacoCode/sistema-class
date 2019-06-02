@@ -111,14 +111,24 @@
  }
  
  .tabla{
+     
      color:white;
-     border:1px solid;
      width:500px;
  }
- td{
+ .tabla thead{
+    background-color: rgb(55, 91, 131);
+    border-bottom: solid 5px #000;
+  
+     }
+ .tabla tbody{
+    background-color: rgb(254, 254, 255);
+    color: #000;
+ }
+
+ td, th{
      text-align: center;
-     border: 1px solid;
-     font: 18px normal normal uppercase helvetica, arial, serif;
+     padding: 20px;
+     font: 16px normal normal uppercase helvetica, arial, serif;
      width: 100%;
  }
  
