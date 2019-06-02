@@ -5,7 +5,7 @@ include('../Login/iniciar.php');
 //session_start();
 error_reporting(0);
 $usuario = $_SESSION['usuario'];
-$clave=$_SESSION['clave'];
+
 
 ?>
 
@@ -29,12 +29,20 @@ $clave=$_SESSION['clave'];
     <div class="form col" >
     <form action="" method="POST" autocomplete="off"  >
 		<p>Usuario</p>
+
 		<br>
         <input type="text" name="usuario"  maxlength="8" required value="<?php echo $usuario; ?>" DISABLED >
-        
-		<p>Contraseña</p>
+
+        <br>
+        <br>
+		<p>Ingrese la contraseña antigua</p>
 		<br>
-        <input type="password" name="clave" minlength="8" placeholder="Ingrese nueva contraseña" maxlength="10" required="required" >
+        <input type="password" name="oldclave" minlength="8" placeholder="Contraseña actual" maxlength="10" required="required" >
+        <br>
+        <br>
+        <p>Ingrese la nueva contraseña</p>
+        <br>
+        <input type="password" name="clave" minlength="8" placeholder="Nueva contraseña" maxlength="10" required="required" >
         <br>
         <br>
         <input type="password" name="claverep" minlength="8" placeholder="Repita la contraseña" maxlength="10" required="required">
@@ -53,32 +61,38 @@ $clave=$_SESSION['clave'];
     <button class="pop-up-activate">Actualizar</button>
     </div>
         <?php
-          $newclave = $_POST['clave'];
-          
+          $oldclave=$_POST['oldclave']; //contraseña antigua 
+          $newclave = $_POST['newclave'];  //nuevacontraseña
           $confirmacion = $_POST['claverep'];
-        if ($newclave == $confirmacion)
-        {
-                
-                if($_POST['submit'])
+        
+     
+                if ($newclave == $confirmacion)
                 {
-                    
-                    $newclave = $_POST['clave'];
-                    $clavecrypt = password_hash($newclave, PASSWORD_DEFAULT);
+                        
+                        if($_POST['submit'])
+                        {
+                            
+                            $newclave = $_POST['clave'];
+                            $clavecrypt = password_hash($newclave, PASSWORD_DEFAULT);
 
-                    $query ="UPDATE login SET  clave= '$clavecrypt' WHERE usuario='$usuario' ";
-                    $data = mysqli_query($conexion, $query);
-                    if($data)
-                    {
-                        header("Location: http://localhost:8080/formulario/Login/login.php");
-                    }
-                    else{
-                        header("Location: http://localhost:8080/formulario/Login/login.php");
-                    }
+                            $query ="UPDATE login SET  clave= '$clavecrypt' WHERE usuario='$usuario' ";
+                            $data = mysqli_query($conexion, $query);
+                            if($data)
+                            {
+                                header("Location: http://localhost:8080/formulario/Login/login.php");
+                            }
+                            else{
+                                header("Location: http://localhost:8080/formulario/Login/login.php");
+                            }
+                        }
                 }
-        }
-        else {
-            header("Location: http://localhost:8080/formulario/admin/cambiarclave.php?fallo=true");
-        }
+                else {
+                    header("Location: http://localhost:8080/formulario/admin/cambiarclave.php?fallo=true");
+                }
+        
+      
+
+
       
         ?>
 
