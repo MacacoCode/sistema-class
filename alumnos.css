@@ -63,6 +63,7 @@
  .contenedor-tabla h2{
      color: white;
      margin-bottom: 20px;
+     
  }
  
  .fondo{
@@ -109,7 +110,7 @@
      height: 5  00px;
   
  }
-
+/*inicio de tabla*/
  table{
 	background-color: white;
 	text-align: left;
@@ -120,6 +121,7 @@
 th, td{
     padding: 20px;
     text-align: center;
+    color: #000;
 }
 
 thead{
@@ -136,7 +138,7 @@ tr:hover td{
 	background-color: rgb(55, 91, 131);
 	color: white;
 }
-
+/*Fin de tabla*/
  .btcolor{
      
      width:70px;
@@ -169,12 +171,7 @@ tr:hover td{
      
  }
 
- td{
-     padding: 5px;
- }
- td:hover{
-     color:rgb(29, 119, 129);
- }
+
 .menu{
     color:white;
      font: 16px normal normal uppercase helvetica, arial, serif;
@@ -182,7 +179,8 @@ tr:hover td{
 
 .mainh2{
     color: white;
-    margin-bottom: 10%;
+    margin-bottom: 20%;
+    text-align: center;
 }
 
  #btn-createDB{

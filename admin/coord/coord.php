@@ -140,10 +140,7 @@
 							<input class= "pop-up-cancel" type="button" value="Cancelar">
 							</div>
 						</div>
-						
-
-
-						
+					
 					</form>
 					
 					<button class="pop-up-activate">Enviar</button>
