@@ -24,7 +24,7 @@ include('../../Login/iniciar.php');
 
 		<div id="main">
 				<div class="contenedor-tabla"> 
-					<h2>Matricula de clases </h2>
+					<h2>Registro de Clases </h2>
 					<input type="text" name="search" id="search" class="form-control" placeholder="Buscar en tabla" />  
 					<br>
 					<table class="tabla" id="buscador">
@@ -59,7 +59,7 @@ include('../../Login/iniciar.php');
 										<div>
 											<p>¿Esta seguro?</p>
 											<button>
-												<a href='deleteclases.php?pn=replace&sc=$mostrar[codigo]'>Borrar</a>
+												<a class='toDelete' href='deleteclases.php?pn=replace'>Borrar</a>
 											</button>
 											<br>
 											<br>

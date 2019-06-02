@@ -65,7 +65,7 @@
 										<div>
 											<p>¿Esta seguro?</p>
 											<button>
-												<a href='deletecoord.php?rn=replace'>Confirmar</a>
+												<a class='toDelete' href='deletecoord.php?rn=replace'>Confirmar</a>
 											</button>
 											<br>
 											<br>
@@ -97,11 +97,11 @@
 					<p>Nombre</p>
 					
 					<br>
-					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="25" pattern="^[A-Za-z]*$" required oninvalid="this.setCustomValidity('Solo se aceptan letras')">
+					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="25"  required >
 					<p>Apellido</p>
 					
 					<br>
-					<input type="text" name="apellido" placeholder="Apellido" maxlength="25" pattern="^[A-Za-z]*$" required oninvalid="this.setCustomValidity('Solo se aceptan letras')"> 
+					<input type="text" name="apellido" placeholder="Apellido" maxlength="25" required > 
 						<br>
 						<br>
 						<p>Carreras Disponibles</p>
@@ -154,7 +154,7 @@
           echo "
             <div class='pop-up-error'>
                 <div>
-					<p>Ya existe un coordinador con esta identificacion</p>
+					<p>Ya existe un usuario con esta identificacion</p>
                     <input class='pop-up-cancel' type='button' value='Confirmar'>
                 </div>
             </div> ";

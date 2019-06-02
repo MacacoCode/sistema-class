@@ -6,6 +6,7 @@ $idalumno = $_GET['sc'];
 $grupo = $_GET['gr'];
 
 
+
 //Convertir nombre de la materia a su id 
 $recuperarID="SELECT idmateria as idmateria from materias where nombre='$nombreMat'";
 	$consulta = mysqli_query($conexion, $recuperarID);

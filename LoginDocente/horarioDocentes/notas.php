@@ -90,6 +90,17 @@ $recuperarID="SELECT idmateria as idmateria from materias where nombre='$materia
 							</tr>
 							</tbody>
 							";
+
+       if(isset($_GET["fallo"]) && $_GET["fallo"] == 'true')
+       {
+          echo "
+            <div class='pop-up-error'>
+                <div>
+                    <p>No Se Pudo Devolver Nota</p>
+                    <input class='pop-up-cancel' type='button' value='Confirmar'>
+                </div>
+            </div> ";
+	   }
                                 
                         ?>
                         

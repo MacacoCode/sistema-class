@@ -65,7 +65,7 @@ $clave=$_SESSION['clave'];
 							<td>
 							
 
-                            <button >Botar Clase<p>".$mostrar['idmateria']."</p></button>
+                            <button class='pop-up-del'>Botar Clase<p>".$mostrar['idmateria']."</p></button>
 							<div class='pop-up-borrar'>
 											<div>
 											<p>¿Esta seguro?</p>
@@ -82,6 +82,16 @@ $clave=$_SESSION['clave'];
 							</tr>
 							</tbody>
 							";
+							if(isset($_GET["fallo3"]) && $_GET["fallo3"] == 'true')
+								{
+									echo "
+										<div class='pop-up-error'>
+											<div>
+												<p>Hubo Un Error Al Botar La Clase</p>
+												<input class='pop-up-cancel' type='button' value='Confirmar'>
+											</div>
+										</div> ";
+								}
                                 
                         ?>
                         

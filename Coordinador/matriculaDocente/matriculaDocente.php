@@ -68,9 +68,7 @@ $idcar= $array['idcarrera'];
 							<td>
 							
 
-							<button class='pop-up-del'>
-							<a>Borrar</a>
-							</button>
+							<button class='pop-up-del-multi'>Borrar<p>".$mostrar['nombre']."</p><p>".$mostrar['iddocente']."</p><p>".$mostrar['grupo']."</p></button>
 							</td>
                         
 							</tr>
@@ -79,7 +77,7 @@ $idcar= $array['idcarrera'];
 										<div>
 											<p>¿Esta seguro?</p>
 											<button>
-												<a href='deleteDocente.php?pn=$mostrar[nombre]&sc=$mostrar[iddocente]&gr=$mostrar[grupo]'>Confirmar</a>
+												<a class='toDelete' href='deleteDocente.php?pn=replace&sc=replace2&gr=replace3'>Confirmar</a>
 											</button>
 											<br>
 											<br>

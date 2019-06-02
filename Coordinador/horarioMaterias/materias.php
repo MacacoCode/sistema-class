@@ -66,24 +66,23 @@ $idcar= $array['idcarrera'];
 								
 
 								<td>
-								----------------------------------------------------------------------------------------------------------------
 								<button >
 								<a  href='updatemate.php?rn=$mostrar[idmateria]&sn=$mostrar[nombre]&gr=$mostrar[grupo]&ini=$mostrar[inicio]&fin=$mostrar[final]&dia=$mostrar[dia]'>Editar</a>
 								</button>
 
-								<button class='pop-up-del'>Borrar</button>
+								<button class='pop-up-del-multi'>Borrar<p>".$mostrar['idmateria']."</p><p>".$mostrar['inicio']."</p><p>".$mostrar['final']."</p><p>".$mostrar['dia']."</p><p>".$mostrar['grupo']."</p></button>
 								<div class='pop-up-borrar'>
 										<div>
 											<p>¿Esta seguro?</p>
 											<button>
-												<a href='deletemate.php?id=$mostrar[idmateria]&hi=$mostrar[inicio]&hf=$mostrar[final]&dia=$mostrar[dia]&gp=$mostrar[grupo]'>Confirmar</a>
+												<a class='toDelete' href='deletemate.php?id=replace&hi=replace2&hf=replace3&dia=replace4&gp=replace5'>Confirmar</a>
 											</button>
 											<br>
 											<br>
 											<input class= 'pop-up-cancel' type='button' value='Cancelar'>
 										</div>
 									</div>
-								----------------------------------------------------------------------------------------------------------------
+
 								</td>
 								
 								</tr>

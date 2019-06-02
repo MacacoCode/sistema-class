@@ -63,23 +63,19 @@
 									<td>".$mostrar['semestre']."</td>
 								
 									<td>
-									---------------------------------------------------------------------------------------
-									<button class='pop-up-del'>
-									<a href='deleteClase.php?rn=$mostrar[idmateria]&sn=$mostrar[idcarrera]&pn=$mostrar[semestre]'>Borrar</a>
-									</button>
+									<button class='pop-up-del-multi'>Borrar<p>".$mostrar['idmateria']."</p><p>".$mostrar['idcarrera']."</p><p>".$mostrar['semestre']."</p></button>
 
 									<div class='pop-up-borrar'>
 										<div>
 											<p>¿Esta seguro?</p>
 											<button>
-												<a href='deleteClase.php?rn=$mostrar[idmateria]&sn=$mostrar[idcarrera]&pn=$mostrar[semestre]'>Confirmar</a>
+												<a class='toDelete' href='deleteClase.php?rn=replace&sn=replace2&pn=replace3'>Confirmar</a>
 											</button>
 											<br>
 											<br>
 											<input class= 'pop-up-cancel' type='button' value='Cancelar'>
 										</div>
 									</div>
-									------------------------------------------------------------------------------------------
 									</td>
 									
 									</tr>

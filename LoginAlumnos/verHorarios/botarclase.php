@@ -19,7 +19,7 @@ if($data)
 }
 else 
 {
-    echo"Error al botar materia";
+    header("Location: http://localhost:8080/formulario/LoginAlumnos/verHorarios/verHorarios.php?fallo3=true");
 
 }
 

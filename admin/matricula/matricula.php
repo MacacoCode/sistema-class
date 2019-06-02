@@ -61,20 +61,19 @@ include('../../Login/iniciar.php');
 							
 							<td>
 							
------------------------------------------------------------------------------------------------------------------------------------
-							<button class='pop-up-del'>Borrar".$mostrar['nombre'].$mostrar['idalumno'].$mostrar['grupo']."</button>
+							<button class='pop-up-del-multi'>Borrar<p>".$mostrar['idalumno']."</p><p>".$mostrar['grupo']."</p><p>".$mostrar['nombre']."</p></button>
 							<div class='pop-up-borrar'>
 										<div>
 											<p>¿Esta seguro?</p>
 											<button>
-												<a href='deletematricula.php?pn=replace&sc=replace2&gr=replace3'>Confirmar</a>
+												<a class='toDelete' href='deletematricula.php?sc=replace&gr=replace2&pn=replace3'>Confirmar</a>
 											</button>
 											<br>
 											<br>
 											<input class= 'pop-up-cancel' type='button' value='Cancelar'>
 										</div>
 									</div>
---------------------------------------------------------------------------------------------------------------------------------------
+
 							</td>
                         
 							</tr>
@@ -96,7 +95,7 @@ include('../../Login/iniciar.php');
 					<p>ID Alumno</p>
 					
 					<br>
-					<input type="text" name="idalumno" placeholder="Id Alumno" maxlength="8" pattern="^[0-9]*$" required oninvalid="this.setCustomValidity('Solo se aceptan digitos')">
+					<input type="text" name="idalumno" placeholder="Id Alumno" maxlength="8">
 					<br>	
 					<br>
 					
@@ -129,13 +128,13 @@ include('../../Login/iniciar.php');
 					<p>Grupo</p>
 					
 					<br>
-					<input type="number" name="grupo" placeholder="No. Grupo" maxlength="8" pattern="^[0-9]*$" required>
+					<input type="number" name="grupo" placeholder="No. Grupo" required>
 					<br>
 					<br>
 					<div class="pop-up">
 						<div >
 							<p>¿Esta seguro?</p>
-							<input href='insertcarrera.php' type="submit" value="Confirmar">
+							<input href='insertmatricula.php' type="submit" value="Confirmar">
 							<br>
 							<br>
 							<input class= "pop-up-cancel" type="button" value="Cancelar">

@@ -106,7 +106,7 @@ $usuario = $_SESSION['usuario'];
                         }
 
                         else{
-                            header("Location: http://localhost:8080/formulario/Login/login.php");  //CAMBIAR POP UP POR "Contraseña actual no valida"
+                            header("Location: http://localhost:8080/formulario/Login/login.php?fallo2=true");  //Contraseña actual no valida
                         }
                                 
                        
@@ -117,7 +117,7 @@ $usuario = $_SESSION['usuario'];
 
                     }
                 else {
-                    header("Location: http://localhost:8080/formulario/admin/cambiarclave.php?fallo=true");
+                    header("Location: http://localhost:8080/formulario/admin/cambiarclave.php?fallo=true"); //Contraseñas no coinciden
                 }
             
 
@@ -132,6 +132,16 @@ $usuario = $_SESSION['usuario'];
             <div class='pop-up-error'>
                 <div>
                     <p>Las Contraseñas No Coinciden</p>
+                    <button><a class='pop-up-cancel' href='cambiarclave.php'>Confirmar</a></button>
+                </div>
+            </div> ";
+       }
+       if(isset($_GET["fallo"]) && $_GET["fallo2"] == 'true')
+       {
+          echo "
+            <div class='pop-up-error'>
+                <div>
+                    <p>Constraseña Actual Invalida</p>
                     <button><a class='pop-up-cancel' href='cambiarclave.php'>Confirmar</a></button>
                 </div>
             </div> ";

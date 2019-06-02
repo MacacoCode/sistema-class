@@ -60,7 +60,7 @@ include('../../Login/iniciar.php');
 										<div>
 											<p>¿Esta seguro?</p>
 											<button>
-												<a href='deleteprofes.php?pn=replace'>Confirmar</a>
+												<a class='toDelete' href='deleteprofes.php?pn=replace'>Confirmar</a>
 											</button>
 											<br>
 											<br>
@@ -91,11 +91,11 @@ include('../../Login/iniciar.php');
 					<p>Nombre</p>
 					
 					<br>
-					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="45" pattern="^[A-Za-z]*$" required oninvalid="this.setCustomValidity('Solo se aceptan letras')">
+					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="45">
 					<p>Apellido</p>
 					
 					<br>
-					<input type="text" name="apellido" placeholder="Apellido" maxlength="45" pattern="[a-zA-Z]*$" required oninvalid="this.setCustomValidity('Solo se aceptan letras')">
+					<input type="text" name="apellido" placeholder="Apellido" maxlength="45">
 					<br>
 					<br>
 

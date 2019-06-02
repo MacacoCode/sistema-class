@@ -17,7 +17,7 @@ if(mysqli_query($conexion, $query))
     header("Location: http://localhost:8080/formulario/LoginDocente/horarioDocentes/notas.php?rn=$nombreMateria&gr=$grupo");
 }
 else{
-   echo "No se pudo actualizar";
+    header("Location: http://localhost:8080/formulario/LoginDocente/horarioDocentes/notas.php?rn=$nombreMateria&gr=$grupo&fallo=true");
 }
 
 
