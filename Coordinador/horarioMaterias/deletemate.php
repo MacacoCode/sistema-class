@@ -7,7 +7,7 @@ $horafinal = $_GET['hf'];
 $dia = $_GET['dia'];
 $grupo = $_GET['gp'];
 
-$q ="DELETE   from hora_materia where idmateria = '$idmateria' and dia='$dia' and idgrupo='$grupo' ";
+$q ="DELETE   from hora_materia where idmateria = '$idmateria'  and idgrupo='$grupo' ";
 
 
 
