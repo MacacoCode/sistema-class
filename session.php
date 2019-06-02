@@ -1,6 +1,9 @@
 <?php
-    include('../../validarsesion.php');
-    $name=$_SESSION['usuario'];
+    
+    session_start();
+    $namepag= isset($_SESSION['usuario'])?
+     $_SESSION['usuario']:'invitado';
+
 
 ?>
 
@@ -13,6 +16,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>El nombre es: <?php echo $name?></h1>    
+    <h1>El nombre es: <?php echo $namepag?></h1>    
 </body>
 </html>
