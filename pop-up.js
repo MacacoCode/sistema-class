@@ -5,6 +5,7 @@ $(".pop-up-activate").click(function(){
    
 });
 $(".pop-up-del").click(function(){
+    $(this).css("display", "none")
     const father = $(this).text()
     const replace = father.slice(6);
     
@@ -19,8 +20,11 @@ $(".pop-up-del").click(function(){
 });
 
 $(".pop-up-del-multi").click(function(){
-    
-    const father = $(".pop-up-del-multi > p")
+    $(this).css("display", "none")
+    if($(this).css('display') == 'none')
+{
+    const father = $(this).find('p')
+    console.log(father)
     const replace = father.slice(0,1).text();
     console.log(replace)
     const replace2 = father.slice(1,2).text();
@@ -40,11 +44,14 @@ $(".pop-up-del-multi").click(function(){
     });
     $("body").css("pointer-events", "none");
     $(".pop-up-borrar").css("display", "flex")
+}
+    
     
 });
 $(".pop-up-cancel").click(function(){
     $(".pop-up-activate").css("display", "inline")
     $(".pop-up-del").css("display", "inline")
+    $(".pop-up-del-multi").css("display", "inline")
     $("body").css("pointer-events", "all");
     $(".pop-up").css("display", "none")
     $(".pop-up-borrar").css("display", "none")
