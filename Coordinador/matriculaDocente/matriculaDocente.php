@@ -139,14 +139,8 @@ $idcar= $array['idcarrera'];
 								$nombredemateria= $ensenar['nombre'];
 							
                                 echo "
-<<<<<<< HEAD
-                               
-                                    <option>".$ensenar['nombre']."</option>
-                                    
-=======
 								
                                     <option >".$nombredemateria."</option>       
->>>>>>> ec13c295fc3f99950b6ad3ecb0f831e21624d50a
                                 
 							";
 									
@@ -160,19 +154,17 @@ $idcar= $array['idcarrera'];
 
 					<p>Grupo</p>
 					<br>
-<<<<<<< HEAD
-					<select name="grupo" required>
+					<input name ="grupo" type="number" value="Grupo">
+					<!---<select name="grupo" required>
                         <option ></option>
-=======
 
->>>>>>> ec13c295fc3f99950b6ad3ecb0f831e21624d50a
 					<br>
 					<?php 
-							echo $_POST['change'];
+							/*echo $_POST['change'];
 							$change = $_POST['change'];
 						
-							$sql="SELECT idgrupo FROM materias, hora_materia WHERE materias.nombre = '$change';";
-                            $result=mysqli_query($conexion,$sql);
+							$sql="SELECT idgrupo FROM materias, hora_materia WHERE materias.nombre = '$change';";*/
+                           /* $result=mysqli_query($conexion,$sql);
                             
                             
 
@@ -185,9 +177,9 @@ $idcar= $array['idcarrera'];
 							";
 						
 								
-						}
+						}*/
 						?>
-						 </select>	
+						 </select>	--->
 					<div class="pop-up">
 						<div >
 							<p>¿Esta seguro?</p>

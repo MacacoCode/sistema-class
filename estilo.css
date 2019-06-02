@@ -1,6 +1,6 @@
 body{
 	background-color:  rgb(46, 59, 73);
-	color: #fff;
+	color: rgb(0, 0, 0);
 
 }
 h3{
@@ -28,7 +28,7 @@ input[type="submit"]{
 	border-radius:20px;
 	margin-left: center;
 	border:0px;
-	background-color:rgb(41, 158, 173);
+	background-color:rgb(12, 43, 40);
 	font: 14px normal normal uppercase helvetica, arial, serif;
 }
 
@@ -64,7 +64,7 @@ td{
 	border-radius:20px;
 	margin: 2px;
 	border:0px;
-	background-color:rgb(29, 119, 129);
+	background-color:rgb(12, 43, 40);
 	font: 14px normal normal uppercase helvetica, arial, serif;
 }
 .btcolor:hover{
@@ -78,15 +78,15 @@ button {
 	border-radius:20px;
 	margin-left: center;
 	border:0px;
-	background-color: rgb(29, 119, 129);
+	background-color: rgb(12, 43, 40);
 	font: 14px normal normal uppercase helvetica, arial, serif;
 }
 a{
 	color:black;
 }
 .card-body{
-	background-color: rgb(29, 119, 129);
-	border-color:  rgb(29, 119, 129);
+	background-color: rgb(12, 43, 40);
+	border-color:  rgb(12, 43, 40);
 }
 .btn-success{
 	background-color: rgba(10, 15, 20, 0.1);

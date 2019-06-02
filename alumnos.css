@@ -3,6 +3,18 @@
     padding: 0;
     
  }
+ .sidebar-permanent-hover{
+    background-color: rgb(41, 158, 173);
+    color: black;
+ }
+ input{
+     border-radius:1em;
+     height: 1.4em;
+ }
+ select{
+    border-radius:1em;
+    height: 1.4em;
+}
  
  
  #container{
@@ -34,13 +46,13 @@
      display: flex;
      flex-direction: column;
      align-items: center;
-     padding-top: 25px;
+     padding-top: 2em;
    
  }
 
  .sidebar a {
-     padding-top: 6%;
-     height: 5%;
+     padding-top: 0.5em;
+     padding-bottom: 0.5em;
      width: 100%;
      text-align: center;
      background-color:  rgb(46, 59, 73);
@@ -101,7 +113,6 @@
      color: white;
      background: rgb(46, 59, 73);
      margin-left: 50px;
-    
      padding: 30px;
      text-align: center;
      border : 5px solid #000;
@@ -114,7 +125,9 @@
 	background-color: white;
 	text-align: left;
 	border-collapse: collapse;
-	width: 100%;
+    width: 100%;
+    border-radius: 1em;
+   
 }
 
 th, td{
@@ -123,8 +136,8 @@ th, td{
 }
 
 thead{
-	background-color: rgb(55, 91, 131);
-	border-bottom: solid 5px #0F362D;
+	background-color: rgb(12, 43, 40);
+	border-bottom: solid 5px rgb(12, 43, 40);
 	color: white;
 }
 
@@ -133,7 +146,7 @@ tr:nth-child(even){
 }
 
 tr:hover td{
-	background-color: rgb(55, 91, 131);
+    background-color:  rgb(12, 43, 40);
 	color: white;
 }
 
