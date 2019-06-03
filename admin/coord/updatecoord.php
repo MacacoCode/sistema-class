@@ -25,7 +25,7 @@ $_GET['car']; //nombre de la carrera
  
         <h1 id="h1conf">Actualizar Coordinadores</h1>
         <br>
-    <div class="form col" >
+    <div class="formcontra col" >
     <form action="" method="GET" autocomplete="off"  >
 		<p>ID</p>
 		

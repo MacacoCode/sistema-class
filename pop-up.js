@@ -79,3 +79,16 @@ function change(){
      console.log(fetch(url, { method: 'POST', body: formData}));*/
 }
 
+$("document").ready(function(){
+    const clickeado = $("a.menu")
+    const largo = clickeado.length
+    const url = window.location.href;  
+    for(var i=0; i<largo; i++){
+        if(clickeado[i] == url){
+            console.log(clickeado[i].href)
+            $(clickeado[i]).toggleClass('toggle-side')
+        }
+    }
+        
+})
+ 

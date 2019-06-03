@@ -5,13 +5,24 @@
  }
 
  input{
-     border-radius:1em;
+     border-radius:0.9em;
      height: 1.4em;
+     border: 0;
  }
+ input::-webkit-input-placeholder { /*Chrome*/
+    padding-left: 5px;
+ }
+ input:-moz-placeholder { /* older Firefox*/
+    padding-left: 5px;
+   }
+ input::-moz-placeholder { /* Firefox 19+ */ 
+    padding-left: 5px;
+   } 
  select{
     border-radius:1em;
     height: 1.4em;
-}
+    border: 0;
+ }
  
  
  #container{
@@ -37,26 +48,25 @@
      min-width: 150px;
      width: 10%;
      height: 100vh;
-     background: rgb(46, 59, 73);
+     background: rgb(30, 38, 46);
      list-style: none;
      color: white;
      display: flex;
      flex-direction: column;
      align-items: center;
      padding-top: 2em;
-   
  }
 
  .sidebar a {
-     padding-top: 0.5em;
-     padding-bottom: 0.5em;
+     padding-top: 0.7em;
+     padding-bottom: 0.7em;
      width: 100%;
      text-align: center;
-     background-color:  rgb(46, 59, 73);
+     background-color:  rgb(30, 38, 46);
      text-decoration: none !important;
  }
  .sidebar a:hover{
-    background-color: rgb(41, 158, 173);
+    background-color: rgb(29, 119, 129);
     color: black;
  }
 
@@ -109,13 +119,14 @@
  
  .form{
      color: white;
-     background: rgb(46, 59, 73);
+     background: rgb(30, 38, 46);
      margin-left: 50px;
-     padding: 30px;
+     padding: 2em;
      text-align: center;
-     border : 5px solid #000;
+     border : 0.15em solid rgba(255, 255, 255, 0.685);
      width:250px;
-     height: 5  00px;
+     border-radius: 1.2em;
+     height: 75vh;
   
  }
 /*inicio de tabla*/
@@ -125,12 +136,19 @@
 	border-collapse: collapse;
     width: 100%;
     border-radius: 1em;
-   
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
 }
 
-th, td{
-    padding: 20px;
+th{
+    padding: 1.3em;
     text-align: center;
+    
+}
+td{
+    padding: 1.3em;
+    text-align: center;
+    border: solid black 1px;
     
 }
 
@@ -144,9 +162,10 @@ tr:nth-child(even){
 	background-color: #ddd;
 }
 
+
 tr:hover td{
-    background-color:  rgb(12, 43, 40);
-	color: white;
+    background-color:  rgba(12, 43, 40, 0.747);
+    color: white;
 }
 /*Fin de tabla*/
  .btcolor{
@@ -186,6 +205,10 @@ tr:hover td{
     color:white;
      font: 16px normal normal uppercase helvetica, arial, serif;
 }
+.toggle-side{
+    color: black;
+    background-color: rgb(29, 119, 129) !important;
+}
 
 .mainh2{
     color: white;
@@ -216,3 +239,42 @@ tr:hover td{
   #config-footer{
       margin-top: auto;
   }
+
+
+
+
+
+
+
+
+
+
+
+.n-bordered{
+    border: 1px solid black;
+    border-collapse: collapse;	
+}
+
+.tabla{
+    border: none;
+}
+
+.tabla td{
+    border: 1px solid black;
+}
+
+.tabla tr:first-child td{
+    border-top: none;
+}
+
+.tabla tr:last-child td{
+    border-bottom: none;
+}
+
+.tabla tr td:first-child{
+    border-left: none;
+}
+
+.tabla tr td:last-child{
+    border-right: none;
+}

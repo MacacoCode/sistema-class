@@ -19,11 +19,11 @@ include('../../Login/iniciar.php');
 	//verificamos la ejecucion
 
             if(mysqli_query($conexion, $sql) ){
-                header("Location: http://localhost:8080/formulario/admin/cambioclave/claveolvidada.php?fallo=true"); //que regrese un pop up que diga que se cambio la clave
+                header("Location: http://localhost:8080/formulario/admin/cambioclave/claveolvidada.php?success=true"); //que regrese un pop up que diga que se cambio la clave
             }
     }
     else {
-        echo"Usuario no fue encontrado";
+        header("Location: http://localhost:8080/formulario/admin/cambioclave/claveolvidada.php?fallo=true");
     }
 	
 

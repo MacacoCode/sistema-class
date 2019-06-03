@@ -142,7 +142,7 @@
 						</div>
 					
 					</form>
-					
+					<br>
 					<button class="pop-up-activate">Enviar</button>
 				</div>
 			
@@ -171,12 +171,6 @@
             </div> ";
        }
      ?>
-		<style>
-			.form {
-				width:250px;
-				height: 500px;
-			}
-		</style>
 	
 
 		</body>

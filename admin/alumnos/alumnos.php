@@ -105,7 +105,7 @@
 					
 					<br>
 					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="25"  required>
-					
+					<br>
 					<br>
 					<input type="text" name="apellido" placeholder="Apellido" maxlength="25" required>
 						<br>
@@ -148,7 +148,7 @@
 
 						
 					</form>
-					
+					<br>
 					<button class="pop-up-activate">Enviar</button>
 				</div>
 			
@@ -177,12 +177,6 @@
             </div> ";
 	   }
      ?>
-		<style>
-			.form {
-				width:250px;
-				height: 500px;
-			}
-		</style>
 	
 
 		</body>

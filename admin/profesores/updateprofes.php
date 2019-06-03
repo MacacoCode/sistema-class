@@ -23,7 +23,7 @@ $_GET['cl'];
     </div>
         <h1 id="h1conf">Actualizar Tabla Docentes</h1>
         <br>
-    <div class="form col" >
+    <div class="formcontra col" >
     <form action="" method="GET" autocomplete="off"  >
 		<p>ID Docente</p>
 	
