@@ -6,9 +6,8 @@ error_reporting(0);
 $_GET['rn']; //idalumno
 $_GET['sn']; //nombre
 $_GET['cl']; //apellido
-$_GET['car']; //nombre de la carrera
 
-
+$nombrecarrera = $_GET['nom'];
 ?>
 
 <html>
@@ -45,6 +44,27 @@ $_GET['car']; //nombre de la carrera
 		<input type="text" name="apellido" placeholder="Apellido" maxlength="45" required value="<?php echo $_GET['cl']; ?>">
 		<br>
         <br>
+        <p>Seleccione una carrera</p>
+						<select name="carrera" required flex>
+                        <option><?php echo $nombrecarrera ?>
+						</option>
+							<?php 
+									$sql="SELECT * from oferta_academica";
+									$result=mysqli_query($conexion,$sql);
+								
+									
+									while($ensenar=mysqli_fetch_array($result)){
+										echo "
+                                        
+											<option>".$ensenar['nombre']."</option>
+										
+									"
+											
+									?>
+									<?php 
+								}
+								?>	
+							</select>
         <div class="pop-up">
 			<div >
 				<p>¿Esta seguro?</p>
@@ -63,12 +83,19 @@ $_GET['car']; //nombre de la carrera
             $idalumno = $_GET['idalumno'];
             $nombre = $_GET['nombre'];
             $apellido = $_GET['apellido'];
+            $carrera = $_GET['carrera']; //nombre de la carrera
+
+            //Pasar el nombre de la carrera a su id
+            $recuperarID="SELECT idcarrera as idcarrera from oferta_academica where nombre='$carrera'";
+            $consulta = mysqli_query($conexion, $recuperarID);
+            $array = mysqli_fetch_array($consulta);
+            $idcarrera= $array['idcarrera'];
            
             $query ="UPDATE alumnos SET  nombre= '$nombre', apellido='$apellido' WHERE idalumno='$idalumno' or nombre='$nombre' or apellido='$apellido' ";
-           
+            $sql ="UPDATE oferta_alumnos SET  idcarrera= '$idcarrera' WHERE idalumno='$idalumno' ";
 
             //$data = mysqli_query($conexion, $sqk) && mysqli_query($conexion, $query);
-            if(mysqli_query($conexion, $query))
+            if(mysqli_query($conexion, $query) && mysqli_query($conexion, $sql) )
             {
                 header("Location: http://localhost:8080/formulario/admin/alumnos/alumnos.php");
             }
@@ -78,6 +105,9 @@ $_GET['car']; //nombre de la carrera
         }
       
         ?>
+
+
+
         	<?php
        if(isset($_GET["fallo"]) && $_GET["fallo"] == 'true')
        {

@@ -46,7 +46,7 @@
 									</tr>
 								</thead>
 								<?php 
-								$sql="SELECT alumnos.idalumno as idalumno, alumnos.nombre as nombre, alumnos.apellido as apellido, oferta_academica.nombre as carrera
+								$sql="SELECT alumnos.idalumno as idalumno, alumnos.nombre as nombre, alumnos.apellido as apellido, oferta_academica.nombre as carrera, oferta_academica.idcarrera as idcarrera
 								from alumnos, oferta_alumnos, oferta_academica 
 								where alumnos.idalumno=oferta_alumnos.idalumno and oferta_alumnos.idcarrera=oferta_academica.idcarrera;";
 								$result=mysqli_query($conexion,$sql);
@@ -63,7 +63,7 @@
 									<td>
 				
 									<button >
-									<a  href='update.php?rn=$mostrar[idalumno]&sn=$mostrar[nombre]&cl=$mostrar[apellido]&car=$mostrar[carrera]'>Editar</a>
+									<a  href='update.php?rn=$mostrar[idalumno]&sn=$mostrar[nombre]&cl=$mostrar[apellido]&car=$mostrar[idcarrera]&nom=$mostrar[carrera]'>Editar</a>
 									</button>
 
 									<button class='pop-up-del' >Borrar<p>".$mostrar['idalumno']."</p></button>
@@ -113,8 +113,7 @@
 						<br>
 						<p>Seleccione una carrera</p>
 						<select name="carrera" required flex>
-                        <option >
-						</option>
+                        <option value=""> </option>
 							<?php 
 									$sql="SELECT * from oferta_academica";
 									$result=mysqli_query($conexion,$sql);
@@ -122,7 +121,7 @@
 									
 									while($ensenar=mysqli_fetch_array($result)){
 										echo "
-									
+
 											<option >".$ensenar['nombre']."</option>
 										
 									"
