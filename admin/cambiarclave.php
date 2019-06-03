@@ -78,7 +78,7 @@ $usuario = $_SESSION['usuario'];
                             $array = mysqli_fetch_array($consulta);
 
                             if(password_verify($oldclave, $array['clave'])){
-                            $clavecrypt = password_hash($newclave, PASSWORD_DEFAULT);
+                            $clavecrypt = password_hash($newclave, PASSWORD_DEFAULT, ['cost'=>6]);
 
                             $query ="UPDATE login SET  clave= '$clavecrypt' WHERE usuario='$usuario' ";
                             $data = mysqli_query($conexion, $query);
