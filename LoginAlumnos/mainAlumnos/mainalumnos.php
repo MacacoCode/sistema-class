@@ -28,16 +28,17 @@ $nombre= $arrayd['nombre'];
 	<body background-color: #fff>
 	<div id="container">
 	<?php include ('../sidebarAlu.php')?>
-			<div id="main">
+	<div id="main">
 			<div id="main-repair">
 					<div class="row">
 						<div class ="col"> 
-							<h2 class="mainh2">Bienvenido/a, <?php echo $nombre; ?></h2>
+							<h2 class="mainh2">Bienvenido/a <?php echo $nombre;?></h2>
+							
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
-							
+						
 						</div>
 					</div>
 				</div>
