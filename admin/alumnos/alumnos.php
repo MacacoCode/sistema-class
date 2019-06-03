@@ -34,6 +34,7 @@
 						<h2>Tabla Alumnos</h2>
 						<input type="text" name="search" id="search" class="form-control" placeholder="Buscar en tabla" />  
 						<br>
+						<div class ='tableFixHead scroll' >
 							<table class="tabla" id="buscador">
 								<thead>
 									<tr>
@@ -84,13 +85,13 @@
 									</td>
 									
 									</tr>
-									</tbody>
-	";
+									</tbody>";
 										
 								
 							}
 							?>	
 						</table>
+						</div>
 					
 					</div>
 				

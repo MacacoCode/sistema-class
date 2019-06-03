@@ -152,7 +152,7 @@ td{
     
 }
 
-thead{
+thead tr td{
 	background-color: rgb(12, 43, 40);
 	border-bottom: solid 5px rgb(12, 43, 40);
 	color: white;
@@ -163,7 +163,7 @@ tr:nth-child(even){
 }
 
 
-tr:hover td{
+tbody tr:hover td{
     background-color:  rgba(12, 43, 40, 0.747);
     color: white;
 }
@@ -250,13 +250,10 @@ tr:hover td{
 
 
 
-.n-bordered{
-    border: 1px solid black;
-    border-collapse: collapse;	
-}
 
 .tabla{
     border: none;
+    
 }
 
 .tabla td{
@@ -277,4 +274,33 @@ tr:hover td{
 
 .tabla tr td:last-child{
     border-right: none;
+}
+
+
+
+.tableFixHead { 
+    overflow-y: auto; 
+    height: 71.5vh; 
+}
+.tableFixHead thead tr td{ 
+    position: sticky;
+    top: 0; 
+    z-index: 950;
+}
+.scroll::-webkit-scrollbar {
+    width: 10px;
+ 
+  }
+   
+  .scroll::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 20px;
+  }
+  
+  .scroll::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 20px;
+  }
+menu {
+    z-index: 900;
 }

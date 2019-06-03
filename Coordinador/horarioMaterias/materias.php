@@ -34,6 +34,7 @@ $idcar= $array['idcarrera'];
 					<h2>Tabla Clases</h2>
 					<input type="text" name="search" id="search" class="form-control" placeholder="Buscar en tabla" />  
 					<br>
+					<div class ='tableFixHead scroll' >
 						<table class="tabla" id="buscador">
 								<thead>
 								<tr>
@@ -97,7 +98,8 @@ $idcar= $array['idcarrera'];
 						<?php 
 						}
 						?>	
-                    </table>
+					</table>
+					</div>
 				
 				</div>
 			
