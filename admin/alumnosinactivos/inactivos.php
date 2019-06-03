@@ -65,6 +65,9 @@
 									<button >
 									<a href='informacion.php?id=$mostrar[id]&nom=$mostrar[nombre]&ap=$mostrar[apellido]'>Info</a>
 									</button>
+									<button >
+									<a href='rematricular.php?id=$mostrar[id]&nom=$mostrar[nombre]&ap=$mostrar[apellido]'>Rematricular</a>
+									</button>
 									</td>
 									
 									</tr>
@@ -80,14 +83,7 @@
 						</div>
 					
 					</div>
-				
-				
-						
-
-
-						
-					
-                
+			
 			
 		</div>
 		
@@ -98,7 +94,7 @@
           echo "
             <div class='pop-up-error'>
                 <div>
-					<p>Hubo Un Error Al Registrar</p>
+					<p>Se rematriculo el alumno exitosamente</p>
                     <input class='pop-up-cancel' type='button' value='Confirmar'>
                 </div>
             </div> ";

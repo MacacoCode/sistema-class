@@ -451,6 +451,56 @@ if (mysqli_query($conn, $coord)) {
        }
 
 
+       //Rematricula de alumnos
+
+        $rematricula= "
+          
+        CREATE trigger rematricula_alumnos before delete on alumnosinactivos
+        for each row
+        begin
+        insert into alumnos (idalumno, nombre, apellido) values (old.idalumno, old.nombre, old.apellido);
+        delete from carrera_inactivos where idalumno = old.idalumno;
+        delete from notasAlumnosInactivos where idalumno = old.idalumno; 
+
+        
+        END;
+        ";
+     
+       if (mysqli_query($conn, $rematricula)) {
+       } else {
+           echo "Error al crear la tabla: " . mysqli_error($conn);
+       }  
+ 
+         //trigger cuando se rematriculan alumnos
+         $rematriculacarrera_alumnos= "
+           
+         CREATE trigger rematriculaalumnos_carrera before delete on carrera_inactivos
+         for each row
+         begin
+         insert into oferta_alumnos (idalumno, idcarrera) values (old.idalumno, old.idcarrera);
+         END;
+         ";
+      
+        if (mysqli_query($conn, $rematriculacarrera_alumnos)) {
+        } else {
+            echo "Error al crear la tabla: " . mysqli_error($conn);
+        }
+ 
+         //trigger cuando se borran alumnos de su carrera 
+         $remanotas_alumnosinactivos= "
+           
+         CREATE trigger remanotas_alumnosInactivos before delete on notasAlumnosInactivos
+         for each row
+         begin
+         insert into notas (idalumno, idmateria, nota) values (old.idalumno, old.idmateria, old.notas);
+         END;
+         ";
+      
+        if (mysqli_query($conn, $remanotas_alumnosinactivos)) {
+        } else {
+            echo "Error al crear la tabla: " . mysqli_error($conn);
+        }
+ 
 
 
 
