@@ -65,7 +65,7 @@
 									<button >
 									<a href='informacion.php?id=$mostrar[id]&nom=$mostrar[nombre]&ap=$mostrar[apellido]'>Info</a>
 									</button>
-									<button >
+									<button class='pop-up-del'>
 									<a href='rematricular.php?id=$mostrar[id]&nom=$mostrar[nombre]&ap=$mostrar[apellido]'>Rematricular</a>
 									</button>
 									</td>

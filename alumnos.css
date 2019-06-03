@@ -182,7 +182,7 @@ tbody tr:hover td{
      background-color: #ffff
  }
  
- button {
+ button { /*BOTON DE EDITAR*/
      position:relative;
      width:100px;
      height:40px;
@@ -194,6 +194,31 @@ tbody tr:hover td{
      font: 14px normal normal uppercase helvetica, arial, serif;
      padding:2px;
  }
+ .pop-up-del{ /*Boton de borrar*/
+    position:relative;
+     width:100px;
+     height:40px;
+     border-radius:20px;
+     margin-top:5px;
+     margin-bottom:5px;
+     border:0px;
+     background-color: rgb(177, 56, 56);
+     font: 14px normal normal uppercase helvetica, arial, serif;
+     padding:2px;
+ }
+ .pop-up-del-multi{ /*Boton de borrar*/
+    position:relative;
+     width:100px;
+     height:40px;
+     border-radius:20px;
+     margin-top:5px;
+     margin-bottom:5px;
+     border:0px;
+     background-color: rgb(177, 56, 56);
+     font: 14px normal normal uppercase helvetica, arial, serif;
+     padding:2px;
+ }
+
  a{
      color:black;
      font: 14px normal normal uppercase helvetica, arial, serif;

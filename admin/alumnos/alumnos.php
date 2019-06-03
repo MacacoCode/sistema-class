@@ -62,7 +62,7 @@
 
 									<td>
 				
-									<button >
+									<button  >
 									<a  href='update.php?rn=$mostrar[idalumno]&sn=$mostrar[nombre]&cl=$mostrar[apellido]&car=$mostrar[idcarrera]&nom=$mostrar[carrera]'>Editar</a>
 									</button>
 
@@ -72,7 +72,7 @@
 											<div class='pop-up-borrar'>
 											<div>
 											<p>¿Esta seguro?</p>
-											<button>
+											<button >
 											   <a class='toDelete' href='delete.php?rn=replace'>Confirmar</a>
 											   </button>
 											   <br>
