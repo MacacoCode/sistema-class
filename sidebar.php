@@ -10,6 +10,7 @@
 				<a class="menu" href='../Clases/clases.php'>Clases</a>
 				<a class="menu" href='../matricula/matricula.php'>Matricula de Alumnos</a>
 				<a class="menu" href='../cambioclave/claveolvidada.php'>Cambiar Contraseña Olvidada</a>
+				<a class="menu" href='../alumnosinactivos/inactivos.php'>Alumnos Inactivos</a>
 				<a id="config-footer" class="menu" href='../cambiarclave.php'> Cambiar Contraseña</a>
 				<a class="menu" href='../../Login/salir.php'>Cerrar Sesión</a>
 </div>

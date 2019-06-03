@@ -91,7 +91,7 @@ validaradmin($usuario,$conexion);
 					<p>ID Docente</p>
 					
 					<br>
-					<input type="text" name="iddocente" placeholder="ID" maxlength="14" pattern="^([0-9]{13})([A-Z]{1})$" required oninvalid="this.setCustomValidity('Se requieren 13 digitos y 1 letra mayuscula')">
+					<input type="text" name="iddocente" placeholder="ID" maxlength="14" minlength="14" maxlength="14">
 					<p>Nombre</p>
 					
 					<br>
