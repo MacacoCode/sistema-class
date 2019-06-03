@@ -38,15 +38,15 @@ $usuario = $_SESSION['usuario'];
         <br>
 		<p>Ingrese la contraseña antigua</p>
 		<br>
-        <input type="password" name="oldclave" minlength="8" placeholder="Contraseña actual" maxlength="10" required="required" >
+        <input type="password" name="oldclave" minlength="8" placeholder="Contraseña actual" maxlength="12" required="required" >
         <br>
         <br>
         <p>Ingrese la nueva contraseña</p>
         <br>
-        <input type="password" name="newclave" minlength="8" placeholder="Nueva contraseña" maxlength="10" required="required" >
+        <input type="password" name="newclave" minlength="8" placeholder="Nueva contraseña" minlength="8" maxlength="12" required="required" >
         <br>
         <br>
-        <input type="password" name="claverep" minlength="8" placeholder="Repita la contraseña" maxlength="10" required="required">
+        <input type="password" name="claverep" minlength="8" placeholder="Repita la contraseña" minlength="8" maxlength="12" required="required">
         <br>
 		<br>
 		<div class="pop-up">

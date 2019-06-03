@@ -108,6 +108,10 @@ a{
 	border: 0;
 }
 
+.btn-block:hover{
+	background-color: rgb(29, 119, 129);
+	border: 0;
+}
 	
 .idnone{
 	display: none;
