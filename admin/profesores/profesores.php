@@ -91,15 +91,15 @@ validaradmin($usuario,$conexion);
 					<p>ID Docente</p>
 					
 					<br>
-					<input type="text" name="iddocente" placeholder="ID" maxlength="14" minlength="14" maxlength="14">
+					<input type="text" name="iddocente" placeholder="ID" maxlength="14" minlength="14" >
 					<p>Nombre</p>
 					
 					<br>
-					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="45">
+					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="45" pattern="[A-Za-z]+">
 					<p>Apellido</p>
 					
 					<br>
-					<input type="text" name="apellido" placeholder="Apellido" maxlength="45">
+					<input type="text" name="apellido" placeholder="Apellido" maxlength="45" pattern="[A-Za-z]+">
 					<br>
 					<br>
 

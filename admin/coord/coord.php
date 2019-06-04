@@ -99,15 +99,15 @@
 					<p>ID</p>
 					
 					<br>
-					<input type="text" name="id" placeholder="ID" maxlength="8" pattern="^[0-9]*$" required oninvalid="this.setCustomValidity('Solo se aceptan numeros')">
+					<input type="text" name="id" placeholder="ID" minlength="12" maxlength="14" pattern="^[0-9]*$" required oninvalid="this.setCustomValidity('Solo se aceptan numeros')">
 					<p>Nombre</p>
 					
 					<br>
-					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="25"  required >
+					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="25"  pattern="[A-Za-z]+"required >
 					<p>Apellido</p>
 					
 					<br>
-					<input type="text" name="apellido" placeholder="Apellido" maxlength="25" required > 
+					<input type="text" name="apellido" placeholder="Apellido" maxlength="25" pattern="[A-Za-z]+" required > 
 						<br>
 						<br>
 						<p>Carreras Disponibles</p>
