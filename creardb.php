@@ -68,8 +68,13 @@ if (mysqli_query($conn, $coord)) {
     $alumnos= "CREATE table if not exists alumnos(
         idalumno varchar(10) not null,
         primary key (idalumno), 
-        nombre varchar (45) not null, 
-        apellido varchar(45)
+        nombre varchar (45) not null,
+        segundoNombre varchar (45), 
+        apellido varchar(45) not null,
+        segundoApellido varchar (45) not null,
+        sexo enum('Masculino','Femenino','Indefinido') not null,
+        correo varchar (45) not null,
+        telefono varchar(11) not null
         )Engine= innodb;";
      
     if (mysqli_query($conn, $alumnos)) {
@@ -249,7 +254,12 @@ if (mysqli_query($conn, $coord)) {
         idalumno varchar(8) not null, 
         primary key (idalumno),
         nombre varchar (45) not null,
-        apellido varchar(45) not null
+        apellido varchar(45) not null,
+        segundoNombre varchar (45), 
+        segundoApellido varchar (45) not null,
+        sexo enum('Masculino','Femenino','Indefinido') not null,
+        correo varchar (45) not null,
+        telefono varchar(11) not null
         )Engine= innodb;";      
      
        if (mysqli_query($conn, $alumnosInactivos)) {
@@ -411,7 +421,7 @@ if (mysqli_query($conn, $coord)) {
        delete from oferta_alumnos where idalumno = old.idalumno; 
        delete from notas where idalumno =old.idalumno;
        delete from login where usuario = old.idalumno;
-       insert into alumnosInactivos (idalumno, nombre, apellido) values (old.idalumno, old.nombre, old.apellido);
+       insert into alumnosInactivos (idalumno, nombre, apellido, segundoNombre, segundoApellido, telefono, correo, sexo) values (old.idalumno, old.nombre, old.apellido, old.segundoNombre, old.segundoApellido, old.telefono, old.correo, old.sexo);
        END;
        ";
     
@@ -458,7 +468,7 @@ if (mysqli_query($conn, $coord)) {
         CREATE trigger rematricula_alumnos before delete on alumnosInactivos
         for each row
         begin
-        insert into alumnos (idalumno, nombre, apellido) values (old.idalumno, old.nombre, old.apellido);
+        insert into alumnos (idalumno, nombre, apellido, segundoNombre, segundoApellido, telefono, correo, sexo) values (old.idalumno, old.nombre, old.apellido, old.segundoNombre, old.segundoApellido, old.telefono, old.correo, old.sexo);
         delete from carrera_inactivos where idalumno = old.idalumno;
         delete from notasAlumnosInactivos where idalumno = old.idalumno; 
 

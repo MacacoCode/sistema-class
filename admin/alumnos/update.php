@@ -5,9 +5,13 @@ error_reporting(0);
 
 $_GET['rn']; //idalumno
 $_GET['sn']; //nombre
+$_GET['ndos']; //segundo nombre
+$_GET['ados']; //segundo apellido
+$_GET['sexo']; //sexo
+$_GET['telefono']; //telefono
+$_GET['correo']; //correo
 $_GET['cl']; //apellido
-
-$nombrecarrera = $_GET['nom'];
+$nombrecarrera = $_GET['nom'];//nombre de la carrera
 ?>
 
 <html>
@@ -28,23 +32,34 @@ $nombrecarrera = $_GET['nom'];
     <form action="" method="GET" autocomplete="off"  >
 		<p>ID</p>
 	
-    
-      
         <br>
         <input class="idnone" type="text" name="idalumno" placeholder="CIF" maxlength="8" required value="<?php echo $_GET['rn']; ?>">
         <p><?php echo $_GET['rn']; ?></p>
         <br>
         
-		<p>Nombre</p>
-		<br>
+		<p>Nombres</p>
+		
         <input type="text" name="nombre" placeholder="Primer nombre" maxlength="45" required value="<?php echo $_GET['sn']; ?>">
-        
-		<p>Apellido</p>
-		<br>
+        <br><br>
+        <input type="text" name="segundoNombre" placeholder="Segundo nombre" maxlength="25" pattern="[A-Za-z]+" required required value="<?php echo $_GET['ndos']; ?>">
+        <br><br>
+
+		<p>Apellidos</p>
 		<input type="text" name="apellido" placeholder="Apellido" maxlength="45" required value="<?php echo $_GET['cl']; ?>">
-		<br>
-        <br>
-        <p>Seleccione una carrera</p>
+		<br><br>
+        <input type="text" name="segundoapellido" placeholder="Apellido" maxlength="45" required value="<?php echo $_GET['ados']; ?>">
+        <br><br>
+
+        <p>Telefono</p>
+		<input type="text" name="telefono"  maxlength="11" pattern="[0-9]{11}" required value="<?php echo $_GET['telefono']; ?>">
+		<br><br>
+
+        <p>Correo</p>
+		<input type="email" name="correo"  maxlength="45" required value="<?php echo $_GET['correo']; ?>">
+		<br><br>
+        
+
+        <p>Carrera</p>
 						<select name="carrera" required flex>
                         <option><?php echo $nombrecarrera ?>
 						</option>
@@ -82,7 +97,11 @@ $nombrecarrera = $_GET['nom'];
         {
             $idalumno = $_GET['idalumno'];
             $nombre = $_GET['nombre'];
+            $segundonombre = $_GET['segundoNombre'];
             $apellido = $_GET['apellido'];
+            $segundoapellido = $_GET['segundoapellido'];
+            $telefono = $_GET['telefono'];
+            $correo = $_GET['correo'];
             $carrera = $_GET['carrera']; //nombre de la carrera
 
             //Pasar el nombre de la carrera a su id
@@ -91,7 +110,7 @@ $nombrecarrera = $_GET['nom'];
             $array = mysqli_fetch_array($consulta);
             $idcarrera= $array['idcarrera'];
            
-            $query ="UPDATE alumnos SET  nombre= '$nombre', apellido='$apellido' WHERE idalumno='$idalumno' or nombre='$nombre' or apellido='$apellido' ";
+            $query ="UPDATE alumnos SET  nombre= '$nombre', apellido='$apellido', segundoNombre='$segundonombre', segundoApellido='$segundoapellido', correo='$correo', telefono='$telefono' WHERE idalumno='$idalumno' or nombre='$nombre' or apellido='$apellido' ";
             $sql ="UPDATE oferta_alumnos SET  idcarrera= '$idcarrera' WHERE idalumno='$idalumno' ";
 
             //$data = mysqli_query($conexion, $sqk) && mysqli_query($conexion, $query);

@@ -23,6 +23,7 @@
     border-radius:1em;
     height: 1.4em;
     border: 0;
+    font-size:1rem;
  }
  
  
@@ -219,6 +220,22 @@ tbody tr:hover td{
      font: 14px normal normal uppercase helvetica, arial, serif;
      padding:2px;
  }
+
+.registraralumno
+{
+    position:relative;
+     width:125px;
+     height:50px;
+     border-radius:40px;
+     margin-top:5px;
+     margin-bottom:5px;
+     border:0px;
+     background-color: rgb(29, 119, 129);
+     color: #fff;
+     font: 14px normal normal uppercase helvetica, arial, serif;
+     padding:2px;
+}
+
 
  a{
      color:black;

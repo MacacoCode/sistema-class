@@ -5,7 +5,12 @@ include('../../Login/iniciar.php');
 	//recuperar las variables
 	$cif=$_POST['cif'];
 	$nombre=$_POST['nombre'];
+	$segundonombre=$_POST['segundoNombre'];
 	$apellido=$_POST['apellido'];
+	$segundoapellido=$_POST['segundoApellido'];
+	$sexo=$_POST['sexo'];
+	$correo=$_POST['correo'];
+	$celular=$_POST['celular'];
 	$carrera=$_POST['carrera'];
 
 
@@ -24,7 +29,8 @@ include('../../Login/iniciar.php');
 			$idcarrera= $array['idcarrera'];
 
 			//hacemos la sentencia de sql para insertar al alumno
-			$sql="INSERT into alumnos VALUES('$cif','$nombre','$apellido')";
+			$sql="INSERT into alumnos(idalumno, nombre, segundoNombre,apellido,segundoApellido,sexo,correo,telefono) 
+			VALUES('$cif','$nombre','$segundonombre','$apellido','$segundoapellido','$sexo','$correo','$celular')";
 			$sqk="INSERT into oferta_alumnos VALUES ('$idcarrera','$cif')";
 			//verificamos la ejecucion
 

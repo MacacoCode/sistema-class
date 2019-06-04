@@ -38,16 +38,21 @@
 							<table class="tabla" id="buscador">
 								<thead>
 									<tr>
-										<td>Id Alumno</td>
+										<td >CIF</td>
 										<td>Nombre</td>
+										<td>Segundo Nombre</td>
 										<td>Apellido</td>
-                                        <td>Carrera</td>
+										<td>Segundo Apellido</td>
+										<td>Sexo</td>
+										<td>Telefono</td>
+										<td>Correo</td>
+										<td>Carrera</td>
 										<td>Acciones</td>
 
 									</tr>
 								</thead>
 								<?php 
-								$sql="SELECT alumnosinactivos.idalumno as id, alumnosinactivos.nombre as nombre, alumnosinactivos.apellido as apellido, oferta_academica.nombre as carrera
+								$sql="SELECT alumnosinactivos.idalumno as id, alumnosinactivos.nombre as nombre, alumnosinactivos.segundoNombre as segundonombre, alumnosinactivos.apellido as apellido,alumnosinactivos.segundoApellido as segundoapellido, alumnosinactivos.telefono as telefono, alumnosinactivos.sexo as sexo, alumnosinactivos.correo as correo, oferta_academica.nombre as carrera
                                 from alumnosinactivos, carrera_inactivos, oferta_academica 
                                 where alumnosinactivos.idalumno = carrera_inactivos.idalumno and carrera_inactivos.idcarrera=oferta_academica.idcarrera";
 								$result=mysqli_query($conexion,$sql);
@@ -58,7 +63,12 @@
 									<tr>
 									<td>".$mostrar['id']."</td>
 									<td>".$mostrar['nombre']."</td>
-                                    <td>".$mostrar['apellido']."</td>
+									<td>".$mostrar['segundonombre']."</td>
+									<td>".$mostrar['apellido']."</td>
+									<td>".$mostrar['segundoapellido']."</td>
+									<td>".$mostrar['sexo']."</td>
+									<td>".$mostrar['telefono']."</td>
+									<td>".$mostrar['correo']."</td>
                                     <td>".$mostrar['carrera']."</td>
 								
 									<td>
