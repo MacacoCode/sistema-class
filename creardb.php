@@ -181,7 +181,12 @@ if (mysqli_query($conn, $coord)) {
         iddocente varchar(15) not null, 
         primary key (iddocente),
         nombre varchar (45) not null,
-        apellido varchar(45) not null 
+        segundoNombre varchar(45),
+        apellido varchar(45) not null,
+        segundoApellido varchar(45) not null,
+        sexo enum('Masculino','Femenino','Indefinido') not null,
+        correo varchar (45) not null,
+        telefono varchar(11) not null 
         )Engine= innodb;";
      
        if (mysqli_query($conn, $docentes)) {
