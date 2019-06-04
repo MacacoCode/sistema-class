@@ -9,7 +9,7 @@ $sql = "DELETE from alumnosinactivos where idalumno='$idalumno'";
 if(mysqli_query($conexion, $sql))
 {
    
-    header("Location: http://localhost:8080/formulario/admin/alumnosinactivos/inactivos.php?fallo");
+    header("Location: http://localhost:8080/formulario/admin/alumnosinactivos/inactivos.php?exito");
 }
 else 
 {

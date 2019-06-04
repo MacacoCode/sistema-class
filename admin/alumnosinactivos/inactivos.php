@@ -65,9 +65,19 @@
 									<button >
 									<a href='informacion.php?id=$mostrar[id]&nom=$mostrar[nombre]&ap=$mostrar[apellido]'>Info</a>
 									</button>
-									<button class='pop-up-del'>
-									<a href='rematricular.php?id=$mostrar[id]&nom=$mostrar[nombre]&ap=$mostrar[apellido]'>Rematricular</a>
-									</button>
+									<button class='pop-up-del-multi'>Rematricular<p>".$mostrar['id']."</p><p>".$mostrar['nombre']."</p><p>".$mostrar['apellido']."</p></button>
+
+									<div class='pop-up-borrar'>
+											<div>
+											<p>¿Esta seguro?</p>
+											<button >
+											   <a class='toDelete' href='rematricular.php?id=replace&nom=replace2&ap=replace3'>Confirmar</a>
+											   </button>
+											   <br>
+											   <br>
+											   <input class= 'pop-up-cancel' type='button' value='Cancelar'>
+										   </div>
+										</div>
 									</td>
 									
 									</tr>
@@ -89,7 +99,7 @@
 		
 		</div>
 		<?php
-       if(isset($_GET["fallo"]) && $_GET["fallo"] == 'true')
+       if(isset($_GET["exito"]) && $_GET["exito"] == 'true')
        {
           echo "
             <div class='pop-up-error'>

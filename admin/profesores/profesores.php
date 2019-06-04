@@ -91,15 +91,15 @@ validaradmin($usuario,$conexion);
 					<p>ID Docente</p>
 					
 					<br>
-					<input type="text" name="iddocente" placeholder="ID" maxlength="14" minlength="14" maxlength="14">
+					<input type="text" name="iddocente" placeholder="ID" maxlength="14" minlength="14" maxlength="14" pattern = "^([0-9]{13})*([A-Z]{1})$" oninvalid="this.setCustomValidity('Se requieren 13 numeros y 1 letra')" oninput="setCustomValidity('')" required>
 					<p>Nombre</p>
 					
 					<br>
-					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="45">
+					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="45" required>
 					<p>Apellido</p>
 					
 					<br>
-					<input type="text" name="apellido" placeholder="Apellido" maxlength="45">
+					<input type="text" name="apellido" placeholder="Apellido" maxlength="45" required>
 					<br>
 					<br>
 

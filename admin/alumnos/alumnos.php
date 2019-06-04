@@ -101,7 +101,7 @@
 					<p>CIF</p>
 					
 					<br>
-					<input type="text" name="cif" placeholder="CIF" maxlength="8" pattern="^[0-9]*$" required oninvalid="this.setCustomValidity('Solo se aceptan numeros')">
+					<input type="text" name="cif" placeholder="CIF" minlength="8" maxlength="8" pattern="^[0-9]*$" required oninvalid="this.setCustomValidity('Deben ser 8 numeros')" oninput="this.setCustomValidity('')">
 					<p>Nombre</p>
 					
 					<br>
