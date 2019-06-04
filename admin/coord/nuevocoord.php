@@ -71,7 +71,7 @@
 						<select name="carrera" required>
                         <option required></option>
 							<?php 
-									$sql="SELECT * from oferta_academica";
+									$sql="SELECT oferta_academica.idcarrera, oferta_academica.nombre as nombre from oferta_academica, coordinadores where oferta_academica.idcarrera not in (select idcarrera from coordinadores);";
 									$result=mysqli_query($conexion,$sql);
 								
 									
