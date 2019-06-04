@@ -44,7 +44,7 @@ include('../../conexion.php');
 			}	
 			}
 			else { 
-				header("Location: http://localhost:8080/formulario/Coordinador/horarioMaterias/materias.php?fallo3=true");//horas no son validas
+				header("Location: http://localhost:8080/formulario/Coordinador/horarioMaterias/materias.php?fallo3=true");}//horas no son validas
 		}
 		else {
 			header("Location: http://localhost:8080/formulario/Coordinador/horarioMaterias/materias.php?fallo4=true");//el aula seleccionada ya esta ocupada en esas horas
