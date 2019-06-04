@@ -29,7 +29,7 @@
 	<?php include ('../../sidebar.php')?>
 
 			<div id="main">
-
+		
 					<div class="contenedor-tabla"> 
 						<h2>Tabla Alumnos</h2>
 						<input type="text" name="search" id="search" class="form-control" placeholder="Buscar en tabla" />  

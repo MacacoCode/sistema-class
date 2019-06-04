@@ -8,10 +8,11 @@ $usuario = $_SESSION['usuario'];
 include('../../validarsesion.php');
 validaralumno($usuario,$conexion);
 
-$recuperarID="SELECT nombre from alumnos where idalumno='$usuario';";
+$recuperarID="SELECT nombre, apellido from alumnos where idalumno='$usuario';";
 $consultad = mysqli_query($conexion, $recuperarID);
 $arrayd = mysqli_fetch_array($consultad);
 $nombre= $arrayd['nombre'];
+$apellido =$arrayd['apellido'];
 ?>
 <!DOCTYPE html>
 	<html>
@@ -32,9 +33,17 @@ $nombre= $arrayd['nombre'];
 			<div id="main-repair">
 					<div class="row">
 						<div class ="col"> 
-							<h2 class="mainh2">Bienvenido/a <?php echo $nombre;?></h2>
-							
+							<h2 class="mainh2">Bienvenido/a <?php echo $nombre,'   ', $apellido?></h2>
+							<div class="informaciondemain">
+									<p><?php echo $nombre, '     ', $apellido?></p>
+									<p>Carrera del estudiante</p>
+							</div>	
+							<div class="informacionpersonal">
+									<p>Telefono: </p> <p> 1316565565</p>
+									
+							</div>	
 						</div>
+						
 					</div>
 					<div class="row">
 						<div class="col">
