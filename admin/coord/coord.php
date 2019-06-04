@@ -39,13 +39,18 @@
 									<tr>
 										<td >ID</td>
 										<td>Nombre</td>
+										<td>Segundo Nombre</td>
 										<td>Apellido</td>
+										<td>Segundo Apellido</td>
+										<td>Sexo</td>
+										<td>Telefono</td>
+										<td>Correo</td>
 										<td>Carrera</td>
 										<td>Acciones</td>	
 									</tr>
 								</thead>
 								<?php 
-								$sql="SELECT coordinadores.idcoordinador as idcoord, coordinadores.nombre as nombre, coordinadores.apellido as apellido, oferta_academica.nombre as carrera
+								$sql="SELECT coordinadores.idcoordinador as idcoord, coordinadores.nombre as nombre, coordinadores.segundoNombre as segundonombre, coordinadores.apellido as apellido, coordinadores.segundoApellido as segundoapellido,coordinadores.correo as correo, coordinadores.sexo as sexo, coordinadores.telefono as telefono, oferta_academica.nombre as carrera
                                 from coordinadores, oferta_academica 
                                 where coordinadores.idcarrera = oferta_academica.idcarrera;";
 								$result=mysqli_query($conexion,$sql);
@@ -56,13 +61,18 @@
 									<tr>
 									<td>".$mostrar['idcoord']."</td>
 									<td>".$mostrar['nombre']."</td>
+									<td>".$mostrar['segundonombre']."</td>
 									<td>".$mostrar['apellido']."</td>
+									<td>".$mostrar['segundoapellido']."</td>
+									<td>".$mostrar['sexo']."</td>
+									<td>".$mostrar['telefono']."</td>
+									<td>".$mostrar['correo']."</td>
 									<td>".$mostrar['carrera']."</td>
 
 									<td>
 				
 									<button>
-									<a  href='updatecoord.php?rn=$mostrar[idcoord]&sn=$mostrar[nombre]&cl=$mostrar[apellido]&car=$mostrar[carrera]'>Editar</a>
+									<a  href='updatecoord.php?rn=$mostrar[idcoord]&sn=$mostrar[nombre]&cl=$mostrar[apellido]&car=$mostrar[carrera]&ndos=$mostrar[segundonombre]&ados=$mostrar[segundoapellido]&sexo=$mostrar[sexo]&telefono=$mostrar[telefono]&correo=$mostrar[correo]'>Editar</a>
 									</button>
 
 									<button class='pop-up-del'>Borrar<p>".$mostrar['idcoord']."</p></button>
@@ -93,59 +103,8 @@
 					
 					</div>
 				
-				<div class="form col">
-				<h2>Registrar</h2>	
-				<form action="insertcoord.php" method="POST" autocomplete="off" pattern="\S">
-					<p>ID</p>
-					
-					<br>
-					<input type="text" name="id" placeholder="ID" minlength="8" maxlength="8" pattern="^[0-9]*$" required oninvalid="this.setCustomValidity('Deben ser 8 numeros')" oninput="this.setCustomValidity('')">
-					<p>Nombre</p>
-					
-					<br>
-					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="25"  pattern="[A-Za-z]+"required >
-					<p>Apellido</p>
-					
-					<br>
-					<input type="text" name="apellido" placeholder="Apellido" maxlength="25" pattern="[A-Za-z]+" required > 
-						<br>
-						<br>
-						<p>Carreras Disponibles</p>
-						<select name="carrera" required>
-                        <option required></option>
-							<?php 
-									$sql="SELECT * from oferta_academica";
-									$result=mysqli_query($conexion,$sql);
-								
-									
-									while($ensenar=mysqli_fetch_array($result)){
-										echo "
-									
-											<option >".$ensenar['nombre']."</option>
-										
-									"
-											
-									?>
-									<?php 
-								}
-								?>	
-							</select>
-
-						<br>
-
-						<div class="pop-up">
-							<div >
-							<p>¿Esta seguro?</p>
-							<input href='guardar.php' type="submit" value="Confirmar">
-							<br>
-							<br>
-							<input class= "pop-up-cancel" type="button" value="Cancelar">
-							</div>
-						</div>
-					
-					</form>
-					<br>
-					<button class="pop-up-activate">Enviar</button>
+				<div >
+				<button class="registraralumno"><a href='nuevocoord.php'>Nuevo Coordinador</a></button>			
 				</div>
 			
 		</div>

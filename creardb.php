@@ -52,7 +52,12 @@ $oferta= "CREATE table if not exists oferta_academica(
  $coord= "CREATE table if not exists coordinadores(
     idcoordinador varchar(10) not null, 
     nombre varchar (45) not null, 
-    apellido varchar(45),
+    segundoNombre varchar(45),
+        apellido varchar(45) not null,
+        segundoApellido varchar(45) not null,
+        sexo enum('Masculino','Femenino','Indefinido') not null,
+        correo varchar (45) not null,
+        telefono varchar(11) not null ,
     idcarrera mediumint not null,
     primary key (idcoordinador,idcarrera),
     foreign key (idcarrera) references oferta_academica(idcarrera)
