@@ -9,7 +9,7 @@
 <div class="pop-up-sesion">
 	<div >
 		<p>¿Desea Cerrar Sesión?</p>
-		<input href='../../Login/salir.php' type="submit" value="Confirmar">
+		<button><a href='../../Login/salir.php'>Confirmar</a></button>
 		<br>
 		<br>
 		<input class= "pop-up-cancel" type="button" value="Cancelar">
