@@ -95,11 +95,11 @@ validaradmin($usuario,$conexion);
 					<p>Nombre</p>
 					
 					<br>
-					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="45" required>
+					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="45" oninvalid="this.setCustomValidity('Solo letras')" oninput="setCustomValidity('')" required>
 					<p>Apellido</p>
 					
 					<br>
-					<input type="text" name="apellido" placeholder="Apellido" maxlength="45" required>
+					<input type="text" name="apellido" placeholder="Apellido" maxlength="45" oninvalid="this.setCustomValidity('Solo letras')" oninput="setCustomValidity('')" required>
 					<br>
 					<br>
 

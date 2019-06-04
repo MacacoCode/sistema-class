@@ -105,7 +105,7 @@
 					<p>Nombre</p>
 					
 					<br>
-					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="25"  required>
+					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="25" pattern="[A-Za-z]+" required>
 					<br>
 					<br>
 					<input type="text" name="apellido" placeholder="Apellido" maxlength="25" required>

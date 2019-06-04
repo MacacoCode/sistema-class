@@ -411,7 +411,7 @@ if (mysqli_query($conn, $coord)) {
        delete from oferta_alumnos where idalumno = old.idalumno; 
        delete from notas where idalumno =old.idalumno;
        delete from login where usuario = old.idalumno;
-       insert into alumnosinactivos (idalumno, nombre, apellido) values (old.idalumno, old.nombre, old.apellido);
+       insert into alumnosInactivos (idalumno, nombre, apellido) values (old.idalumno, old.nombre, old.apellido);
        END;
        ";
     
@@ -455,7 +455,7 @@ if (mysqli_query($conn, $coord)) {
 
         $rematricula= "
           
-        CREATE trigger rematricula_alumnos before delete on alumnosinactivos
+        CREATE trigger rematricula_alumnos before delete on alumnosInactivos
         for each row
         begin
         insert into alumnos (idalumno, nombre, apellido) values (old.idalumno, old.nombre, old.apellido);
