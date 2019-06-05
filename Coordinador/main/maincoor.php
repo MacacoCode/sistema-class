@@ -7,10 +7,20 @@ $usuario = $_SESSION['usuario'];
 include('../../validarsesion.php');
 validarcoor($usuario,$conexion);
 
-$recuperarID="SELECT nombre from coordinadores where idcoordinador='$usuario';";
+$recuperarID="SELECT * from coordinadores where idcoordinador='$usuario';";
 $consultad = mysqli_query($conexion, $recuperarID);
 $arrayd = mysqli_fetch_array($consultad);
 $nombre= $arrayd['nombre'];
+$apellido =$arrayd['apellido'];
+$telefono =$arrayd['telefono'];
+$correo =$arrayd['correo'];
+$sexo =$arrayd['sexo'];
+
+$carreraquery="SELECT oferta_academica.nombre as nombrecarrera from oferta_academica, coordinadores
+where oferta_academica.idcarrera=coordinadores.idcarrera and coordinadores.idcoordinador='$usuario'; ";
+$consultacarr = mysqli_query($conexion, $carreraquery);
+$arraycarr = mysqli_fetch_array($consultacarr);
+$nombrecarrera =$arraycarr['nombrecarrera'];
 ?>
 	
 	<!DOCTYPE html>
@@ -34,7 +44,39 @@ $nombre= $arrayd['nombre'];
 					<div class="row">
 						<div class ="col"> 
 							<h2 class="mainh2">Bienvenido/a, <?php echo $nombre; ?></h2>
-							
+							<div class="informaciondemain">
+									<p><?php echo $nombre, '     ', $apellido?></p>
+									<p class="carrera"><i>Coordinador</i></p>
+							</div>
+							<div class="informacionpersonal">
+									<table class="tabladelmain">
+										<tbody>
+
+										<tr>	
+										<td>Carrera:</td>
+										<td><?php echo $nombrecarrera ?></td>
+										</tr>
+
+										<tr>	
+										<td>Telefono: </td>
+										<td><?php echo $telefono?></td>
+										</tr>
+
+										<tr>	
+										<td>Correo: </td>
+										<td><?php echo $correo ?></td>
+										</tr>
+
+										<tr>	
+										<td>Sexo:</td>
+										<td><?php echo $sexo ?></td>
+										</tr>
+
+										
+
+										</tbody>
+									</table>
+							</div>	
 						</div>
 					</div>
 					<div class="row">
