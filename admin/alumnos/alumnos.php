@@ -105,10 +105,6 @@
 					
 					</div>
 				
-				<div >
-					<button class="registraralumno"><a href='nuevoalumno.php'>Nuevo Alumno</a></button>			
-				</div>
-			
 		</div>
 		
 		</div>

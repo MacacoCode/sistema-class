@@ -14,7 +14,7 @@ include('../../conexion.php');
 			
 	}
 	else{
-		echo"Aun hay Carrera inscritos a la facultad";
+		header("Location: http://localhost:8080/formulario/admin/facultades/facultades.php?fallo2=true");//Aun hay Carrera inscritos a la facultad
 		
 	}
 ?>

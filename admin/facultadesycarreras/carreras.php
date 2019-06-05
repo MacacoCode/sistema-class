@@ -158,6 +158,16 @@ validaradmin($usuario,$conexion);
                 </div>
             </div> ";
 	   }
+	   if(isset($_GET["fallo2"]) && $_GET["fallo2"] == 'true')
+       {
+          echo "
+            <div class='pop-up-error'>
+                <div>
+                    <p>Error Aun Hay Alumnos Inscritos En La Carrera</p>
+                    <input class='pop-up-cancel' type='button' value='Confirmar'>
+                </div>
+            </div> ";
+	   }
      ?>
 
 

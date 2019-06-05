@@ -35,6 +35,8 @@
 			
 				<h2>Registrar</h2>	
 				<form action="guardar.php" method="POST" autocomplete="off" pattern="\S">
+					<div class="row">
+					<div class="form2 col-5">
 					<p>CIF</p>
 					
 					<input type="text" name="cif" placeholder="CIF" minlength="8" maxlength="8" pattern="^[0-9]*$" required oninvalid="this.setCustomValidity('Deben ser 8 numeros')" oninput="this.setCustomValidity('')">
@@ -52,7 +54,9 @@
 						<br>
 					<input type="text" name="segundoApellido" placeholder="Segundo apellido" maxlength="25" required>
 					<br><br>
-
+					</div>
+					
+					<div class="form2 col-5">
 					<p>Sexo<p>
 					<select name="sexo" required>
                         <option ></option>
@@ -90,6 +94,8 @@
 							</select>
 
 						<br>
+						</div>
+						</div>
 
 						<div class="pop-up">
 							<div >

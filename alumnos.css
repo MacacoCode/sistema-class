@@ -31,9 +31,6 @@
      display: flex;
  
  }
- select {
-     width: 100%;
- }
  
  
  #main{ 
@@ -42,13 +39,12 @@
      padding-bottom: 100vh;
      display: flex;
      justify-content: space-between;
-     padding: 50px 20% 0 20%;
+     padding: 50px 20% 0 10%;
  }
  
  
  .sidebar{
      min-width: 150px;
-     width: 10%;
      height: 100vh;
      background: rgb(30, 38, 46);
      list-style: none;
@@ -131,6 +127,18 @@
      height: 75vh;
   
  }
+ .form2{
+    color: white;
+    background: rgb(30, 38, 46);
+    margin-left: 50px;
+    padding: 2em;
+    text-align: center;
+    border : 0.15em solid rgba(255, 255, 255, 0.685);
+    width:250px;
+    border-radius: 1.2em;
+    height: 50vh;
+ 
+}
 /*inicio de tabla*/
  table{
 	background-color: white;
@@ -388,3 +396,60 @@ menu {
     font-size: 100%;
 }
 /*COSAS DEL MAIN ALUMNOS, COORDINADOR, PROFESORES*/
+.dropdown {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .dd-button {
+    display: flex;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 10px 30px 10px 20px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .dd-button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+  }
+  .dd-button:hover {
+    background-color:rgb(29, 119, 129);
+  }
+  .dd-input {
+    display: none;
+  }
+  
+  .dd-menu {
+    top: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0;
+    margin: 2px 0 0 0;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+    background-color: rgb(30, 38, 46);
+    list-style-type: none;
+  }
+  .dd-input + .dd-menu {
+    display: none;
+  } 
+  
+  .dd-input:checked + .dd-menu {
+    display: block;
+
+  } 
+  .dd-menu a {
+    display: block;
+  
+    padding: 10px 20px;
+  }
+  

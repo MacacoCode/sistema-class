@@ -33,7 +33,9 @@
 				
 				<div class="form col">
 				<h2>Registrar Coordinador</h2>	
-				<form action="insertcoord.php" method="POST" autocomplete="off" pattern="\S">
+				<form  action="insertcoord.php" method="POST" autocomplete="off" pattern="\S">
+					<div class="row">
+					<div class="form2 col-5">
 					<p>ID</p>
 					
 					<br>
@@ -50,7 +52,9 @@
 						<br>
 					<input type="text" name="segundoApellido" placeholder="Segundo apellido" maxlength="25" required>
 					<br><br>
-
+					</div>
+					
+					<div class="form2 col-5">
 					<p>Sexo<p>
 					<select name="sexo" required>
                         <option ></option>
@@ -89,6 +93,9 @@
 							</select>
 
 						<br>
+						</div>
+						</div>
+						
 
 						<div class="pop-up">
 							<div >

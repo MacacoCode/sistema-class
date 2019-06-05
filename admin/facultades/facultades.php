@@ -126,6 +126,16 @@ validaradmin($usuario,$conexion);
                 </div>
             </div> ";
 	   }
+	   if(isset($_GET["fallo2"]) && $_GET["fallo2"] == 'true')
+       {
+          echo "
+            <div class='pop-up-error'>
+                <div>
+                    <p>Aun Hay Carreras Pertenecientes De Esta Facultad</p>
+                    <input class='pop-up-cancel' type='button' value='Confirmar'>
+                </div>
+            </div> ";
+	   }
      ?>
 
 

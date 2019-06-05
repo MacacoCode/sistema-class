@@ -94,10 +94,7 @@ validaradmin($usuario,$conexion);
 					</div>
 				
 				</div>
-			
-			<div >
-			<button class="registraralumno"><a href='nuevoprofe.php'>Nuevo Docente</a></button>
-	</div>
+
 	</div>
 	<?php
        if(isset($_GET["fallo"]) && $_GET["fallo"] == 'true')

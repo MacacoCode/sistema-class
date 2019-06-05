@@ -103,9 +103,6 @@
 					
 					</div>
 				
-				<div >
-				<button class="registraralumno"><a href='nuevocoord.php'>Nuevo Coordinador</a></button>			
-				</div>
 			
 		</div>
 		

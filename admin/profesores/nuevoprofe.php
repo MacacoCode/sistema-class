@@ -30,6 +30,8 @@ validaradmin($usuario,$conexion);
 			<div class="form col">
 			<h2>Registrar Docente</h2>	
 				<form action="insertprofes.php" method="POST" autocomplete="off" pattern="\S">
+					<div class="row">
+					<div class="form2 col-5">
 					<p>ID Docente</p>
 					<input type="text" name="iddocente" placeholder="ID" maxlength="14" minlength="14" maxlength="14" pattern = "^([0-9]{13})*([A-Z]{1})$" oninvalid="this.setCustomValidity('Se requieren 13 numeros y 1 letra')" oninput="setCustomValidity('')" required>
 					<br><br>
@@ -46,7 +48,9 @@ validaradmin($usuario,$conexion);
                     <input type="text" name="segundoapellido" placeholder="Segundo Apellido" maxlength="45" oninvalid="this.setCustomValidity('Solo letras')" oninput="setCustomValidity('')" required>
 					<br>
 					<br>
-                    
+					</div>
+					
+					<div class="form2 col-5">
 					<p>Sexo<p>
 					<select name="sexo" required>
                         <option ></option>
@@ -61,7 +65,10 @@ validaradmin($usuario,$conexion);
 
 					<p>Celular</p>
 					<input type="text" name="celular" placeholder="Numero de Celular" maxlength="11" pattern="[0-9]{11}"  >
-					<br><br>
+
+					</div>
+					</div>
+					<br>
 
 					<div class="pop-up">
 						<div >
