@@ -8,11 +8,21 @@ $usuario = $_SESSION['usuario'];
 include('../../validarsesion.php');
 validaralumno($usuario,$conexion);
 
-$recuperarID="SELECT nombre, apellido from alumnos where idalumno='$usuario';";
+$recuperarID="SELECT * from alumnos where idalumno='$usuario';";
 $consultad = mysqli_query($conexion, $recuperarID);
 $arrayd = mysqli_fetch_array($consultad);
 $nombre= $arrayd['nombre'];
 $apellido =$arrayd['apellido'];
+$telefono =$arrayd['telefono'];
+$correo =$arrayd['correo'];
+$sexo =$arrayd['sexo'];
+
+$carreraquery="SELECT oferta_academica.nombre as nombrecarrera from oferta_academica, oferta_alumnos
+where oferta_academica.idcarrera=oferta_alumnos.idcarrera and oferta_alumnos.idalumno='$usuario'; ";
+$consultacarr = mysqli_query($conexion, $carreraquery);
+$arraycarr = mysqli_fetch_array($consultacarr);
+$nombrecarrera =$arraycarr['nombrecarrera'];
+
 ?>
 <!DOCTYPE html>
 	<html>
@@ -33,14 +43,39 @@ $apellido =$arrayd['apellido'];
 			<div id="main-repair">
 					<div class="row">
 						<div class ="col"> 
-							<h2 class="mainh2">Bienvenido/a <?php echo $nombre,'   ', $apellido?></h2>
+							<h2 class="mainh2">Bienvenido/a </h2>
 							<div class="informaciondemain">
 									<p><?php echo $nombre, '     ', $apellido?></p>
-									<p>Carrera del estudiante</p>
+									<p class="carrera"><i>Estudiante</i></p>
 							</div>	
 							<div class="informacionpersonal">
-									<p>Telefono: </p> <p> 1316565565</p>
-									
+									<table class="tabladelmain">
+										<tbody>
+
+										<tr>	
+										<td>Carrera:</td>
+										<td><?php echo $nombrecarrera ?></td>
+										</tr>
+
+										<tr>	
+										<td>Telefono: </td>
+										<td><?php echo $telefono?></td>
+										</tr>
+
+										<tr>	
+										<td>Correo: </td>
+										<td><?php echo $correo ?></td>
+										</tr>
+
+										<tr>	
+										<td>Sexo:</td>
+										<td><?php echo $sexo ?></td>
+										</tr>
+
+										
+
+										</tbody>
+									</table>
 							</div>	
 						</div>
 						

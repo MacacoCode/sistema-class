@@ -2,7 +2,8 @@
 
 <div class="sidebar">
 					
-                <a class="menu" href='../main/main.php'>Home</a>
+				<a class="menu" href='../main/main.php'>Home</a>
+				<a class="menu" href='../facultades/facultades.php'>Facultades</a>
 				<a class="menu" href='../facultadesycarreras/carreras.php'>Carreras</a>
 				<a class="menu" href='../coord/coord.php'>Coordinadores</a>
                 <a class="menu" href='../alumnos/alumnos.php'>Alumnos</a>
