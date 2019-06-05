@@ -10,7 +10,14 @@
     
 <form action="Login/login.php"><!-- Esto es BackEnd-->
     <h1>Funciono devuelta </h1><!-- Esto es FrontEnd -->
-    <td colspan="2" align="center"><input type="submit" name="enviando" id="enviando" value="entar"></td>
+       
+    
+    <?php
+    header("location: http://localhost:8080/formulario/Login/login.php");
+    
+    ?>
+
+    <!--<td colspan="2" align="center"><input type="submit" name="enviando" id="enviando" value="entar"></td>-->
     </form>
 
 </body>
