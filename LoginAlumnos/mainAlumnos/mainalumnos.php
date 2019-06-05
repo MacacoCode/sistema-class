@@ -39,7 +39,7 @@ $nombrecarrera =$arraycarr['nombrecarrera'];
 	<body background-color: #fff>
 	<div id="container">
 	<?php include ('../sidebarAlu.php')?>
-	<div id="main">
+	<div id="main" class='sample'>
 			<div id="main-repair">
 					<div class="row">
 						<div class ="col"> 

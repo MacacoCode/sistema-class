@@ -28,7 +28,7 @@
 	
 	<?php include ('../../sidebar.php')?>
 
-			<div id="main">
+			<div id="main" >
 		
 					<div class="contenedor-tabla"> 
 						<h2>Tabla Alumnos</h2>

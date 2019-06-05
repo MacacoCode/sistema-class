@@ -27,7 +27,7 @@ validaradmin($usuario,$conexion);
 			<?php include ('../../sidebar.php')?>
 
 			<div id="main">
-			<div id="main-repair">
+			<div id="main-repair" >
 					<div class="row">
 						<div class ="col"> 
 							<h2 class="mainh2">Bienvenido al manejador de base de datos Universidad</h2>
