@@ -427,12 +427,13 @@ if (mysqli_query($conn, $coord)) {
        CREATE trigger alumnos_inactivos before delete on alumnos
        for each row
        begin
+       delete from login where usuario = old.idalumno;
+       insert into alumnosInactivos (idalumno, nombre, apellido, segundoNombre, segundoApellido, telefono, correo, sexo) values (old.idalumno, old.nombre, old.apellido, old.segundoNombre, old.segundoApellido, old.telefono, old.correo, old.sexo);
+      
        delete from materias_alumnos where idalumno = old.idalumno;
        delete from oferta_alumnos where idalumno = old.idalumno; 
        delete from notas where idalumno =old.idalumno;
-       delete from login where usuario = old.idalumno;
-       insert into alumnosInactivos (idalumno, nombre, apellido, segundoNombre, segundoApellido, telefono, correo, sexo) values (old.idalumno, old.nombre, old.apellido, old.segundoNombre, old.segundoApellido, old.telefono, old.correo, old.sexo);
-       END;
+        END;
        ";
     
       if (mysqli_query($conn, $trigalumnos)) {

@@ -103,7 +103,7 @@ validaradmin($usuario,$conexion);
 					<br>
 					<p>Prerequisito</p>
 						<select name="prerequisito"  flex>
-                        <option >
+                        <option >0
 						</option>
 							<?php 
 									$sql="SELECT * from materias";
