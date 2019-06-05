@@ -26,7 +26,7 @@
 				<a class="menu" href='../alumnos/alumnos.php'>Ver Alumnos</a>
 				<a class="menu" href='../alumnos/nuevoalumno.php'>Nuevo Alumno</a>
 				<a class="menu" href='../matricula/matricula.php'>Matricula de Alumnos</a>
-				<a class="menu" href='../alumnosinactivos/inactivos.php'>Alumnos Inactivos</a>
+				<!--<a class="menu" href='../alumnosinactivos/inactivos.php'>Alumnos Inactivos</a>-->
 				</ul>
 				</label>
 
