@@ -6,10 +6,14 @@ include('../../admin/main/validacioncontra.php');
 include('../../validarsesion.php');
 $usuario = $_SESSION['usuario'];
 validarprofe($usuario,$conexion);
-$recuperarID="SELECT nombre from docentes where iddocente='$usuario';";
+$recuperarID="SELECT * from docentes where iddocente='$usuario';";
 $consultad = mysqli_query($conexion, $recuperarID);
 $arrayd = mysqli_fetch_array($consultad);
 $nombre= $arrayd['nombre'];
+$apellido = $arrayd['apellido'];
+$telefono = $arrayd['telefono'];
+$sexo = $arrayd['sexo'];
+$correo = $arrayd['correo'];
 ?>
 	
 	<!DOCTYPE html>
@@ -33,6 +37,36 @@ $nombre= $arrayd['nombre'];
 					<div class="row">
 						<div class ="col"> 
 							<h2 class="mainh2">Bienvenido Prof. <?php echo $nombre; ?></h2>
+							<div class="informaciondemain">
+									<p><?php echo $nombre, '     ', $apellido?></p>
+									<p class="carrera"><i>Docente</i></p>
+									<div class="informacionpersonal">
+									<table class="tabladelmain">
+										<tbody>
+
+									
+
+										<tr>	
+										<td>Telefono: </td>
+										<td><?php echo $telefono?></td>
+										</tr>
+
+										<tr>	
+										<td>Correo: </td>
+										<td><?php echo $correo ?></td>
+										</tr>
+
+										<tr>	
+										<td>Sexo:</td>
+										<td><?php echo $sexo ?></td>
+										</tr>
+
+										
+
+										</tbody>
+									</table>
+							</div>	
+							</div>
 						</div>
 					</div>
 					<div class="row">
