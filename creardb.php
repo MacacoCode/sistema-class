@@ -79,7 +79,8 @@ if (mysqli_query($conn, $coord)) {
         segundoApellido varchar (45) not null,
         sexo enum('Masculino','Femenino','Indefinido') not null,
         correo varchar (45) not null,
-        telefono varchar(11) not null
+        telefono varchar(11) not null,
+        activo mediumint default 1
         )Engine= innodb;";
      
     if (mysqli_query($conn, $alumnos)) {

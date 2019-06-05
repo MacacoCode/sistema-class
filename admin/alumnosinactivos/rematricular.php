@@ -4,7 +4,7 @@ include('../../Login/iniciar.php');
 
 $idalumno = $_GET['id'];
 
-$sql = "DELETE from alumnosinactivos where idalumno='$idalumno'";
+$sql = "UPDATE alumnos set activo='1' where idalumno = '$idalumno';";
 
 if(mysqli_query($conexion, $sql))
 {
