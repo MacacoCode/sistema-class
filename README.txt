@@ -2,5 +2,4 @@ HOLA PERROS DEL MAL
 xd
  UBEERMAN WAS HERE 
 
- OLI PUTOS
- test >3
+version para amazon
