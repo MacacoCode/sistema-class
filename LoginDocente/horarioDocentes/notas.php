@@ -82,7 +82,7 @@ $recuperarID="SELECT idmateria as idmateria from materias where nombre='$materia
 							<input type='text' name='idmateria' id='hidden' value=".$mostrar['idmateria']." > 
 							<input type='text' name='nombreMateria' id='hidden' value='$materia' >
 							 
-							<input type='decimal' min='0' max='100' name='nota'required> 
+							<input type='number' step='0.01' min='0' max='100' name='nota'required> 
 							<button type='submit'>
 							Devolver Nota
 							</button>
