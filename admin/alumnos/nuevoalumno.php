@@ -69,7 +69,7 @@
 					<br><br>
 
 					<p>Celular</p>
-					<input type="text" name="celular" placeholder="Numero de Celular" maxlength="11" pattern="[0-9]{11}"  >
+					<input type="text" name="celular" placeholder="Numero de Celular" maxlength="11" pattern="[0-9]{11}" required oninvalid="this.setCustomValidity('505 y luego el numero')" oninput="this.setCustomValidity('')" >
 					<br><br>
 						<p>Seleccione una carrera</p>
 						<select name="carrera" required flex>
