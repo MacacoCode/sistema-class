@@ -157,30 +157,8 @@ $idcar= $array['idcarrera'];
 					<p>Grupo</p>
 					<br>
 					<input name ="grupo" type="number" value="Grupo">
-					<!---<select name="grupo" required>
-                        <option ></option>
-
-					<br>
-					<?php 
-							/*echo $_POST['change'];
-							$change = $_POST['change'];
-						
-							$sql="SELECT idgrupo FROM materias, hora_materia WHERE materias.nombre = '$change';";*/
-                           /* $result=mysqli_query($conexion,$sql);
-                            
-                            
-
-							while($ensenar=mysqli_fetch_array($result)){
-                                echo "
-                               
-                                    <option >".$ensenar['idgrupo']."</option>
-                                    
-                                
-							";
-						
-								
-						}*/
-						?>
+					
+				
 						 </select>	--->
 					<div class="pop-up">
 						<div >
@@ -212,7 +190,7 @@ $idcar= $array['idcarrera'];
           echo "
             <div class='pop-up-error'>
                 <div>
-                    <p>La Clase Choca</p>
+                    <p>Profesor ya tiene una clase entre esas horas</p>
                     <input class='pop-up-cancel' type='button' value='Confirmar'>
                 </div>
             </div> ";

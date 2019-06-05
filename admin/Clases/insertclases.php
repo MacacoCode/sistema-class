@@ -6,9 +6,12 @@ include('../../Login/iniciar.php');
 	$codigo=$_POST['codigo'];
 	$nombre=$_POST['nombre'];
 	$prereq=$_POST['prerequisito'];
-	if($prereq == 0)
+	
+	
+	if($prereq == 'Ninguno')
 	{
-				$sqld="INSERT into materias (codigo, nombre, prerequisito) VALUES('$codigo','$nombre','0')";
+		
+		$sqld="INSERT into materias (codigo, nombre, prerequisito) VALUES('$codigo','$nombre','0')";
 			
 			
 			if(mysqli_query($conexion, $sqld)){
@@ -17,7 +20,6 @@ include('../../Login/iniciar.php');
 			else{
 				header("Location: http://localhost:8080/formulario/admin/Clases/clases.php?fallo=true");
 			
-				
 			}
 	}
 	else {
@@ -36,11 +38,8 @@ include('../../Login/iniciar.php');
 		header("Location: http://localhost:8080/formulario/admin/Clases/clases.php");
 	}
 	else{
-		header("Location: http://localhost:8080/formulario/admin/Clases/clases.php?fallo=true");
-	
-		
+		header("Location: http://localhost:8080/formulario/admin/Clases/clases.php?fallo=true");	
 	}
-	
 
 	}
 		
