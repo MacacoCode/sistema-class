@@ -56,7 +56,6 @@ validaradmin($usuario,$conexion);
                         <option ></option>
 						<option>Masculino</option>
 						<option>Femenino</option>
-						<option>Indefinido</option>
                     </select>
 					<br><br>
 					<p>Correo</p>
@@ -64,7 +63,7 @@ validaradmin($usuario,$conexion);
 					<br><br>
 
 					<p>Celular</p>
-					<input type="text" name="celular" placeholder="Numero de Celular" maxlength="11" pattern="[0-9]{11}"  >
+					<input type="text" name="celular" placeholder="Numero de Celular" maxlength="11" pattern="[0-9]{11}"  required oninvalid="this.setCustomValidity('505 y luego el numero')" oninput="this.setCustomValidity('')"  >
 
 					</div>
 					</div>
