@@ -25,6 +25,8 @@
 				<ul class="dd-menu">
 				<a class="menu" href='../alumnos/alumnos.php'>Ver Alumnos</a>
 				<a class="menu" href='../alumnos/nuevoalumno.php'>Nuevo Alumno</a>
+				<a class="menu" href='../matricula/matricula.php'>Matricula de Alumnos</a>
+				<a class="menu" href='../alumnosinactivos/inactivos.php'>Alumnos Inactivos</a>
 				</ul>
 				</label>
 
@@ -40,9 +42,7 @@
 
 
 				<a class="menu" href='../Clases/clases.php'>Clases</a>
-				<a class="menu" href='../matricula/matricula.php'>Matricula de Alumnos</a>
 				<a class="menu" href='../cambioclave/claveolvidada.php'>Cambiar Contraseña Olvidada</a>
-				<a class="menu" href='../alumnosinactivos/inactivos.php'>Alumnos Inactivos</a>
 				<a id="config-footer" class="menu" href='../cambiarclave.php'> Cambiar Contraseña</a>
 				<a class="menu pop-up-cerrar">Cerrar Sesión</a>
 </div>

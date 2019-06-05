@@ -62,7 +62,6 @@
                         <option ></option>
 						<option>Masculino</option>
 						<option>Femenino</option>
-						<option>Indefinido</option>
                     </select>
 					<br><br>
 					<p>Correo</p>
