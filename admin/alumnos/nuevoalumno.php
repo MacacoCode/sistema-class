@@ -44,7 +44,7 @@
 			
 					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="25" pattern="[A-Za-z]+" required>
 					<br> <br> 
-					<input type="text" name="segundoNombre" placeholder="Segundo nombre" maxlength="25" pattern="[A-Za-z]+" required>
+					<input type="text" name="segundoNombre" placeholder="Segundo nombre" maxlength="25" pattern="[A-Za-z]+" >
 					<br><br>
 					<p>Apellido</p>
 					<input type="text" name="apellido" placeholder="Primer apellido" maxlength="25" required>
