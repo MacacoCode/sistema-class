@@ -31,6 +31,8 @@ $_GET['cl']; //apellido
         <br>
     <div class="formcontra col" >
     <form action="" method="GET" autocomplete="off"  >
+    <div class="row">
+		<div class="form2 col-6">
 		<p>ID Docente</p>
 	
         <input class="idnone" type="text" name="iddocente" placeholder="iddocente" maxlength="8" required value="<?php echo $_GET['rn']; ?>">
@@ -49,7 +51,9 @@ $_GET['cl']; //apellido
 		<br><br>
         <input type="text" name="segundoapellido" placeholder="Apellido" maxlength="45" required value="<?php echo $_GET['ados']; ?>">
         <br><br>
+        </div>
 
+        <div class="form2 col-6">
         <p>Telefono</p>
 		<input type="text" name="telefono"  maxlength="11" pattern="[0-9]{11}" required value="<?php echo $_GET['telefono']; ?>">
 		<br><br>
@@ -57,6 +61,8 @@ $_GET['cl']; //apellido
         <p>Correo</p>
 		<input type="email" name="correo"  maxlength="45" required value="<?php echo $_GET['correo']; ?>">
 		<br><br>
+        </div>
+        </div>
 		<div class="pop-up">
 			<div >
 				<p>¿Esta seguro?</p>

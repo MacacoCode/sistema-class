@@ -32,6 +32,8 @@ $nombrecarrera =$_GET['car']; //nombre de la carrera
         <br>
     <div class="formcontra col" >
     <form action="" method="GET" autocomplete="off"  >
+    <div class="row">
+		<div class="form2 col-6">
 		<p>ID</p>
 		
         
@@ -51,7 +53,10 @@ $nombrecarrera =$_GET['car']; //nombre de la carrera
 		<br><br>
         <input type="text" name="segundoapellido" placeholder="Apellido" maxlength="45" required value="<?php echo $_GET['ados']; ?>">
         <br><br>
+        </div>
 
+        
+		<div class="form2 col-6">
         <p>Telefono</p>
 		<input type="text" name="telefono"  maxlength="11" pattern="[0-9]{11}" required value="<?php echo $_GET['telefono']; ?>">
 		<br><br>
@@ -82,6 +87,8 @@ $nombrecarrera =$_GET['car']; //nombre de la carrera
 								}
 								?>	
 							</select>
+                            </div>
+                            </div>
         <div class="pop-up">
 			<div >
 				<p>¿Esta seguro?</p>
