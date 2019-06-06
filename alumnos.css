@@ -106,7 +106,7 @@
      position:relative;
      width:150px;
      height:40px;
-     border-radius:20px;
+     border-radius:10px;
      margin-left: center;
      border:0px;
      background-color:rgb(41, 158, 173);
@@ -175,11 +175,16 @@ thead tr td{
 tr:nth-child(even){
 	background-color: #ddd;
 }
-
+ 
 
 tbody tr:hover td{
     background-color:  rgb(30, 38, 46);
     color: white;
+    transition: 0.3s;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;  
 }
 /*Fin de tabla*/
  .btcolor{
@@ -200,7 +205,7 @@ tbody tr:hover td{
      position:relative;
      width:100px;
      height:40px;
-     border-radius:20px;
+     border-radius:10px;
      margin-top:5px;
      margin-bottom:5px;
      border:0px;
@@ -212,10 +217,11 @@ tbody tr:hover td{
     position:relative;
      width:100px;
      height:40px;
-     border-radius:20px;
+     border-radius:10px;
      margin-top:5px;
      margin-bottom:5px;
      border:0px;
+     color:white;
      background-color: rgb(177, 56, 56);
      font: 14px normal normal uppercase helvetica, arial, serif;
      padding:2px;
@@ -224,7 +230,8 @@ tbody tr:hover td{
     position:relative;
      width:100px;
      height:40px;
-     border-radius:20px;
+     border-radius:10px;
+     color:white;
      margin-top:5px;
      margin-bottom:5px;
      border:0px;
@@ -239,6 +246,7 @@ tbody tr:hover td{
      width:125px;
      height:50px;
      border-radius:40px;
+     color:white;
      margin-top:5px;
      margin-bottom:5px;
      border:0px;
@@ -250,7 +258,7 @@ tbody tr:hover td{
 
 
  a{
-     color:black;
+     color:white;
      font: 14px normal normal uppercase helvetica, arial, serif;
      
  }
