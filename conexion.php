@@ -1,7 +1,7 @@
 <?php
 
-	$servername = "localhost:3306";
-	$username = "root";
+	$servername = "uni.crxav7eabiql.us-east-2.rds.amazonaws.com:3306";
+	$username = "admin";
 	$password = "0011202001";
 	
 
