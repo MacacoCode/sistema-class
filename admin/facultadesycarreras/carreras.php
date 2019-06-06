@@ -58,6 +58,9 @@ validaradmin($usuario,$conexion);
 								<td>".$mostrar['nombrec']."</td>
 								
 								<td>
+								<button  >
+                                <a  href='updatecarrera.php?rn=$mostrar[idcarrera]&sn=$mostrar[nombrec]&id=$mostrar[id]'>Editar</a>
+                                </button>
 								<button class='pop-up-del' >Borrar<p>".$mostrar['idcarrera']."</p></button>
 								<div class='pop-up-borrar'>
 											<div>

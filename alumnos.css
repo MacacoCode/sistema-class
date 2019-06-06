@@ -107,6 +107,7 @@
      width:150px;
      height:40px;
      border-radius:10px;
+     color: white;
      margin-left: center;
      border:0px;
      background-color:rgb(41, 158, 173);
@@ -180,9 +181,9 @@ tr:nth-child(even){
 tbody tr:hover td{
     background-color:  rgb(30, 38, 46);
     color: white;
-    transition: 0.3s;
+    transition: 0.5s;
     transition-property: all;
-    transition-duration: 0.3s;
+    transition-duration: 0.5s;
     transition-timing-function: ease;
     transition-delay: 0s;  
 }
