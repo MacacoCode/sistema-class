@@ -53,7 +53,7 @@
 								<?php 
 								$sql="SELECT alumnos.idalumno as idalumno, alumnos.nombre as nombre, alumnos.segundoNombre as segundonombre, alumnos.apellido as apellido, alumnos.segundoApellido as segundoapellido, alumnos.sexo as sexo, alumnos.telefono as telefono, alumnos.correo as correo, oferta_academica.nombre as carrera, oferta_academica.idcarrera as idcarrera
 								from alumnos, oferta_alumnos, oferta_academica 
-								where alumnos.idalumno=oferta_alumnos.idalumno and oferta_alumnos.idcarrera=oferta_academica.idcarrera;";
+								where alumnos.idalumno=oferta_alumnos.idalumno and oferta_alumnos.idcarrera=oferta_academica.idcarrera and alumnos.activo='1';";
 								$result=mysqli_query($conexion,$sql);
 
 								while($mostrar=mysqli_fetch_array($result)){

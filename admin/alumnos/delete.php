@@ -2,11 +2,11 @@
 include('../../conexion.php');
 include('../../Login/iniciar.php');
 $idalumno = $_GET['rn'];
-$sql = "DELETE from oferta_alumnos where idalumno='$idalumno'";
-$query = "DELETE   from alumnos where idalumno = '$idalumno'";
+//$sql = "DELETE from oferta_alumnos where idalumno='$idalumno'";
+$query = "UPDATE alumnos set activo='0' where idalumno = '$idalumno'";
 
 
-$data =  mysqli_query($conexion, $sql) && mysqli_query($conexion, $query);
+$data = mysqli_query($conexion, $query);
 if($data)
 {
    

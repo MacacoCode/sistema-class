@@ -52,9 +52,9 @@
 									</tr>
 								</thead>
 								<?php 
-								$sql="SELECT alumnosinactivos.idalumno as id, alumnosinactivos.nombre as nombre, alumnosinactivos.segundoNombre as segundonombre, alumnosinactivos.apellido as apellido,alumnosinactivos.segundoApellido as segundoapellido, alumnosinactivos.telefono as telefono, alumnosinactivos.sexo as sexo, alumnosinactivos.correo as correo, oferta_academica.nombre as carrera
-                                from alumnosinactivos, carrera_inactivos, oferta_academica 
-                                where alumnosinactivos.idalumno = carrera_inactivos.idalumno and carrera_inactivos.idcarrera=oferta_academica.idcarrera";
+								$sql="SELECT alumnos.idalumno as id, alumnos.nombre as nombre, alumnos.segundoNombre as segundonombre, alumnos.apellido as apellido, alumnos.segundoApellido as segundoapellido, alumnos.sexo as sexo, alumnos.telefono as telefono, alumnos.correo as correo, oferta_academica.nombre as carrera, oferta_academica.idcarrera as idcarrera
+								from alumnos, oferta_alumnos, oferta_academica 
+								where alumnos.idalumno=oferta_alumnos.idalumno and oferta_alumnos.idcarrera=oferta_academica.idcarrera and alumnos.activo='0'";
 								$result=mysqli_query($conexion,$sql);
 
 								while($mostrar=mysqli_fetch_array($result)){

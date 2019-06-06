@@ -42,8 +42,8 @@ $apellido =$_GET['ap'];
                             </tr>
 						</thead>
                         <?php 
-                        $sql="SELECT materias.nombre as materia, notasalumnosinactivos.notas as nota from notasalumnosinactivos, materias 
-                        where notasalumnosinactivos.idmateria = materias.idmateria and notasalumnosinactivos.idalumno='$idalumno';";
+                        $sql="SELECT materias.nombre as materia, notas.nota as nota from notas, materias, alumnos 
+                        where notas.idmateria = materias.idmateria and notas.idalumno=alumnos.idalumno and  notas.idalumno='$idalumno' and alumnos.activo='0';";
                         $result=mysqli_query($conexion,$sql);
 
                         while($mostrar=mysqli_fetch_array($result)){

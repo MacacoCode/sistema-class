@@ -26,7 +26,7 @@ include('../../conexion.php');
 	$consultados = mysqli_query($conexion, $existencia);
 	$arraydos = mysqli_fetch_array($consultados);
 
-	if($arraydos['existencia']==1)
+	if($arraydos['existencia']>0)
 	{
 			
 			//Consulta para verificar si la hora y dia estan disponibles para un docente
