@@ -1,3 +1,3 @@
 localhost: uni.crxav7eabiql.us-east-2.rds.amazonaws.com:3306
 user:       admin
-pasword:    00011202001
+pasword:    0011202001
