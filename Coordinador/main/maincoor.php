@@ -44,6 +44,7 @@ $nombrecarrera =$arraycarr['nombrecarrera'];
 					<div class="row">
 						<div class ="col"> 
 							<h2 class="mainh2">Bienvenido/a, <?php echo $nombre; ?></h2>
+							
 							<div class="informaciondemain">
 									<p><?php echo $nombre, '     ', $apellido?></p>
 									<p class="carrera"><i>Coordinador</i></p>

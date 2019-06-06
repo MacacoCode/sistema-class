@@ -36,7 +36,7 @@ validaradmin($usuario,$conexion);
 					</div>
 					<div class="row">
 						<div class="col">
-							<!--<button id="btn-createDB"><a href="creardb.php">Create DB</a></button>-->
+						
 						</div>
 					</div>
 				</div>
