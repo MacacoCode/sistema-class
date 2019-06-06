@@ -2,7 +2,7 @@
 			
                 
                 <a class="menu" href='../main/maincoor.php'>Home</a> 
-				 <a class="menu" href='../clasesCarrera/agregarClase.php'>Clases Para Carreras</a>
+				 <a class="menu" href='../clasesCarrera/agregarClase.php'>Crear Pensum</a>
 				 <a class="menu" href='../horarioMaterias/materias.php'> Horario De Clases</a>
 				 <a class="menu" href='../matriculaDocente/matriculaDocente.php'>Clases De Profesores</a>
 				 <a class="menu" href='../alumnos/alumnosInfo.php'>Info De Alumnos</a>
