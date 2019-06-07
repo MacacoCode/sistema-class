@@ -31,7 +31,7 @@ $nombrecarrera =$_GET['car']; //nombre de la carrera
         <h1 id="h1conf">Actualizar Coordinadores</h1>
         <br>
     <div class="formcontra col" >
-    <form action="" method="GET" autocomplete="off"  >
+    <form action="updatereparacion.php" method="GET" autocomplete="off"  >
     <div class="row">
 		<div class="form2 col-6">
 		<p>ID</p>
@@ -89,6 +89,8 @@ $nombrecarrera =$_GET['car']; //nombre de la carrera
 							</select>
                             </div>
                             </div>
+
+
         <div class="pop-up">
 			<div >
 				<p>¿Esta seguro?</p>
@@ -102,6 +104,7 @@ $nombrecarrera =$_GET['car']; //nombre de la carrera
     <button class="pop-up-activate">Actualizar</button>
     </div>
     <?php
+    /*
         if($_GET['submit'])
         {
             $idcoord = $_GET['id'];
@@ -122,16 +125,15 @@ $nombrecarrera =$_GET['car']; //nombre de la carrera
             $query ="UPDATE coordinadores SET  nombre= '$nombre', apellido='$apellido', segundoNombre='$segundonombre', segundoApellido='$segundoapellido', correo='$correo', telefono='$telefono', idcarrera='$idcarrera' WHERE idcoordinador='$idcoord'";
            
 
-            //$data = mysqli_query($conexion, $sqk) && mysqli_query($conexion, $query);
             if(mysqli_query($conexion, $query))
             {
                 header("Location: http://localhost:8080/formulario/admin/coord/coord.php");
             }
             else{
-                header("Location: http://localhost:8080/formulario/admin/coord/coord.php?fallo=true");
+             echo"NEPE"
             }
         }
-      
+      */
         ?>
         	<?php
        if(isset($_GET["fallo"]) && $_GET["fallo"] == 'true')

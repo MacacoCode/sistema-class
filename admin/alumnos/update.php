@@ -29,7 +29,7 @@ $nombrecarrera = $_GET['nom'];//nombre de la carrera
         <h1 id="h1conf">Actualizar tabla Alumnos</h1>
         <br>
     <div class="formcontra col" >
-    <form action="" method="GET" autocomplete="off"  >
+    <form action="updatereparacion.php" method="GET" autocomplete="off"  >
         <div class="row">
 		<div class="form2 col-6">
 		<p>ID</p>
@@ -49,7 +49,7 @@ $nombrecarrera = $_GET['nom'];//nombre de la carrera
 		<p>Apellidos</p>
 		<input type="text" name="apellido" placeholder="Apellido" maxlength="45" required value="<?php echo $_GET['cl']; ?>">
 		<br><br>
-        <input type="text" name="segundoapellido" placeholder="Apellido" maxlength="45" required value="<?php echo $_GET['ados']; ?>">
+        <input type="text" name="segundoapellido" placeholder="Apellido" maxlength="45"  value="<?php echo $_GET['ados']; ?>">
         <br><br>
         </div>
 
@@ -100,7 +100,7 @@ $nombrecarrera = $_GET['nom'];//nombre de la carrera
     <button class="pop-up-activate">Actualizar</button>
     </div>
     <?php
-        if($_GET['submit'])
+      /*  if($_GET['submit'])
         {
             $idalumno = $_GET['idalumno'];
             $nombre = $_GET['nombre'];
@@ -128,7 +128,7 @@ $nombrecarrera = $_GET['nom'];//nombre de la carrera
             else{
                 header("Location: http://localhost:8080/formulario/admin/alumnos/alumnos.php?fallo=true");
             }
-        }
+        }*/
       
         ?>
 

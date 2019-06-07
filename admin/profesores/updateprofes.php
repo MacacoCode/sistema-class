@@ -43,7 +43,7 @@ $_GET['cl']; //apellido
 		
         <input type="text" name="nombre" placeholder="Primer nombre" maxlength="45" required value="<?php echo $_GET['sn']; ?>">
         <br><br>
-        <input type="text" name="segundoNombre" placeholder="Segundo nombre" maxlength="25" pattern="[A-Za-z]+" required required value="<?php echo $_GET['ndos']; ?>">
+        <input type="text" name="segundoNombre" placeholder="Segundo nombre" maxlength="25" pattern="[A-Za-z]+"   value="<?php echo $_GET['ndos']; ?>">
         <br><br>
 
 		<p>Apellidos</p>
