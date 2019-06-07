@@ -39,7 +39,7 @@
 					<p>ID</p>
 					
 					<br>
-					<input type="text" name="id" placeholder="ID" minlength="8" maxlength="8" pattern="^[0-9]*$" required oninvalid="this.setCustomValidity('Deben ser 8 numeros')" oninput="this.setCustomValidity('')">
+					<input type="text" name="id" placeholder="ID" minlength="9" maxlength="9" pattern="^[0-9]*$" required oninvalid="this.setCustomValidity('Deben ser 8 numeros')" oninput="this.setCustomValidity('')">
 					<p>Nombres</p>
 			
 					<input type="text" name="nombre" placeholder="Primer nombre" maxlength="25" pattern="[A-Za-z]+" required>

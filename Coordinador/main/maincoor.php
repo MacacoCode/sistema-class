@@ -54,6 +54,10 @@ $nombrecarrera =$arraycarr['nombrecarrera'];
 										<tbody>
 
 										<tr>	
+										<td>ID:</td>
+										<td><?php echo $usuario ?></td>
+										</tr>	
+										<tr>	
 										<td>Carrera:</td>
 										<td><?php echo $nombrecarrera ?></td>
 										</tr>

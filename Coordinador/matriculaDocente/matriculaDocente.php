@@ -31,7 +31,7 @@ $idcar= $array['idcarrera'];
 
 		<div id="main">
 				<div class="contenedor-tabla"> 
-					<h2>Matricula de clases </h2>
+					<h2>Matricula de Docentes </h2>
 					<input type="text" name="search" id="search" class="form-control" placeholder="Buscar en tabla" />  
 					<br>
 					<div class ='tableFixHead scroll' >
@@ -159,7 +159,7 @@ $idcar= $array['idcarrera'];
 					<input name ="grupo" type="number" value="Grupo">
 					
 				
-						 </select>	--->
+						 </select>	
 					<div class="pop-up">
 						<div >
 							<p>¿Esta seguro?</p>

@@ -44,7 +44,11 @@ $correo = $arrayd['correo'];
 									<table class="tabladelmain">
 										<tbody>
 
-									
+										
+										<tr>	
+										<td>ID: </td>
+										<td><?php echo $usuario?></td>
+										</tr>
 
 										<tr>	
 										<td>Telefono: </td>
