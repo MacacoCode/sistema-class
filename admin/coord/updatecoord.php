@@ -92,7 +92,7 @@ $nombrecarrera =$_GET['car']; //nombre de la carrera
         <div class="pop-up">
 			<div >
 				<p>¿Esta seguro?</p>
-				<input type="submit" name="submit" value="Confirmar"/>
+				<input type="submit" name='submit' value="Confirmar"/>
 					
 				<br>
 				<input class= "pop-up-cancel" type="button" value="Cancelar">
@@ -107,9 +107,7 @@ $nombrecarrera =$_GET['car']; //nombre de la carrera
             $idcoord = $_GET['id'];
             $nombre = $_GET['nombre'];
             $apellido = $_GET['apellido'];
-            $nombre = $_GET['nombre'];
             $segundonombre = $_GET['segundoNombre'];
-            $apellido = $_GET['apellido'];
             $segundoapellido = $_GET['segundoapellido'];
             $telefono = $_GET['telefono'];
             $correo = $_GET['correo'];

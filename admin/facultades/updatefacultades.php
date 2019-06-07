@@ -65,7 +65,7 @@ $nombrefacultad =$_GET['sn']; //nombre
                 header("Location: http://localhost:8080/formulario/admin/facultades/facultades.php");
             }
             else{
-               echo"nepe";
+                header("Location: http://localhost:8080/formulario/admin/facultades/facultades.php?fallo=true");
             }
         }
       
