@@ -38,7 +38,7 @@ else{
 
 
 //Alumnos 
-$q = "SELECT *from login where usuario = '$usuario' and cargo ='alumno'";
+$q = "SELECT *from login where usuario = '$usuario' and cargo ='alumno' and activo='1'";
 $consulta = mysqli_query($conexion, $q);
 $array = mysqli_fetch_array($consulta);
 
