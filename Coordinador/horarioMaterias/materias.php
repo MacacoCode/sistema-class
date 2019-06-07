@@ -53,7 +53,7 @@ $idcar= $array['idcarrera'];
 							<?php 
 							$sql="SELECT materias.idmateria as idmateria, materias.nombre as nombre, hora_materia.horainicio as inicio, hora_materia.horfinal as final , hora_materia.dia as dia, hora_materia.idgrupo as grupo, hora_materia.aula as aula
 							from hora_materia, materias, pensum
-							where materias.idmateria=hora_materia.idmateria and pensum.idmateria=hora_materia.idmateria;";
+							where materias.idmateria=hora_materia.idmateria and pensum.idmateria=hora_materia.idmateria and pensum.idcarrera='$idcar';";
 							$result=mysqli_query($conexion,$sql);
 
 							while($mostrar=mysqli_fetch_array($result)){
