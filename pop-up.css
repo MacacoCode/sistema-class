@@ -9,7 +9,21 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.808);
     display: none;
-    
+    z-index: 1000;
+    pointer-events: all;
+}
+.pop-up-borrar{
+    top: 0;
+    right: 0;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+    position: absolute !important;
+    padding-left: 49%;
+    padding-right: 50%;
+    padding-top: 20%;
+    padding-bottom: 29%;
+    z-index: 1000;
     pointer-events: all;
 }
 .pop-up-sesion {
@@ -23,8 +37,23 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.808);
+    z-index: 1000;
     display: none;
     
+    pointer-events: all;
+}
+.pop-up-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.808);
+    text-align: center;
+    z-index: 1000;
     pointer-events: all;
 }
 .pop-up-activate{
@@ -43,34 +72,8 @@ input[type=button], input[type=submit]{
      font: 14px normal normal uppercase helvetica, arial, serif;
      padding:2px;
 }
-.pop-up-borrar{
-    top: 0;
-    right: 0;
-    height: 0;
-    background-color: rgba(0, 0, 0, 0.808);
-    display: none;
-    position: absolute !important;
-    padding-left: 49%;
-    padding-right: 50%;
-    padding-top: 20%;
-    padding-bottom: 29%;
-    pointer-events: all;
-}
 p{
     color:white;
-}
-.pop-up-error {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.808);
-    text-align: center;
-    pointer-events: all;
 }
 .pop-up-del p{
     display: none;
