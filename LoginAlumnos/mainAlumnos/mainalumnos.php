@@ -16,6 +16,7 @@ $apellido =$arrayd['apellido'];
 $telefono =$arrayd['telefono'];
 $correo =$arrayd['correo'];
 $sexo =$arrayd['sexo'];
+$idalumnos=$arrayd['idalumno'];
 
 $carreraquery="SELECT oferta_academica.nombre as nombrecarrera from oferta_academica, oferta_alumnos
 where oferta_academica.idcarrera=oferta_alumnos.idcarrera and oferta_alumnos.idalumno='$usuario'; ";
@@ -51,6 +52,11 @@ $nombrecarrera =$arraycarr['nombrecarrera'];
 							<div class="informacionpersonal">
 									<table class="tabladelmain">
 										<tbody>
+
+										<tr>	
+										<td>ID:</td>
+										<td><?php echo $idalumnos ?></td>
+										</tr>
 
 										<tr>	
 										<td>Carrera:</td>
