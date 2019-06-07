@@ -353,21 +353,7 @@ if (mysqli_query($conn, $coord)) {
          echo "Error al crear la tabla: " . mysqli_error($conn);
      }  
 
-     //trigger para borrar alumnos de notas si retiran la clase
-     $borrarnotas= "
-        
-     CREATE trigger borrarNotas after delete on materias_alumnos    
-     for each row
-     begin
-     delete from notas where idalumno=old.idalumno and idmateria=old.idmateria and idgrupo=old.idgrupo;
-     
-     END;
-     ";
-  
-    if (mysqli_query($conn, $borrarnotas)) {
-    } else {
-        echo "Error al crear la tabla: " . mysqli_error($conn);
-    }  
+    
 
       
  

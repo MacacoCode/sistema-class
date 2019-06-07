@@ -41,6 +41,7 @@ validaralumno($usuario,$conexion);
                                 <td>Grupo</td>
 								<td>Dia	</td>
 								<td>Aula</td>
+								<td>Profesor</td>
 							
 								
 								<td>Acciones</td>
@@ -49,10 +50,13 @@ validaralumno($usuario,$conexion);
                             </tr>
 						</thead>
                         <?php 
-                        $sql="SELECT materias.idmateria as idmateria, materias.nombre as materia, hora_materia.horainicio as inicio, hora_materia.horfinal as final, materias_alumnos.idgrupo as grupo, hora_materia.dia as dia,hora_materia.aula as aula, notas.nota
-						from materias_alumnos, hora_materia, materias, notas
-						where materias_alumnos.idmateria=hora_materia.idmateria and materias_alumnos.idmateria=materias.idmateria and materias_alumnos.idgrupo=hora_materia.idgrupo 
-						and notas.idalumno=materias_alumnos.idalumno and notas.idmateria=materias.idmateria and materias_alumnos.idalumno='$usuario' ;";
+                        $sql="SELECT materias.idmateria as idmateria, materias.nombre as materia, hora_materia.horainicio as inicio, hora_materia.horfinal as final,
+						materias_alumnos.idgrupo as grupo, hora_materia.dia as dia,hora_materia.aula as aula, notas.nota, docentes.nombre as nombredocente, docentes.apellido as apellidodocente
+					   from materias_alumnos, hora_materia, materias, notas, docentes, materia_docente
+					   where materias_alumnos.idmateria=hora_materia.idmateria and materias_alumnos.idmateria=materias.idmateria and materias_alumnos.idgrupo=hora_materia.idgrupo 
+					   and docentes.iddocente = materia_docente.iddocente and hora_materia.idmateria = materia_docente.idmateria
+					   and notas.idalumno=materias_alumnos.idalumno and notas.idmateria=materias.idmateria and materias_alumnos.idalumno='$usuario' 
+					   and hora_materia.idmateria not in (select idmateria from notas where idalumno='$usuario' and nota>0) ;";
                         $result=mysqli_query($conexion,$sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
@@ -65,6 +69,7 @@ validaralumno($usuario,$conexion);
 							<td>".$mostrar['grupo']."</td>
 							<td>".$mostrar['dia']."</td>
 							<td>".$mostrar['aula']."</td>
+							<td>".$mostrar['nombredocente'].'   '.$mostrar['apellidodocente']."</td>
 						
 							
 							

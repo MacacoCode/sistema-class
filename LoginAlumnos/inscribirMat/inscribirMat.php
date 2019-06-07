@@ -56,7 +56,7 @@ $idcarrera= $array['idcarrera'];
                         $sql="SELECT materias.idmateria as idmateria, materias.nombre as materia, pensum.idcarrera, hora_materia.horainicio as inicio, hora_materia.horfinal as final,  hora_materia.idgrupo as grupo, hora_materia.dia as dia
                         from pensum, hora_materia, materias
                         where pensum.idmateria=hora_materia.idmateria and pensum.idmateria=materias.idmateria and pensum.idcarrera ='$idcarrera' and 
-                        hora_materia.idmateria  not in (select idmateria from materias_alumnos where idalumno='$usuario');";
+                        hora_materia.idmateria  not in (select idmateria from notas where idalumno='$usuario');";
                         $result=mysqli_query($conexion,$sql);
 
                         while($mostrar=mysqli_fetch_array($result)){

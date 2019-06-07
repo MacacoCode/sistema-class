@@ -14,7 +14,7 @@ $usuario = $_SESSION['usuario']; //id del alumno
 	$consultsiono = mysqli_query($conexion, $sionopre);
 	$arraysiono = mysqli_fetch_array($consultsiono);
 
-	if($arraysiono['siono'] ==1)
+	if($arraysiono['siono'] == 1)
 	{
 			//Consulta para verificar si la hora y dia estan disponibles para un estudiante
 			$sinchoque = "SELECT count(*) as sinchoque FROM  materias, hora_materia, materias_alumnos 
